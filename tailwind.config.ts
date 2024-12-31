@@ -8,6 +8,12 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        clashregular: ["ClashDisplay-Regular", "sans-serif"],
+        clashbold: ["ClashDisplay-Bold", "sans-serif"],
+        clashmedium: ["ClashDisplay-Medium", "sans-serif"],
+        clashsemibold: ["ClashDisplay-Semibold", "sans-serif"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
