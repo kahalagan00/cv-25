@@ -33,9 +33,9 @@ const ThemeMenu: React.FC = () => {
   return (
     <button onClick={handleClick}>
       {!isDarkMode ? (
-        <FiSun className="h-10 w-10 rounded-full p-2 hover:bg-violet-500" />
+        <FiSun className="h-10 w-10 rounded-full p-2 text-fuchsia-500 hover:bg-indigo-800" />
       ) : (
-        <FiMoon className="h-10 w-10 rounded-full p-2 hover:bg-violet-500" />
+        <FiMoon className="h-10 w-10 rounded-full p-2 text-fuchsia-500 hover:bg-indigo-800" />
       )}
     </button>
   );

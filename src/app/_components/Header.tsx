@@ -1,9 +1,9 @@
 "use client";
 
-import { Rubik } from "next/font/google";
 import Link from "next/link";
 import { useState } from "react";
 import ThemeMenu from "./ThemeMenu";
+import { Rubik } from "next/font/google";
 
 const rubik = Rubik({ weight: "400", subsets: ["latin"] });
 
