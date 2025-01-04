@@ -34,7 +34,7 @@ export default function RootLayout({
         <div className="w-screen">
           <Header />
         </div>
-        <main className="mx-auto mt-4 max-w-screen-2xl bg-slate-200">
+        <main className="mx-auto mt-4 max-w-screen-2xl bg-indigo-950">
           {children}
         </main>
       </body>

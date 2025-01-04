@@ -6,6 +6,7 @@ import ThemeMenu from "./ThemeMenu";
 import { Rubik } from "next/font/google";
 
 const rubik = Rubik({ weight: "400", subsets: ["latin"] });
+const rubikBold = Rubik({ weight: "700", subsets: ["latin"] });
 
 const Header: React.FC = () => {
   const [linkSelected, setLinkSelected] = useState("home");
@@ -76,7 +77,7 @@ const Header: React.FC = () => {
         <Link
           onClick={() => setLinkSelected("contact")}
           href="/contact"
-          className={`${rubik.className} rounded-full bg-violet-900 px-9 py-4 text-lg hover:bg-violet-800`}
+          className={`${rubikBold.className} rounded-full bg-violet-900 px-9 py-4 text-lg hover:bg-violet-800`}
         >
           Contact me
         </Link>
