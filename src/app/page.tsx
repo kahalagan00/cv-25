@@ -2,7 +2,7 @@ import { Rubik } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { ImCross } from "react-icons/im";
-import { IoMdArrowForward, IoMdDownload } from "react-icons/io";
+import { IoMdArrowBack, IoMdArrowForward, IoMdDownload } from "react-icons/io";
 
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 const rubikBold = Rubik({ weight: "700", subsets: ["latin"] });
@@ -56,15 +56,15 @@ const Page: React.FC = () => {
       </section>
 
       {/* About me summary section */}
-      <section className="relative mb-16 flex w-full px-4">
+      <section className="relative mb-64 flex w-full px-4">
         <div className="w-3/5">
-          <div className="relative h-[700px] w-[700px] overflow-hidden rounded-full bg-pink-200">
+          <div className="relative h-[500px] w-[500px] overflow-hidden rounded-full bg-pink-200 sm:h-[600px] sm:w-[600px] xl:h-[700px] xl:w-[700px]">
             <Image
               src="/images/Coding_Desk.jpg"
-              width={700}
-              height={700}
-              alt="Picture of developer"
-              className="-translate-y-36"
+              alt="Picture of desk"
+              layout="fill"
+              objectFit="cover"
+              className="-translate-y-18 h-full w-full"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 opacity-80 mix-blend-multiply"></div>
           </div>
@@ -97,9 +97,94 @@ const Page: React.FC = () => {
       </section>
 
       {/* Technical skills summary section */}
-      <section className="relative mb-16 flex w-full px-4"></section>
+      <section className="relative mb-64 w-full px-4">
+        <div className="flex">
+          <div className="w-1/2">
+            <h1 className="font-clashsemibold text-[7rem] leading-tight text-white">
+              My skills
+            </h1>
+          </div>
+          <div className="w-1/2 overflow-hidden">
+            <IoMdArrowBack className="-translate-x-6 font-clashsemibold text-[10rem] leading-tight text-fuchsia-600" />
+            {/* Use and investigate again later when the entire app is already done */}
+            {/* <Image
+              src="/svgs/arrow-left-long.svg"
+              alt="Picture of left long arrow"
+              height={50}
+              width={400}
+              className="object-cover"
+            /> */}
+          </div>
+        </div>
+
+        <div className="mt-12 flex">
+          <div className="w-1/2">
+            <ul className="w-full">
+              <SkillRow skill="TypeScript" rating={7} />
+              <SkillRow skill="React" rating={8} />
+              <SkillRow skill="Next.js" rating={7} />
+              <SkillRow skill="Tailwind" rating={10} />
+              <SkillRow skill="Python" rating={10} />
+            </ul>
+          </div>
+          <div className="w-1/2">
+            <ul className="w-full">
+              <SkillRow skill="Node.js" rating={8} />
+              <SkillRow skill="Express" rating={8} />
+              <SkillRow skill="Django" rating={3} />
+              <SkillRow skill="MongoDB" rating={8} />
+              <SkillRow skill="PostgreSQL" rating={4} />
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Project showcase section */}
+      <section className="relative mb-64 w-full px-4">
+        <div className="flex justify-end">
+          <h1 className="mr-32 font-clashsemibold text-[7rem] leading-tight text-white">
+            My projects
+          </h1>
+        </div>
+      </section>
     </>
   );
 };
 
 export default Page;
+
+const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
+  const ratingsArr = [];
+  for (let i = 0; i < 10; i++) {
+    if (i + 1 <= rating) {
+      ratingsArr.push(1);
+    } else {
+      ratingsArr.push(0);
+    }
+  }
+
+  return (
+    <li className="my-4 grid w-full grid-cols-[150px_1fr] justify-start text-white">
+      <p className={`${rubikRegular.className} text-2xl text-gray-100`}>
+        {skill}
+      </p>
+      <div className="flex">
+        {ratingsArr.map((x) =>
+          x ? (
+            <div
+              key={`Rating ${x}`}
+              className="ml-2 h-5 w-5 rounded-full bg-fuchsia-600"
+            ></div>
+          ) : (
+            <div
+              key={`Rating ${x}`}
+              className="ml-2 h-5 w-5 rounded-full border-2 border-fuchsia-600 bg-transparent"
+            ></div>
+          ),
+        )}
+        {/* <div className="ml-2 h-5 w-5 rounded-full bg-fuchsia-600"></div> */}
+        {/* <div className="ml-2 h-5 w-5 rounded-full border-2 border-fuchsia-600 bg-transparent"></div> */}
+      </div>
+    </li>
+  );
+};
