@@ -10,6 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        clashlight: ["ClashDisplay-Light", "sans-serif"],
         clashregular: ["ClashDisplay-Regular", "sans-serif"],
         clashbold: ["ClashDisplay-Bold", "sans-serif"],
         clashmedium: ["ClashDisplay-Medium", "sans-serif"],

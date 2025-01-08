@@ -28,9 +28,9 @@ const Page: React.FC = () => {
             I am a Full-Stack developer and I work in the United States.
           </div>
         </div>
-        <div className="relative w-1/2 overflow-hidden bg-violet-900">
+        <div className="relative w-1/2 overflow-hidden">
           <div className="absolute left-1/2 top-1/4 flex h-[500px] w-[500px] -translate-x-1/2 transform items-center justify-center rounded-full border-2 border-fuchsia-500 bg-transparent">
-            <div className="h-[90%] w-[90%] rounded-full bg-red-200"></div>
+            <div className="h-[90%] w-[90%] rounded-full bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 opacity-80 mix-blend-multiply"></div>
           </div>
 
           <div className="absolute left-16 top-1/4 z-20 flex h-36 w-36 items-center justify-center rounded-full bg-fuchsia-800 bg-opacity-70">
@@ -62,9 +62,8 @@ const Page: React.FC = () => {
             <Image
               src="/images/Coding_Desk.jpg"
               alt="Picture of desk"
-              layout="fill"
-              objectFit="cover"
-              className="-translate-y-18 h-full w-full"
+              fill
+              className="-translate-y-18 h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 opacity-80 mix-blend-multiply"></div>
           </div>
@@ -146,6 +145,79 @@ const Page: React.FC = () => {
             My projects
           </h1>
         </div>
+        <div className="mt-32 flex">
+          <div className="w-1/2">
+            <div className="h-[400px] w-full rounded-3xl bg-slate-500 drop-shadow-2xl">
+              Artwork of project
+            </div>
+          </div>
+          <div className="w-1/2 text-white">
+            <div className="flex -translate-x-16 translate-y-16 flex-col">
+              <h3 className="font-clashmedium text-[4rem] tracking-wide">
+                Jhuv Nutrition
+              </h3>
+              <p className="font-clashlight text-[2.5rem]">Current</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-32 flex">
+          <div className="z-20 w-[45%] text-white">
+            <div className="flex translate-x-16 translate-y-72 flex-col items-end">
+              <h3 className="font-clashmedium text-[4rem] tracking-wide">
+                CV 24 Portfolio
+              </h3>
+              <p className="font-clashlight text-[2.5rem]">December 2024</p>
+            </div>
+          </div>
+          <div className="z-10 w-1/2">
+            <div className="h-[500px] w-[500px] rounded-3xl bg-cyan-700 drop-shadow-2xl">
+              Artwork of project
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-32 flex">
+          <div className="w-[35%]">
+            <div className="h-[400px] w-full rounded-3xl bg-purple-800 drop-shadow-2xl">
+              Artwork of project
+            </div>
+          </div>
+          <div className="w-1/2 text-white">
+            <div className="flex -translate-x-16 translate-y-32 flex-col">
+              <h3 className="font-clashmedium text-[4rem] tracking-wide">
+                Weather App
+              </h3>
+              <p className="font-clashlight text-[2.5rem]">September 2024</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-32 flex">
+          <div className="z-20 w-[30%] text-white">
+            <div className="flex translate-x-16 translate-y-24 flex-col items-end">
+              <h3 className="text-end font-clashmedium text-[4rem] tracking-wide">
+                Bluelock Drowning
+              </h3>
+              <p className="font-clashlight text-[2.5rem]">May 2023</p>
+            </div>
+          </div>
+          <div className="z-10 w-[70%]">
+            <div className="h-[400px] w-full rounded-3xl bg-cyan-700 drop-shadow-2xl">
+              Artwork of project
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-32 flex justify-center">
+          <Link href="/projects">
+            <p
+              className={`${rubikRegular.className} text-2xl tracking-wide text-fuchsia-600`}
+            >
+              See more projects &gt;&gt;
+            </p>
+          </Link>
+        </div>
       </section>
     </>
   );
@@ -169,15 +241,15 @@ const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
         {skill}
       </p>
       <div className="flex">
-        {ratingsArr.map((x) =>
+        {ratingsArr.map((x, idx) =>
           x ? (
             <div
-              key={`Rating ${x}`}
+              key={`Rating valid ${idx}`}
               className="ml-2 h-5 w-5 rounded-full bg-fuchsia-600"
             ></div>
           ) : (
             <div
-              key={`Rating ${x}`}
+              key={`Rating invalid ${idx}`}
               className="ml-2 h-5 w-5 rounded-full border-2 border-fuchsia-600 bg-transparent"
             ></div>
           ),
