@@ -219,6 +219,15 @@ const Page: React.FC = () => {
           </Link>
         </div>
       </section>
+
+      {/* My blogs/videos/content section */}
+      <section className="relative mb-64 w-full px-4">
+        <div className="flex justify-end">
+          <h1 className="mr-32 font-clashsemibold text-[7rem] leading-tight text-white">
+            My blogs
+          </h1>
+        </div>
+      </section>
     </>
   );
 };
