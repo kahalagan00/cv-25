@@ -1,0 +1,42 @@
+[
+  {
+    "skill": "TypeScript",
+    "rating": 7
+  },
+  {
+    "skill": "React",
+    "rating": 8
+  },
+  {
+    "skill": "Next.js",
+    "rating": 7
+  },
+  {
+    "skill": "Tailwind",
+    "rating": 10
+  },
+  {
+    "skill": "Python",
+    "rating": 10
+  },
+  {
+    "skill": "Node.js",
+    "rating": 8
+  },
+  {
+    "skill": "Express",
+    "rating": 8
+  },
+  {
+    "skill": "Django",
+    "rating": 3
+  },
+  {
+    "skill": "MongoDB",
+    "rating": 8
+  },
+  {
+    "skill": "PostgreSQL",
+    "rating": 4
+  }
+]

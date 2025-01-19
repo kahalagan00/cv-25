@@ -37,9 +37,14 @@ const Page: React.FC = () => {
         <BlogsSection />
       </section>
 
-      {/* My blogs/videos/content section */}
+      {/* Contact developer section */}
       <section className="relative mb-64 w-full px-4">
         <ContactSection />
+      </section>
+
+      {/* Footer section with social links */}
+      <section className="relative mb-64 w-full px-4">
+        <FooterSection />
       </section>
     </>
   );
@@ -56,7 +61,7 @@ const ProfileSection: React.FC = () => {
         >
           Fullstack software engineer
         </h2>
-        <h1 className="font-clashsemibold text-[7rem] leading-tight text-white">
+        <h1 className="font-clashsemibold text-[8rem] leading-tight text-white">
           Joshmar Morales
         </h1>
 
@@ -95,11 +100,156 @@ const ProfileSection: React.FC = () => {
   );
 };
 
+const AboutSection: React.FC = () => {
+  return (
+    <>
+      <div className="w-3/5">
+        <div className="relative h-[500px] w-[500px] overflow-hidden rounded-full bg-pink-200 sm:h-[600px] sm:w-[600px] xl:h-[700px] xl:w-[700px]">
+          <Image
+            src="/images/Coding_Desk.jpg"
+            alt="Picture of desk"
+            fill
+            className="-translate-y-18 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 opacity-80 mix-blend-multiply"></div>
+        </div>
+      </div>
+      <div className="flex w-2/5 flex-col justify-end text-white">
+        <p
+          className={`${rubikRegular.className} my-16 w-[500px] text-lg tracking-[.015em] text-gray-400`}
+        >
+          I am a Full Stack Developer with a strong passion for creating
+          impactful, user-centered web applications. With a focus on both
+          frontend and backend development, I enjoy building scalable solutions
+          that solve real-world problems. I thrive in dynamic environments and
+          am constantly looking for new opportunities to grow and contribute to
+          meaningful projects.
+        </p>
+        <Link
+          href="/contact"
+          className={`${rubikBold.className} mb-8 flex w-48 items-center justify-center rounded-full bg-fuchsia-700 px-9 py-4 text-lg hover:bg-fuchsia-600`}
+        >
+          Contact me
+        </Link>
+      </div>
+
+      <h1 className="absolute left-1/2 top-0 w-[300px] -translate-x-1/2 font-clashsemibold text-[8rem] leading-tight text-white">
+        About me
+      </h1>
+      <Link href="/about">
+        <IoMdArrowForward className="absolute right-0 top-1/4 w-[300px] -translate-y-1/4 font-clashsemibold text-[10rem] leading-tight text-fuchsia-600" />
+      </Link>
+    </>
+  );
+};
+
+const TechnicalSection: React.FC = () => {
+  const [skillsData, setSkillsData] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/skillsData.json")
+      .then((response) => response.json())
+      .then((data) => setSkillsData(data));
+  }, []);
+
+  return (
+    <>
+      <div className="flex">
+        <div className="w-1/2">
+          <h1 className="font-clashsemibold text-[8rem] leading-tight text-white">
+            My skills
+          </h1>
+        </div>
+        <div className="w-1/2 overflow-hidden">
+          <IoMdArrowBack className="-translate-x-6 font-clashsemibold text-[10rem] leading-tight text-fuchsia-600" />
+
+          {/* Long Arrow implementation */}
+          {/* Use and investigate again later when the entire app is already done */}
+          {/* <Image
+              src="/svgs/arrow-left-long.svg"
+              alt="Picture of left long arrow"
+              height={50}
+              width={400}
+              className="object-cover"
+            /> */}
+        </div>
+      </div>
+
+      <div className="mt-12 flex">
+        <div className="w-1/2">
+          <ul className="w-full">
+            {skillsData.map(
+              (data: { skill: string; rating: number }, idx: number) =>
+                idx < skillsData.length / 2 && (
+                  <SkillRow
+                    key={data.skill}
+                    skill={data.skill}
+                    rating={data.rating}
+                  />
+                ),
+            )}
+          </ul>
+        </div>
+        <div className="w-1/2">
+          <ul className="w-full">
+            {skillsData.map(
+              (data: { skill: string; rating: number }, idx: number) =>
+                idx >= skillsData.length / 2 && (
+                  <SkillRow
+                    key={data.skill}
+                    skill={data.skill}
+                    rating={data.rating}
+                  />
+                ),
+            )}
+          </ul>
+        </div>
+      </div>
+    </>
+  );
+};
+
+const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
+  const ratingsArr = [];
+  for (let i = 0; i < 10; i++) {
+    if (i + 1 <= rating) {
+      ratingsArr.push(1);
+    } else {
+      ratingsArr.push(0);
+    }
+  }
+
+  return (
+    <li className="my-4 grid w-full grid-cols-[150px_1fr] justify-start text-white">
+      <p className={`${rubikRegular.className} text-2xl text-gray-100`}>
+        {skill}
+      </p>
+      <div className="flex">
+        {ratingsArr.map((x, idx) =>
+          x ? (
+            <div
+              key={`Rating valid ${idx}`}
+              className="ml-2 h-5 w-5 rounded-full bg-fuchsia-600"
+            ></div>
+          ) : (
+            <div
+              key={`Rating invalid ${idx}`}
+              className="ml-2 h-5 w-5 rounded-full border-2 border-fuchsia-600 bg-transparent"
+            ></div>
+          ),
+        )}
+        {/* <div className="ml-2 h-5 w-5 rounded-full bg-fuchsia-600"></div> */}
+        {/* <div className="ml-2 h-5 w-5 rounded-full border-2 border-fuchsia-600 bg-transparent"></div> */}
+      </div>
+    </li>
+  );
+};
+
 const ProjectSection: React.FC = () => {
   return (
     <>
       <div className="relative flex justify-end">
-        <h1 className="mr-32 font-clashsemibold text-[7rem] leading-tight text-white">
+        <h1 className="mr-32 font-clashsemibold text-[8rem] leading-tight text-white">
           My projects
         </h1>
         <ImCross className="absolute h-20 w-20 translate-y-48 text-white" />
@@ -181,131 +331,6 @@ const ProjectSection: React.FC = () => {
   );
 };
 
-const TechnicalSection: React.FC = () => {
-  return (
-    <>
-      <div className="flex">
-        <div className="w-1/2">
-          <h1 className="font-clashsemibold text-[7rem] leading-tight text-white">
-            My skills
-          </h1>
-        </div>
-        <div className="w-1/2 overflow-hidden">
-          <IoMdArrowBack className="-translate-x-6 font-clashsemibold text-[10rem] leading-tight text-fuchsia-600" />
-          {/* Use and investigate again later when the entire app is already done */}
-          {/* <Image
-              src="/svgs/arrow-left-long.svg"
-              alt="Picture of left long arrow"
-              height={50}
-              width={400}
-              className="object-cover"
-            /> */}
-        </div>
-      </div>
-
-      <div className="mt-12 flex">
-        <div className="w-1/2">
-          <ul className="w-full">
-            <SkillRow skill="TypeScript" rating={7} />
-            <SkillRow skill="React" rating={8} />
-            <SkillRow skill="Next.js" rating={7} />
-            <SkillRow skill="Tailwind" rating={10} />
-            <SkillRow skill="Python" rating={10} />
-          </ul>
-        </div>
-        <div className="w-1/2">
-          <ul className="w-full">
-            <SkillRow skill="Node.js" rating={8} />
-            <SkillRow skill="Express" rating={8} />
-            <SkillRow skill="Django" rating={3} />
-            <SkillRow skill="MongoDB" rating={8} />
-            <SkillRow skill="PostgreSQL" rating={4} />
-          </ul>
-        </div>
-      </div>
-    </>
-  );
-};
-
-const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
-  const ratingsArr = [];
-  for (let i = 0; i < 10; i++) {
-    if (i + 1 <= rating) {
-      ratingsArr.push(1);
-    } else {
-      ratingsArr.push(0);
-    }
-  }
-
-  return (
-    <li className="my-4 grid w-full grid-cols-[150px_1fr] justify-start text-white">
-      <p className={`${rubikRegular.className} text-2xl text-gray-100`}>
-        {skill}
-      </p>
-      <div className="flex">
-        {ratingsArr.map((x, idx) =>
-          x ? (
-            <div
-              key={`Rating valid ${idx}`}
-              className="ml-2 h-5 w-5 rounded-full bg-fuchsia-600"
-            ></div>
-          ) : (
-            <div
-              key={`Rating invalid ${idx}`}
-              className="ml-2 h-5 w-5 rounded-full border-2 border-fuchsia-600 bg-transparent"
-            ></div>
-          ),
-        )}
-        {/* <div className="ml-2 h-5 w-5 rounded-full bg-fuchsia-600"></div> */}
-        {/* <div className="ml-2 h-5 w-5 rounded-full border-2 border-fuchsia-600 bg-transparent"></div> */}
-      </div>
-    </li>
-  );
-};
-
-const AboutSection: React.FC = () => {
-  return (
-    <>
-      <div className="w-3/5">
-        <div className="relative h-[500px] w-[500px] overflow-hidden rounded-full bg-pink-200 sm:h-[600px] sm:w-[600px] xl:h-[700px] xl:w-[700px]">
-          <Image
-            src="/images/Coding_Desk.jpg"
-            alt="Picture of desk"
-            fill
-            className="-translate-y-18 h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 opacity-80 mix-blend-multiply"></div>
-        </div>
-      </div>
-      <div className="flex w-2/5 flex-col justify-end text-white">
-        <p
-          className={`${rubikRegular.className} my-16 w-[500px] text-lg tracking-[.015em] text-gray-400`}
-        >
-          I am a Full Stack Developer with a strong passion for creating
-          impactful, user-centered web applications. With a focus on both
-          frontend and backend development, I enjoy building scalable solutions
-          that solve real-world problems. I thrive in dynamic environments and
-          am constantly looking for new opportunities to grow and contribute to
-          meaningful projects.
-        </p>
-        <Link
-          href="/contact"
-          className={`${rubikBold.className} mb-8 flex w-48 items-center justify-center rounded-full bg-fuchsia-700 px-9 py-4 text-lg hover:bg-fuchsia-600`}
-        >
-          Contact me
-        </Link>
-      </div>
-
-      <h1 className="absolute left-1/2 top-0 w-[300px] -translate-x-1/2 font-clashsemibold text-[7rem] leading-tight text-white">
-        About me
-      </h1>
-      <Link href="/about">
-        <IoMdArrowForward className="absolute right-0 top-1/4 w-[300px] -translate-y-1/4 font-clashsemibold text-[10rem] leading-tight text-fuchsia-600" />
-      </Link>
-    </>
-  );
-};
-
 const BlogsSection: React.FC = () => {
   const [blogsData, setBlogsData] = useState([]);
 
@@ -321,7 +346,7 @@ const BlogsSection: React.FC = () => {
   return (
     <>
       <div className="flex">
-        <h1 className="mr-32 font-clashsemibold text-[7rem] leading-tight text-white">
+        <h1 className="mr-32 font-clashsemibold text-[8rem] leading-tight text-white">
           My blogs
         </h1>
       </div>
@@ -381,12 +406,69 @@ const BlogCard = ({ title, summary }: { title: string; summary: string }) => {
 };
 
 const ContactSection: React.FC = () => {
+  const inputStyleNormal = `h-16 w-full rounded-full pl-6 bg-indigo-900 text-white outline-none placeholder:tracking-wide`;
+
   return (
     <>
-      <div className="relative flex justify-center">
-        <h1 className="mr-32 font-clashsemibold text-[7rem] leading-tight text-white">
+      <div className="relative flex w-full flex-col items-center">
+        <h1 className="font-clashsemibold text-[8rem] leading-tight text-white">
           Contact me
         </h1>
+        <form action="" className="block w-1/3 flex-col">
+          <div className="my-8">
+            <p className={`${rubikBold.className} mb-2 text-lg text-white`}>
+              Full name*
+            </p>
+            <input
+              placeholder="Enter your full name..."
+              type="text"
+              className={inputStyleNormal}
+            />
+          </div>
+
+          <div className="my-8">
+            <p className={`${rubikBold.className} mb-2 text-lg text-white`}>
+              Email*
+            </p>
+            <input
+              placeholder="Enter your email..."
+              type="text"
+              className={inputStyleNormal}
+            />
+          </div>
+
+          <div className="my-8">
+            <p className={`${rubikBold.className} mb-2 text-lg text-white`}>
+              Message*
+            </p>
+            <textarea
+              placeholder="Enter your message..."
+              className="min-h-48 w-full rounded-3xl bg-indigo-900 pl-6 pt-4 text-white outline-none placeholder:tracking-wide"
+            ></textarea>
+          </div>
+
+          <Link
+            href="/contact"
+            className={`${rubikBold.className} mx-auto flex w-48 items-center justify-center rounded-full bg-fuchsia-700 px-9 py-4 text-lg text-white hover:bg-fuchsia-600`}
+          >
+            Send
+          </Link>
+        </form>
+      </div>
+    </>
+  );
+};
+
+const FooterSection: React.FC = () => {
+  return (
+    <>
+      <div className="flex w-full">
+        <div className="w-3/4">
+          <h1 className="font-clashsemibold text-[8rem] leading-tight text-white">
+            Follow me
+          </h1>
+        </div>
+        <div>Social Links</div>
       </div>
     </>
   );
