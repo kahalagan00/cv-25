@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Understanding React Hooks",
+    "summary": "React Hooks simplify state and side-effect management in functional components. This article explores useState, useEffect, and custom hooks with examples."
+  },
+  {
+    "title": "Getting Started with Next.js",
+    "summary": "Next.js makes server-side rendering and static site generation seamless. Learn how to set up your first Next.js project and deploy it."
+  },
+  {
+    "title": "Top Web Development Trends in 2025",
+    "summary": "Web development continues to evolve with new technologies like AI and WebAssembly. Discover the trends shaping the future of the web."
+  },
+  {
+    "title": "Optimizing React Performance",
+    "summary": "Improve your React app's performance with memoization, lazy loading, and proper component design. This guide covers tips and best practices."
+  },
+  {
+    "title": "CSS Tricks for Modern Web Design",
+    "summary": "Modern CSS features like grid, flexbox, and custom properties make styling easier than ever. Learn advanced techniques for creating stunning designs."
+  }
+]

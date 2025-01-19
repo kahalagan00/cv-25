@@ -17,7 +17,9 @@ const Header: React.FC = () => {
   return (
     <div className="mx-auto mt-4 flex h-20 max-w-screen-xl items-center justify-start gap-x-8 rounded-full border-2 border-violet-800 bg-indigo-950 pl-8 text-white">
       <div className="font-clashregular text-3xl font-semibold">
-        Joshmar Morales
+        <Link onClick={() => setLinkSelected("home")} href="/">
+          Joshmar Morales
+        </Link>
       </div>
       <div className="relative h-full w-28">
         <Link
