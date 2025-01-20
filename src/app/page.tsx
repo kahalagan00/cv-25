@@ -3,8 +3,17 @@ import { Rubik } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import {
+  FaDiscord,
+  FaFacebook,
+  FaInstagram,
+  FaTiktok,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 import { IoMdArrowBack, IoMdArrowForward, IoMdDownload } from "react-icons/io";
+import { useLinkContext } from "./contexts/useLink";
 
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 const rubikBold = Rubik({ weight: "700", subsets: ["latin"] });
@@ -43,7 +52,7 @@ const Page: React.FC = () => {
       </section>
 
       {/* Footer section with social links */}
-      <section className="relative mb-64 w-full px-4">
+      <section className="relative mb-16 w-full px-4">
         <FooterSection />
       </section>
     </>
@@ -80,7 +89,9 @@ const ProfileSection: React.FC = () => {
           <div className="flex h-28 w-28 items-center justify-center rounded-full bg-fuchsia-700 bg-opacity-80">
             <button className="flex h-20 w-20 flex-col items-center justify-center rounded-full bg-fuchsia-600 transition-transform ease-in-out hover:bg-fuchsia-500 active:translate-y-1">
               <IoMdDownload className="text-2xl text-white" />
-              <span className="text-2xl text-white">CV</span>
+              <a target="_blank" href="documents/Joshmar_Morales_Resume_V1.pdf">
+                <span className="text-2xl text-white">CV</span>
+              </a>
             </button>
           </div>
         </div>
@@ -345,12 +356,14 @@ const BlogsSection: React.FC = () => {
 
   return (
     <>
-      <div className="flex">
+      <div className="relative flex">
         <h1 className="mr-32 font-clashsemibold text-[8rem] leading-tight text-white">
           My blogs
         </h1>
+        <ImCross className="absolute right-0 top-0 h-24 w-24 text-fuchsia-600" />
       </div>
       <div className="flex w-full gap-x-8 text-white">
+        {/* First Half of List */}
         <div className="w-1/2">
           <Link
             href="/blogs"
@@ -369,7 +382,9 @@ const BlogsSection: React.FC = () => {
               ),
           )}
         </div>
-        <div className="w-1/2">
+
+        {/* Second half of list */}
+        <div className="relative w-1/2">
           {blogsData.map(
             (data: { title: string; summary: string }, idx: number) =>
               idx >= halfIndex && (
@@ -380,6 +395,8 @@ const BlogsSection: React.FC = () => {
                 />
               ),
           )}
+
+          <ImCross className="absolute bottom-0 right-0 h-20 w-20 text-white" />
         </div>
       </div>
     </>
@@ -437,7 +454,7 @@ const ContactSection: React.FC = () => {
             />
           </div>
 
-          <div className="my-8">
+          <div className="relative my-8">
             <p className={`${rubikBold.className} mb-2 text-lg text-white`}>
               Message*
             </p>
@@ -445,6 +462,8 @@ const ContactSection: React.FC = () => {
               placeholder="Enter your message..."
               className="min-h-48 w-full rounded-3xl bg-indigo-900 pl-6 pt-4 text-white outline-none placeholder:tracking-wide"
             ></textarea>
+
+            <IoMdArrowBack className="absolute right-0 top-10 translate-x-64 font-clashsemibold text-[10rem] leading-tight text-fuchsia-600" />
           </div>
 
           <Link
@@ -460,15 +479,99 @@ const ContactSection: React.FC = () => {
 };
 
 const FooterSection: React.FC = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { setCurrentLink } = useLinkContext();
+
+  const dotsArt = [];
+  for (let i = 0; i < 20; ++i) {
+    dotsArt.push(
+      <div
+        key={i}
+        className={`h-3 w-3 rounded-full bg-fuchsia-600 md:h-5 md:w-5`}
+        style={{ opacity: 1 - i * 0.05 }}
+      ></div>,
+    );
+  }
+
   return (
     <>
-      <div className="flex w-full">
-        <div className="w-3/4">
+      <div className="mb-48 flex w-full">
+        <div className="relative w-3/4">
           <h1 className="font-clashsemibold text-[8rem] leading-tight text-white">
             Follow me
           </h1>
+          <div className="mt-4 flex gap-x-3">{dotsArt}</div>
+          <ImCross className="absolute left-0 top-0 h-24 w-24 -translate-x-32 -translate-y-32 text-fuchsia-600" />
         </div>
-        <div>Social Links</div>
+        <div className="w-1/4">
+          <div className="mb-8 flex justify-evenly">
+            <a target="_blank" href="https://discord.com">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500">
+                <FaDiscord className="h-14 w-14" />
+              </div>
+            </a>
+            <a target="_blank" href="https://twitter.com">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500">
+                <FaTwitter className="h-14 w-14" />
+              </div>
+            </a>
+            <a target="_blank" href="https://instagram.com">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500">
+                <FaInstagram className="h-14 w-14" />
+              </div>
+            </a>
+          </div>
+          <div className="flex justify-evenly">
+            <a target="_blank" href="https://facebook.com">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500">
+                <FaFacebook className="h-14 w-14" />
+              </div>
+            </a>
+            <a target="_blank" href="https://youtube.com">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500">
+                <FaYoutube className="h-14 w-14" />
+              </div>
+            </a>
+            <a target="_blank" href="https://tiktok.com">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500">
+                <FaTiktok className="h-14 w-14" />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-4 flex border-t-2 border-t-fuchsia-500">
+        <div className="mb-8 mt-12 flex w-full text-white">
+          <div className="w-1/2 font-clashregular text-3xl">
+            Joshmar Morales
+          </div>
+          <div
+            className={`${rubikRegular.className} flex w-1/2 justify-end gap-x-32 text-lg tracking-wide text-white`}
+          >
+            <Link onClick={() => setCurrentLink("home")} href="/">
+              Home
+            </Link>
+            <Link href="/blogs" onClick={() => setCurrentLink("blogs")}>
+              Blogs
+            </Link>
+            <Link onClick={() => setCurrentLink("contact")} href="/contact">
+              Contact
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="ml-auto flex h-8 w-1/2 justify-end gap-x-12 tracking-wide">
+        <p className={`${rubikRegular.className} text-sm text-gray-400`}>
+          &copy; {new Date().getFullYear()} Joshmar Morales. All rights reserved
+        </p>
+        <p className={`${rubikRegular.className} text-sm text-gray-400`}>
+          Terms of Use
+        </p>
+        <p className={`${rubikRegular.className} text-sm text-gray-400`}>
+          Privacy Policy
+        </p>
       </div>
     </>
   );

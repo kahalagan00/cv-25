@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/Header";
+import { LinkProvider } from "./contexts/useLink";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,12 +32,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-indigo-950 antialiased`}
       >
-        <div className="w-screen">
-          <Header />
-        </div>
-        <main className="mx-auto mt-4 max-w-screen-2xl bg-indigo-950">
-          {children}
-        </main>
+        <LinkProvider>
+          <div className="w-screen">
+            <Header />
+          </div>
+          <main className="mx-auto mt-4 max-w-screen-2xl bg-indigo-950">
+            {children}
+          </main>
+        </LinkProvider>
       </body>
     </html>
   );
