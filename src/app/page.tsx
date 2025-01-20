@@ -257,6 +257,20 @@ const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
 };
 
 const ProjectSection: React.FC = () => {
+  const generateDotsArt = (cols: number) => {
+    const dotsArt = [];
+    for (let i = 0; i < cols; ++i) {
+      dotsArt.push(
+        <div className="flex flex-col gap-y-8">
+          <div className="h-2 w-2 rounded-full bg-indigo-700"></div>
+          <div className="h-2 w-2 rounded-full bg-indigo-700"></div>
+          <div className="h-2 w-2 rounded-full bg-indigo-700"></div>
+        </div>,
+      );
+    }
+    return dotsArt;
+  };
+
   return (
     <>
       <div className="relative flex justify-end">
@@ -266,9 +280,17 @@ const ProjectSection: React.FC = () => {
         <ImCross className="absolute h-20 w-20 translate-y-48 text-white" />
       </div>
       <div className="mt-32 flex">
-        <div className="w-1/2">
-          <div className="h-[400px] w-full overflow-hidden rounded-[3rem] bg-slate-500 drop-shadow-2xl">
-            Artwork of project
+        <div className="relative w-1/2">
+          <div className="relative h-[400px] w-full overflow-hidden rounded-[3rem] bg-violet-800 drop-shadow-2xl">
+            <Image
+              src="/images/projects_images/Jhuv_Nutrition_Showcase.png"
+              fill
+              className="mr-32 -translate-x-16 translate-y-16 scale-110 object-contain"
+              alt="Showcase of the Jhuv Nutrition App"
+            />
+          </div>
+          <div className="absolute bottom-0 left-0 flex translate-y-32 gap-x-8">
+            {generateDotsArt(10)}
           </div>
         </div>
         <div className="w-1/2 text-white">
@@ -290,9 +312,19 @@ const ProjectSection: React.FC = () => {
             <p className="font-clashlight text-[2.5rem]">December 2024</p>
           </div>
         </div>
-        <div className="z-10 w-1/2">
-          <div className="h-[500px] w-[500px] overflow-hidden rounded-[3rem] bg-cyan-700 drop-shadow-2xl">
-            Artwork of project
+        <div className="relative z-10 w-1/2">
+          <div className="h-[500px] w-[500px] overflow-hidden rounded-[3rem] bg-violet-400 drop-shadow-2xl">
+            <Image
+              src="/images/projects_images/CV24_Showcase.png"
+              width={1000}
+              height={300}
+              className="mt-16 translate-x-20 -rotate-45 scale-150"
+              alt="Showcase of the CV 24 Portfolio"
+            />
+          </div>
+
+          <div className="absolute bottom-0 left-0 ml-72 flex translate-y-32 gap-x-8">
+            {generateDotsArt(5)}
           </div>
         </div>
       </div>
@@ -300,7 +332,13 @@ const ProjectSection: React.FC = () => {
       <div className="mt-32 flex">
         <div className="w-[35%]">
           <div className="h-[400px] w-full overflow-hidden rounded-[3rem] bg-purple-800 drop-shadow-2xl">
-            Artwork of project
+            <Image
+              src="/images/projects_images/WeatherApp_Showcase.png"
+              width={450}
+              height={300}
+              className="mt-24 object-contain"
+              alt="Showcase of the Weather App"
+            />
           </div>
         </div>
         <div className="w-1/2 text-white">
@@ -317,14 +355,20 @@ const ProjectSection: React.FC = () => {
         <div className="z-20 w-[30%] text-white">
           <div className="flex translate-x-16 translate-y-24 flex-col items-end">
             <h3 className="text-end font-clashmedium text-[4rem] tracking-wide">
-              Bluelock Drowning
+              Bluelock Detection
             </h3>
             <p className="font-clashlight text-[2.5rem]">May 2023</p>
           </div>
         </div>
         <div className="z-10 w-[70%]">
           <div className="h-[400px] w-full overflow-hidden rounded-[3rem] bg-cyan-700 drop-shadow-2xl">
-            Artwork of project
+            <Image
+              src="/images/projects_images/Bluelock_Showcase.png"
+              width={975}
+              height={300}
+              className="ml-16 mt-24 object-contain"
+              alt="Showcase of the Bluelock Project"
+            />
           </div>
         </div>
       </div>
@@ -375,9 +419,10 @@ const BlogsSection: React.FC = () => {
             (data: { title: string; summary: string }, idx: number) =>
               idx < halfIndex && (
                 <BlogCard
-                  key={data.title}
+                  key={idx.toString() + data.title}
                   title={data.title}
                   summary={data.summary}
+                  index={idx}
                 />
               ),
           )}
@@ -389,9 +434,10 @@ const BlogsSection: React.FC = () => {
             (data: { title: string; summary: string }, idx: number) =>
               idx >= halfIndex && (
                 <BlogCard
-                  key={data.title}
+                  key={idx.toString() + data.title}
                   title={data.title}
                   summary={data.summary}
+                  index={idx}
                 />
               ),
           )}
@@ -403,10 +449,25 @@ const BlogsSection: React.FC = () => {
   );
 };
 
-const BlogCard = ({ title, summary }: { title: string; summary: string }) => {
+const BlogCard = ({
+  title,
+  summary,
+  index,
+}: {
+  title: string;
+  summary: string;
+  index: number;
+}) => {
   return (
     <div className="my-16">
-      <div className="mb-8 h-[400px] w-full rounded-[3rem] bg-slate-300"></div>
+      <div className="relative mb-8 h-[400px] w-full overflow-hidden rounded-[3rem] bg-slate-300">
+        <Image
+          src={`/images/blogs_images/${index}.jpg`}
+          fill
+          alt={`Image for blog number ${index}`}
+          className="object-cover"
+        />
+      </div>
       <h3 className="mb-6 font-clashregular text-5xl">{title}</h3>
       <p className={`${rubikRegular.className} mb-6 text-xl text-gray-400`}>
         {summary}
