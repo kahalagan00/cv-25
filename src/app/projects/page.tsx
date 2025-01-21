@@ -1,4 +1,4 @@
-import { Rubik } from "next/font/google";
+// import { Rubik } from "next/font/google";
 
 // const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 // const rubikBold = Rubik({ weight: "700", subsets: ["latin"] });
