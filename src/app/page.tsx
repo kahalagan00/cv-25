@@ -18,42 +18,119 @@ import { useLinkContext } from "./contexts/useLink";
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 const rubikBold = Rubik({ weight: "700", subsets: ["latin"] });
 
+const generateDotsArt = (cols: number) => {
+  const dotsArt = [];
+  for (let i = 0; i < cols; ++i) {
+    dotsArt.push(
+      <div className="flex flex-col gap-y-8" key={i}>
+        <div className="h-2 w-2 rounded-full bg-indigo-700"></div>
+        <div className="h-2 w-2 rounded-full bg-indigo-700"></div>
+        <div className="h-2 w-2 rounded-full bg-indigo-700"></div>
+      </div>,
+    );
+  }
+  return dotsArt;
+};
+
 const Page: React.FC = () => {
   return (
     <>
       {/* Profile Section */}
-      <section className="mb-64 mt-16 flex w-full px-4">
-        <ProfileSection />
+      <section className="relative w-screen">
+        <div className="relative mx-auto mb-64 mt-16 max-w-screen-2xl px-4 lg:flex">
+          <ProfileSection />
+        </div>
+        {/* <Image
+          src={"/images/Test_BG1.png"}
+          fill
+          alt="Test of background"
+          quality={100}
+          className="absolute z-0 object-cover"
+        /> */}
       </section>
 
       {/* About me summary section */}
-      <section className="relative mb-64 flex w-full px-4">
-        <AboutSection />
+      <section className="relative w-screen">
+        <div className="relative mx-auto mb-64 w-full max-w-screen-2xl px-4 lg:flex">
+          <AboutSection />
+        </div>
+        {/* <Image
+          src={"/images/AboutMeSection_BG1.png"}
+          fill
+          alt="About me section background"
+          quality={100}
+          className="absolute z-0 w-full"
+        /> */}
       </section>
 
       {/* Technical skills summary section */}
-      <section className="relative mb-64 w-full px-4">
-        <TechnicalSection />
+      <section className="relative w-screen">
+        <div className="relative mx-auto mb-64 w-full max-w-screen-2xl px-4">
+          <TechnicalSection />
+        </div>
+        {/* <Image
+          src={"/images/TechnicalSection_BG1.png"}
+          fill
+          alt="About me section background"
+          quality={100}
+          className="absolute z-0 object-cover"
+        /> */}
       </section>
 
       {/* Project showcase section */}
-      <section className="relative mb-64 w-full px-4">
-        <ProjectSection />
+      <section className="relative w-screen">
+        <div className="relative mx-auto mb-64 w-full max-w-screen-2xl px-4">
+          <ProjectSection />
+        </div>
+        {/* <Image
+          src={"/images/ProjectSection_BG1.png"}
+          fill
+          alt="About me section background"
+          quality={100}
+          className="absolute z-0 object-cover"
+        /> */}
       </section>
 
       {/* My blogs/videos/content section */}
-      <section className="relative mb-64 w-full px-4">
-        <BlogsSection />
+      <section className="relative w-screen">
+        <div className="relative mx-auto mb-64 w-full max-w-screen-2xl px-4">
+          <BlogsSection />
+        </div>
+        {/* <Image
+          src={"/images/BlogsSection_BG1.png"}
+          fill
+          alt="About me section background"
+          quality={100}
+          className="absolute z-0 object-cover"
+        /> */}
       </section>
 
       {/* Contact developer section */}
-      <section className="relative mb-64 w-full px-4">
-        <ContactSection />
+      <section className="relative w-screen">
+        <div className="relative mx-auto mb-64 w-full max-w-screen-2xl px-4">
+          <ContactSection />
+        </div>
+        {/* <Image
+          src={"/images/ContactSection_BG1.png"}
+          fill
+          alt="About me section background"
+          quality={100}
+          className="absolute z-0 object-cover"
+        /> */}
       </section>
 
       {/* Footer section with social links */}
-      <section className="relative mb-16 w-full px-4">
-        <FooterSection />
+      <section className="relative w-screen">
+        <div className="relative mx-auto mb-16 w-full max-w-screen-2xl px-4">
+          <FooterSection />
+        </div>
+        {/* <Image
+          src={"/images/FooterSection_BG1.png"}
+          fill
+          alt="About me section background"
+          quality={100}
+          className="absolute z-0 object-cover"
+        /> */}
       </section>
     </>
   );
@@ -64,33 +141,42 @@ export default Page;
 const ProfileSection: React.FC = () => {
   return (
     <>
-      <div className="w-1/2 bg-indigo-950 pr-4 pt-16">
+      <div className="relative z-10 w-full pl-24 pt-16 lg:w-1/2">
         <h2
-          className={`${rubikRegular.className} text-4xl uppercase tracking-wide text-gray-400`}
+          className={`${rubikRegular.className} text-xl uppercase tracking-wide text-gray-400 sm:text-3xl xl:text-4xl`}
         >
           Fullstack software engineer
         </h2>
-        <h1 className="font-clashsemibold text-[8rem] leading-tight text-white">
+        <h1 className="font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
           Joshmar Morales
         </h1>
 
         <div
-          className={`${rubikRegular.className} w-[300px] border-l-2 border-l-gray-200 py-1 pl-8 text-2xl text-gray-400`}
+          className={`${rubikRegular.className} w-[300px] border-l-2 border-l-gray-200 py-1 pl-8 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
         >
           I am a Full-Stack developer and I work in the United States.
         </div>
+
+        <div className="absolute left-0 top-0 flex h-[100px] translate-y-32 flex-col justify-between sm:h-[200px]">
+          <div className="h-[5px] w-10 rotate-45 rounded-md bg-indigo-400 sm:w-20"></div>
+          <div className="h-[5px] w-10 rotate-45 rounded-md bg-indigo-400 sm:w-20"></div>
+          <div className="h-[5px] w-10 rotate-45 rounded-md bg-indigo-400 sm:w-20"></div>
+          <div className="h-[5px] w-10 rotate-45 rounded-md bg-indigo-400 sm:w-20"></div>
+          <div className="h-[5px] w-10 rotate-45 rounded-md bg-indigo-400 sm:w-20"></div>
+        </div>
       </div>
-      <div className="relative w-1/2 overflow-hidden">
-        <div className="absolute left-1/2 top-1/4 flex h-[500px] w-[500px] -translate-x-1/2 transform items-center justify-center rounded-full border-2 border-fuchsia-500 bg-transparent">
-          <div className="h-[90%] w-[90%] rounded-full bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 opacity-80 mix-blend-multiply"></div>
+
+      <div className="relative z-10 mt-8 h-[500px] w-full overflow-hidden lg:mt-0 lg:h-auto lg:w-1/2">
+        <div className="absolute left-1/2 top-1/4 flex h-[350px] w-[350px] -translate-x-1/2 transform items-center justify-center rounded-full border-2 border-fuchsia-500 bg-transparent lg:h-[400px] lg:w-[400px] xl:h-[500px] xl:w-[500px]">
+          <div className="h-[90%] w-[90%] rounded-full bg-gradient-to-r from-indigo-300 via-violet-300 to-fuchsia-300 opacity-80 mix-blend-multiply"></div>
         </div>
 
-        <div className="absolute left-16 top-1/4 z-20 flex h-36 w-36 items-center justify-center rounded-full bg-fuchsia-800 bg-opacity-70">
-          <div className="flex h-28 w-28 items-center justify-center rounded-full bg-fuchsia-700 bg-opacity-80">
-            <button className="flex h-20 w-20 flex-col items-center justify-center rounded-full bg-fuchsia-600 transition-transform ease-in-out hover:bg-fuchsia-500 active:translate-y-1">
-              <IoMdDownload className="text-2xl text-white" />
+        <div className="absolute left-16 top-1/4 z-20 flex h-32 w-32 items-center justify-center rounded-full bg-fuchsia-800 bg-opacity-70 xl:h-36 xl:w-36">
+          <div className="flex h-24 w-24 items-center justify-center rounded-full bg-fuchsia-700 bg-opacity-80 xl:h-28 xl:w-28">
+            <button className="flex h-16 w-16 flex-col items-center justify-center rounded-full bg-fuchsia-600 transition-transform ease-in-out hover:bg-fuchsia-500 active:translate-y-1 xl:h-20 xl:w-20">
+              <IoMdDownload className="text-xl text-white xl:text-2xl" />
               <a target="_blank" href="documents/Joshmar_Morales_Resume_V1.pdf">
-                <span className="text-2xl text-white">CV</span>
+                <span className="text-xl text-white xl:text-2xl">CV</span>
               </a>
             </button>
           </div>
@@ -104,18 +190,52 @@ const ProfileSection: React.FC = () => {
           width={550}
           height={550}
           alt="Picture of developer"
-          className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2"
+          className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-16 scale-90 xl:translate-y-0 xl:scale-100"
         />
+
+        <div className="absolute right-0 top-1/4 z-20 flex flex-col gap-y-4">
+          <a href={"https://discord.com"} target="_blank">
+            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-400">
+              <FaDiscord className="text-xl text-white" />
+            </div>
+          </a>
+          <a href={"https://instagram.com"} target="_blank">
+            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-400">
+              <FaInstagram className="text-xl text-white" />
+            </div>
+          </a>
+          <a href={"https://facebook.com"} target="_blank">
+            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-400">
+              <FaFacebook className="text-xl text-white" />
+            </div>
+          </a>
+          <a href={"https://x.com"} target="_blank">
+            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-400">
+              <FaTwitter className="text-xl text-white" />
+            </div>
+          </a>
+          <a href={"https://youtube.com"} target="_blank">
+            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-400">
+              <FaYoutube className="text-xl text-white" />
+            </div>
+          </a>
+          <a href={"https://tiktok.com"} target="_blank">
+            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-400">
+              <FaTiktok className="text-xl text-white" />
+            </div>
+          </a>
+        </div>
       </div>
     </>
   );
 };
 
 const AboutSection: React.FC = () => {
+  const { setCurrentLink } = useLinkContext();
   return (
     <>
-      <div className="w-3/5">
-        <div className="relative h-[500px] w-[500px] overflow-hidden rounded-full bg-pink-200 sm:h-[600px] sm:w-[600px] xl:h-[700px] xl:w-[700px]">
+      <div className="relative z-10 flex w-full justify-center lg:w-3/5 lg:justify-start">
+        <div className="relative h-[400px] w-[400px] overflow-hidden rounded-full bg-pink-200 sm:h-[500px] sm:w-[500px] xl:h-[700px] xl:w-[700px]">
           <Image
             src="/images/Coding_Desk.jpg"
             alt="Picture of desk"
@@ -125,9 +245,9 @@ const AboutSection: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 opacity-80 mix-blend-multiply"></div>
         </div>
       </div>
-      <div className="flex w-2/5 flex-col justify-end text-white">
+      <div className="relative z-10 flex w-full flex-col items-center justify-center text-white sm:justify-end lg:w-2/5 lg:items-start">
         <p
-          className={`${rubikRegular.className} my-16 w-[500px] text-lg tracking-[.015em] text-gray-400`}
+          className={`${rubikRegular.className} my-16 w-[400px] tracking-[.015em] text-gray-400 xl:w-[500px] xl:text-lg`}
         >
           I am a Full Stack Developer with a strong passion for creating
           impactful, user-centered web applications. With a focus on both
@@ -138,17 +258,25 @@ const AboutSection: React.FC = () => {
         </p>
         <Link
           href="/contact"
-          className={`${rubikBold.className} mb-8 flex w-48 items-center justify-center rounded-full bg-fuchsia-700 px-9 py-4 text-lg hover:bg-fuchsia-600`}
+          className={`${rubikBold.className} relative z-10 mb-8 flex w-48 items-center justify-center rounded-full bg-fuchsia-700 px-9 py-4 text-lg hover:bg-fuchsia-600`}
         >
           Contact me
         </Link>
+
+        <div className="absolute bottom-0 right-0 mb-8 flex gap-x-8">
+          {generateDotsArt(5)}
+        </div>
       </div>
 
-      <h1 className="absolute left-1/2 top-0 w-[300px] -translate-x-1/2 font-clashsemibold text-[8rem] leading-tight text-white">
+      <h1 className="absolute left-1/2 top-0 z-10 w-[300px] -translate-x-1/2 -translate-y-8 text-center font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] lg:translate-y-0 lg:text-start xl:text-[8rem]">
         About me
       </h1>
-      <Link href="/about">
-        <IoMdArrowForward className="absolute right-0 top-1/4 w-[300px] -translate-y-1/4 font-clashsemibold text-[10rem] leading-tight text-fuchsia-600" />
+      <Link
+        href="/about"
+        onClick={() => setCurrentLink("about")}
+        className="z-10"
+      >
+        <IoMdArrowForward className="absolute right-0 top-1/4 w-[300px] -translate-y-20 font-clashsemibold text-[8rem] leading-tight text-fuchsia-600 xl:-translate-y-1/4 xl:text-[10rem]" />
       </Link>
     </>
   );
@@ -165,14 +293,14 @@ const TechnicalSection: React.FC = () => {
 
   return (
     <>
-      <div className="flex">
-        <div className="w-1/2">
-          <h1 className="font-clashsemibold text-[8rem] leading-tight text-white">
+      <div className="relative z-20 flex">
+        <div className="flex w-full justify-center lg:block lg:w-1/2">
+          <h1 className="font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
             My skills
           </h1>
         </div>
-        <div className="w-1/2 overflow-hidden">
-          <IoMdArrowBack className="-translate-x-6 font-clashsemibold text-[10rem] leading-tight text-fuchsia-600" />
+        <div className="hidden overflow-hidden lg:block lg:w-1/2">
+          <IoMdArrowBack className="-translate-x-6 font-clashsemibold text-[8rem] leading-tight text-fuchsia-600 xl:text-[10rem]" />
 
           {/* Long Arrow implementation */}
           {/* Use and investigate again later when the entire app is already done */}
@@ -186,9 +314,9 @@ const TechnicalSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="mt-12 flex">
-        <div className="w-1/2">
-          <ul className="w-full">
+      <div className="relative z-20 mt-12 flex flex-col lg:flex-row">
+        <div className="flex w-full justify-center lg:block lg:w-1/2">
+          <ul className="lg:w-full">
             {skillsData.map(
               (data: { skill: string; rating: number }, idx: number) =>
                 idx < skillsData.length / 2 && (
@@ -201,8 +329,8 @@ const TechnicalSection: React.FC = () => {
             )}
           </ul>
         </div>
-        <div className="w-1/2">
-          <ul className="w-full">
+        <div className="flex w-full justify-center lg:block lg:w-1/2">
+          <ul className="lg:w-full">
             {skillsData.map(
               (data: { skill: string; rating: number }, idx: number) =>
                 idx >= skillsData.length / 2 && (
@@ -232,7 +360,9 @@ const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
 
   return (
     <li className="my-4 grid w-full grid-cols-[150px_1fr] justify-start text-white">
-      <p className={`${rubikRegular.className} text-2xl text-gray-100`}>
+      <p
+        className={`${rubikRegular.className} text-xl text-gray-100 lg:text-2xl`}
+      >
         {skill}
       </p>
       <div className="flex">
@@ -240,12 +370,12 @@ const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
           x ? (
             <div
               key={`Rating valid ${idx}`}
-              className="ml-2 h-5 w-5 rounded-full bg-fuchsia-600"
+              className="ml-2 h-4 w-4 rounded-full bg-fuchsia-600 lg:h-5 lg:w-5"
             ></div>
           ) : (
             <div
               key={`Rating invalid ${idx}`}
-              className="ml-2 h-5 w-5 rounded-full border-2 border-fuchsia-600 bg-transparent"
+              className="ml-2 h-4 w-4 rounded-full border-2 border-fuchsia-600 bg-transparent lg:h-5 lg:w-5"
             ></div>
           ),
         )}
@@ -257,54 +387,45 @@ const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
 };
 
 const ProjectSection: React.FC = () => {
-  const generateDotsArt = (cols: number) => {
-    const dotsArt = [];
-    for (let i = 0; i < cols; ++i) {
-      dotsArt.push(
-        <div className="flex flex-col gap-y-8">
-          <div className="h-2 w-2 rounded-full bg-indigo-700"></div>
-          <div className="h-2 w-2 rounded-full bg-indigo-700"></div>
-          <div className="h-2 w-2 rounded-full bg-indigo-700"></div>
-        </div>,
-      );
-    }
-    return dotsArt;
-  };
+  const { setCurrentLink } = useLinkContext();
 
   return (
     <>
-      <div className="relative flex justify-end">
-        <h1 className="mr-32 font-clashsemibold text-[8rem] leading-tight text-white">
+      <div className="relative z-10 flex justify-end">
+        <h1 className="mx-auto font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] lg:mx-0 lg:mr-32 xl:text-[8rem]">
           My projects
         </h1>
-        <ImCross className="absolute h-20 w-20 translate-y-48 text-white" />
+        <ImCross className="absolute h-16 w-16 translate-y-32 text-white lg:h-20 lg:w-20 lg:translate-y-48" />
       </div>
-      <div className="mt-32 flex">
-        <div className="relative w-1/2">
+
+      <div className="relative z-10 mt-32 flex flex-col px-4 lg:flex-row lg:px-0">
+        <div className="relative lg:w-1/2">
           <div className="relative h-[400px] w-full overflow-hidden rounded-[3rem] bg-violet-800 drop-shadow-2xl">
             <Image
               src="/images/projects_images/Jhuv_Nutrition_Showcase.png"
               fill
-              className="mr-32 -translate-x-16 translate-y-16 scale-110 object-contain"
+              className="object-cover lg:-translate-x-20 lg:translate-y-16"
               alt="Showcase of the Jhuv Nutrition App"
             />
           </div>
-          <div className="absolute bottom-0 left-0 flex translate-y-32 gap-x-8">
+          <div className="absolute bottom-0 left-0 hidden translate-y-32 gap-x-8 lg:flex">
             {generateDotsArt(10)}
           </div>
         </div>
-        <div className="w-1/2 text-white">
-          <div className="flex -translate-x-16 translate-y-16 flex-col">
-            <h3 className="font-clashmedium text-[4rem] tracking-wide">
+        <div className="text-white lg:w-1/2">
+          <div className="flex flex-col lg:-translate-x-16 lg:translate-y-16">
+            <h3 className="font-clashmedium text-[3rem] tracking-wide lg:text-[4rem]">
               Jhuv Nutrition
             </h3>
-            <p className="font-clashlight text-[2.5rem]">Current</p>
+            <p className="font-clashlight text-[2rem] lg:text-[2.5rem]">
+              Current
+            </p>
           </div>
         </div>
       </div>
 
-      <div className="mt-32 flex">
-        <div className="z-20 w-[45%] text-white">
+      <div className="relative z-10 mt-16 flex flex-col px-4 lg:mt-32 lg:flex-row lg:px-0">
+        <div className="z-20 hidden w-[45%] text-white lg:block">
           <div className="flex translate-x-16 translate-y-72 flex-col items-end">
             <h3 className="font-clashmedium text-[4rem] tracking-wide">
               CV 24 Portfolio
@@ -312,8 +433,9 @@ const ProjectSection: React.FC = () => {
             <p className="font-clashlight text-[2.5rem]">December 2024</p>
           </div>
         </div>
-        <div className="relative z-10 w-1/2">
-          <div className="h-[500px] w-[500px] overflow-hidden rounded-[3rem] bg-violet-400 drop-shadow-2xl">
+
+        <div className="relative z-10 lg:w-1/2">
+          <div className="h-[400px] overflow-hidden rounded-[3rem] bg-violet-400 drop-shadow-2xl lg:h-[500px] lg:w-[500px]">
             <Image
               src="/images/projects_images/CV24_Showcase.png"
               width={1000}
@@ -323,36 +445,49 @@ const ProjectSection: React.FC = () => {
             />
           </div>
 
-          <div className="absolute bottom-0 left-0 ml-72 flex translate-y-32 gap-x-8">
+          <div className="absolute bottom-0 left-0 ml-72 hidden translate-y-32 gap-x-8 lg:flex">
             {generateDotsArt(5)}
+          </div>
+        </div>
+
+        <div className="z-20 text-white lg:hidden">
+          <div className="flex flex-col">
+            <h3 className="font-clashmedium text-[3rem] tracking-wide lg:text-[4rem]">
+              CV 24 Portfolio
+            </h3>
+            <p className="font-clashlight text-[2rem] lg:text-end lg:text-[2.5rem]">
+              December 2024
+            </p>
           </div>
         </div>
       </div>
 
-      <div className="mt-32 flex">
-        <div className="w-[35%]">
+      <div className="relative z-10 mt-16 flex flex-col px-4 lg:mt-32 lg:flex-row lg:px-0">
+        <div className="lg:w-[35%]">
           <div className="h-[400px] w-full overflow-hidden rounded-[3rem] bg-purple-800 drop-shadow-2xl">
             <Image
               src="/images/projects_images/WeatherApp_Showcase.png"
               width={450}
               height={300}
-              className="mt-24 object-contain"
+              className="mx-auto mt-14 object-contain lg:mx-0 lg:mt-24"
               alt="Showcase of the Weather App"
             />
           </div>
         </div>
-        <div className="w-1/2 text-white">
-          <div className="flex -translate-x-16 translate-y-32 flex-col">
-            <h3 className="font-clashmedium text-[4rem] tracking-wide">
+        <div className="text-white lg:w-1/2">
+          <div className="flex flex-col lg:-translate-x-16 lg:translate-y-32">
+            <h3 className="font-clashmedium text-[3rem] tracking-wide lg:text-[4rem]">
               Weather App
             </h3>
-            <p className="font-clashlight text-[2.5rem]">September 2024</p>
+            <p className="font-clashlight text-[2rem] lg:text-[2.5rem]">
+              September 2024
+            </p>
           </div>
         </div>
       </div>
 
-      <div className="mt-32 flex">
-        <div className="z-20 w-[30%] text-white">
+      <div className="relative z-10 mt-16 flex flex-col px-4 lg:mt-32 lg:flex-row lg:px-0">
+        <div className="z-20 hidden w-[30%] text-white lg:block">
           <div className="flex translate-x-16 translate-y-24 flex-col items-end">
             <h3 className="text-end font-clashmedium text-[4rem] tracking-wide">
               Bluelock Detection
@@ -360,21 +495,33 @@ const ProjectSection: React.FC = () => {
             <p className="font-clashlight text-[2.5rem]">May 2023</p>
           </div>
         </div>
-        <div className="z-10 w-[70%]">
+
+        <div className="z-10 lg:w-[70%]">
           <div className="h-[400px] w-full overflow-hidden rounded-[3rem] bg-cyan-700 drop-shadow-2xl">
             <Image
               src="/images/projects_images/Bluelock_Showcase.png"
               width={975}
               height={300}
-              className="ml-16 mt-24 object-contain"
+              className="translate-y-32 scale-90 lg:ml-16 lg:mt-24 lg:translate-y-0 lg:object-contain"
               alt="Showcase of the Bluelock Project"
             />
           </div>
         </div>
+
+        <div className="z-20 text-white lg:hidden lg:w-[30%]">
+          <div className="flex flex-col">
+            <h3 className="font-clashmedium text-[3rem] tracking-wide lg:text-[4rem]">
+              Bluelock Detection
+            </h3>
+            <p className="font-clashlight text-[2rem] lg:text-[2.5rem]">
+              May 2023
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div className="mt-32 flex justify-center">
-        <Link href="/projects">
+      <div className="relative z-10 mt-32 flex justify-center">
+        <Link href="/projects" onClick={() => setCurrentLink("projects")}>
           <p
             className={`${rubikRegular.className} text-2xl tracking-wide text-fuchsia-600 hover:underline`}
           >
@@ -388,6 +535,7 @@ const ProjectSection: React.FC = () => {
 
 const BlogsSection: React.FC = () => {
   const [blogsData, setBlogsData] = useState([]);
+  const { setCurrentLink } = useLinkContext();
 
   useEffect(() => {
     fetch("/data/blogsData.json")
@@ -400,16 +548,39 @@ const BlogsSection: React.FC = () => {
 
   return (
     <>
-      <div className="relative flex">
-        <h1 className="mr-32 font-clashsemibold text-[8rem] leading-tight text-white">
+      <div className="relative z-10 flex">
+        <h1 className="mx-auto font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] lg:mx-0 lg:mr-32 lg:text-[8rem]">
           My blogs
         </h1>
-        <ImCross className="absolute right-0 top-0 h-24 w-24 text-fuchsia-600" />
+        <ImCross className="absolute right-0 top-0 h-16 w-16 text-fuchsia-600 lg:h-24 lg:w-24" />
       </div>
-      <div className="flex w-full gap-x-8 text-white">
+
+      <div className="relative z-10 flex w-full flex-col px-4 text-white lg:hidden">
+        {blogsData.map(
+          (data: { title: string; summary: string }, idx: number) => (
+            <BlogCard
+              key={idx.toString() + data.title}
+              title={data.title}
+              summary={data.summary}
+              index={idx}
+            />
+          ),
+        )}
+
+        <Link
+          onClick={() => setCurrentLink("blogs")}
+          href="/blogs"
+          className={`${rubikBold.className} mx-auto flex w-48 items-center justify-center rounded-full bg-fuchsia-700 px-9 py-4 text-lg hover:bg-fuchsia-600`}
+        >
+          See all
+        </Link>
+      </div>
+
+      <div className="relative z-10 hidden w-full gap-x-8 text-white lg:flex">
         {/* First Half of List */}
         <div className="w-1/2">
           <Link
+            onClick={() => setCurrentLink("blogs")}
             href="/blogs"
             className={`${rubikBold.className} mt-32 flex w-48 items-center justify-center rounded-full bg-fuchsia-700 px-9 py-4 text-lg hover:bg-fuchsia-600`}
           >
@@ -458,6 +629,8 @@ const BlogCard = ({
   summary: string;
   index: number;
 }) => {
+  const { setCurrentLink } = useLinkContext();
+
   return (
     <div className="my-16">
       <div className="relative mb-8 h-[400px] w-full overflow-hidden rounded-[3rem] bg-slate-300">
@@ -472,7 +645,7 @@ const BlogCard = ({
       <p className={`${rubikRegular.className} mb-6 text-xl text-gray-400`}>
         {summary}
       </p>
-      <Link href="/blogs">
+      <Link href="/blogs" onClick={() => setCurrentLink("blogs")}>
         <p
           className={`${rubikRegular.className} text-2xl tracking-wide text-fuchsia-600 hover:underline`}
         >
@@ -484,15 +657,19 @@ const BlogCard = ({
 };
 
 const ContactSection: React.FC = () => {
+  const { setCurrentLink } = useLinkContext();
   const inputStyleNormal = `h-16 w-full rounded-full pl-6 bg-indigo-900 text-white outline-none placeholder:tracking-wide`;
 
   return (
     <>
-      <div className="relative flex w-full flex-col items-center">
-        <h1 className="font-clashsemibold text-[8rem] leading-tight text-white">
+      <div className="relative z-10 flex w-full flex-col items-center">
+        <h1 className="font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] lg:text-[8rem]">
           Contact me
         </h1>
-        <form action="" className="block w-1/3 flex-col">
+        <form
+          action=""
+          className="block w-full flex-col px-4 sm:w-1/2 sm:px-0 lg:w-1/3"
+        >
           <div className="my-8">
             <p className={`${rubikBold.className} mb-2 text-lg text-white`}>
               Full name*
@@ -524,16 +701,24 @@ const ContactSection: React.FC = () => {
               className="min-h-48 w-full rounded-3xl bg-indigo-900 pl-6 pt-4 text-white outline-none placeholder:tracking-wide"
             ></textarea>
 
-            <IoMdArrowBack className="absolute right-0 top-10 translate-x-64 font-clashsemibold text-[10rem] leading-tight text-fuchsia-600" />
+            <IoMdArrowBack className="absolute right-0 top-10 hidden translate-x-44 font-clashsemibold text-[8rem] leading-tight text-fuchsia-600 sm:block lg:translate-x-64 lg:text-[10rem]" />
           </div>
 
           <Link
             href="/contact"
             className={`${rubikBold.className} mx-auto flex w-48 items-center justify-center rounded-full bg-fuchsia-700 px-9 py-4 text-lg text-white hover:bg-fuchsia-600`}
+            onClick={() => setCurrentLink("contact")}
           >
             Send
           </Link>
         </form>
+
+        <div className="absolute bottom-1/4 hidden translate-y-16 flex-col gap-y-8 max-lg:left-0 sm:flex lg:right-0">
+          <div className="flex gap-x-8">{generateDotsArt(3)}</div>
+          <div className="flex gap-x-8">{generateDotsArt(3)}</div>
+          <div className="flex gap-x-8">{generateDotsArt(3)}</div>
+          <div className="flex gap-x-8">{generateDotsArt(3)}</div>
+        </div>
       </div>
     </>
   );
@@ -554,83 +739,99 @@ const FooterSection: React.FC = () => {
     );
   }
 
+  const socialButtonParentStyle = `flex lg:h-20 lg:w-20 h-16 w-16 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500`;
+  const socialButtonStyle = `lg:h-14 lg:w-14 h-10 w-10`;
+
   return (
     <>
-      <div className="mb-48 flex w-full">
-        <div className="relative w-3/4">
-          <h1 className="font-clashsemibold text-[8rem] leading-tight text-white">
+      <div className="relative z-10 mb-48 flex w-full flex-col px-4 lg:flex-row">
+        <div className="relative flex w-full flex-col items-center justify-center lg:block lg:w-3/4">
+          <h1 className="font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
             Follow me
           </h1>
           <div className="mt-4 flex gap-x-3">{dotsArt}</div>
           <ImCross className="absolute left-0 top-0 h-24 w-24 -translate-x-32 -translate-y-32 text-fuchsia-600" />
         </div>
-        <div className="w-1/4">
-          <div className="mb-8 flex justify-evenly">
+
+        <div className="mt-8 w-full lg:mt-0 lg:w-1/4">
+          <div className="mb-8 flex justify-evenly gap-x-4">
             <a target="_blank" href="https://discord.com">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500">
-                <FaDiscord className="h-14 w-14" />
+              <div className={socialButtonParentStyle}>
+                <FaDiscord className={socialButtonStyle} />
               </div>
             </a>
             <a target="_blank" href="https://twitter.com">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500">
-                <FaTwitter className="h-14 w-14" />
+              <div className={socialButtonParentStyle}>
+                <FaTwitter className={socialButtonStyle} />
               </div>
             </a>
             <a target="_blank" href="https://instagram.com">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500">
-                <FaInstagram className="h-14 w-14" />
+              <div className={socialButtonParentStyle}>
+                <FaInstagram className={socialButtonStyle} />
               </div>
             </a>
           </div>
-          <div className="flex justify-evenly">
+          <div className="flex justify-evenly gap-x-4">
             <a target="_blank" href="https://facebook.com">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500">
-                <FaFacebook className="h-14 w-14" />
+              <div className={socialButtonParentStyle}>
+                <FaFacebook className={socialButtonStyle} />
               </div>
             </a>
             <a target="_blank" href="https://youtube.com">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500">
-                <FaYoutube className="h-14 w-14" />
+              <div className={socialButtonParentStyle}>
+                <FaYoutube className={socialButtonStyle} />
               </div>
             </a>
             <a target="_blank" href="https://tiktok.com">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500">
-                <FaTiktok className="h-14 w-14" />
+              <div className={socialButtonParentStyle}>
+                <FaTiktok className={socialButtonStyle} />
               </div>
             </a>
           </div>
         </div>
       </div>
 
-      <div className="mb-4 flex border-t-2 border-t-fuchsia-500">
-        <div className="mb-8 mt-12 flex w-full text-white">
-          <div className="w-1/2 font-clashregular text-3xl">
+      <div className="relative z-10 mb-4 flex border-t-2 border-t-fuchsia-500 px-4">
+        <div className="mb-8 mt-12 flex w-full flex-col text-white md:flex-row">
+          <div className="mx-auto font-clashregular text-3xl md:mx-0 md:w-1/2">
             Joshmar Morales
           </div>
           <div
-            className={`${rubikRegular.className} flex w-1/2 justify-end gap-x-32 text-lg tracking-wide text-white`}
+            className={`${rubikRegular.className} mt-4 flex justify-center gap-x-8 text-lg tracking-wide text-white md:mt-0 md:w-1/2 md:justify-end xl:gap-x-32`}
           >
-            <Link onClick={() => setCurrentLink("home")} href="/">
+            <Link
+              onClick={() => setCurrentLink("home")}
+              href="/"
+              className="hover:underline"
+            >
               Home
             </Link>
-            <Link href="/blogs" onClick={() => setCurrentLink("blogs")}>
+            <Link
+              href="/blogs"
+              onClick={() => setCurrentLink("blogs")}
+              className="hover:underline"
+            >
               Blogs
             </Link>
-            <Link onClick={() => setCurrentLink("contact")} href="/contact">
+            <Link
+              onClick={() => setCurrentLink("contact")}
+              href="/contact"
+              className="hover:underline"
+            >
               Contact
             </Link>
           </div>
         </div>
       </div>
 
-      <div className="ml-auto flex h-8 w-1/2 justify-end gap-x-12 tracking-wide">
-        <p className={`${rubikRegular.className} text-sm text-gray-400`}>
+      <div className="relative z-10 ml-auto flex h-8 justify-center gap-x-12 px-4 text-center text-xs tracking-wide sm:text-sm md:text-start xl:w-1/2 xl:justify-end">
+        <p className={`${rubikRegular.className} text-gray-400`}>
           &copy; {new Date().getFullYear()} Joshmar Morales. All rights reserved
         </p>
-        <p className={`${rubikRegular.className} text-sm text-gray-400`}>
+        <p className={`${rubikRegular.className} text-gray-400`}>
           Terms of Use
         </p>
-        <p className={`${rubikRegular.className} text-sm text-gray-400`}>
+        <p className={`${rubikRegular.className} text-gray-400`}>
           Privacy Policy
         </p>
       </div>

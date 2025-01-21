@@ -1,38 +1,46 @@
-# CV25 Portfolio
+# CV 25 Portfolio
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This personal portfolio is a showcase of my skills, projects, and experience as a Full Stack Developer. It highlights my ability to create functional, visually appealing, and well-structured web applications using modern technologies.
 
-## Getting Started
+> [!NOTE]
+> Will be updated monthly.
 
-First, run the development server:
+### Technologies
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- ![Next.js](https://img.shields.io/badge/Next.js-%23000000?style=for-the-badge&logo=next.js&logoColor=white)
+- ![React](https://img.shields.io/badge/React-%2320232A?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![TypeScript](https://img.shields.io/badge/TypeScript-%23007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F0DB4F?style=for-the-badge&logo=javascript&logoColor=black)
+- ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)
+- ![ESLint](https://img.shields.io/badge/ESLint-%234B32C3?style=for-the-badge&logo=eslint&logoColor=white)
+- ![Prettier](https://img.shields.io/badge/Prettier-%23F7B93E?style=for-the-badge&logo=prettier&logoColor=black)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Projects Showcased
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Main Full Stack Projects
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- <a href="https://jhuvnutrition.fit">Jhuv Nutrition</a>
+- EgoLift University (In development)
 
-## Learn More
+### Mini Side Projects
 
-To learn more about Next.js, take a look at the following resources:
+- <a href="https://joshmar-weather-app.netlify.app">Weather App</a>
+- My Age App (In development)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### University Projects
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Bluelock (Senior Design Capstone)
+- Rader Distance Detector
 
-## Deploy on Vercel
+## Future features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Dark mode
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Resources
+
+All images and SVGs are from open-source resources.
+
+- [Unsplash](https://unsplash.com)
+- [Undraw](https://undraw.co)
+- [SVG Repo](https://svgrepo.com)
+- [Lottie Files](https://lottiefiles.com)

@@ -15,7 +15,7 @@ const Header: React.FC = () => {
     /* Home | Projects | About | Resources | Contact | Theme */
   }
   return (
-    <div className="mx-auto mt-4 flex h-20 max-w-screen-xl items-center justify-start gap-x-8 rounded-full border-2 border-violet-800 bg-indigo-950 pl-8 text-white">
+    <div className="mx-14 mt-4 hidden h-20 max-w-screen-xl items-center justify-start gap-x-8 rounded-full border-2 border-violet-800 bg-indigo-950 pl-8 text-white lg:mx-auto lg:flex">
       <div className="font-clashregular text-3xl font-semibold">
         <Link onClick={() => setCurrentLink("home")} href="/">
           Joshmar Morales
