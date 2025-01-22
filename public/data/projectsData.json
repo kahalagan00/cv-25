@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Jhuv Nutrition",
+    "dateRange": "Nov 2024 - Current",
+    "summary": "Jhuv Nutrition is a full-stack e-commerce application built with the MERN Stack (MongoDB, Express, React, Node.js) and styled using Tailwind CSS for a modern, responsive design. The backend is powered by Node.js and Express, providing a RESTful API to manage product data, user authentication, and orders. MongoDB serves as the database, storing product information, user profiles, and transaction history. On the frontend, React handles the user interface, enabling dynamic product browsing, secure login, and a smooth checkout process, while React Router ensures seamless navigation throughout the site.",
+    "githubLink": "https://github.com/kahalagan00/nutri-store-app-v2",
+    "siteLink": "https://jhuvnutrition.fit/",
+    "projectDemo": "/images/projects_images/demos/Jhuv_Nutrition_Demo.gif"
+  },
+  {
+    "title": "CV 25",
+    "dateRange": "Jan 2025 - Current",
+    "summary": "This 2025 personal portfolio is a showcase of my skills, projects, and experience as a Full Stack Developer. It highlights my ability to create functional, visually appealing, and well-structured web applications using modern technologies. It is this current website.",
+    "githubLink": "https://github.com/kahalagan00/cv-25",
+    "siteLink": "https://cv-25-6fd7uvf09-joshmar-morales-projects.vercel.app/",
+    "projectDemo": null
+  },
+  {
+    "title": "CV 24",
+    "dateRange": "Jan 2024 - Dec 2024",
+    "summary": "This 2024 personal portfolio is a showcase of my skills, projects, and experience as a Full Stack Developer. It highlights my ability to create functional, visually appealing, and well-structured web applications using modern technologies.",
+    "githubLink": "https://github.com/kahalagan00/cv-24",
+    "siteLink": "https://joshmar-portfolio-cv24-v2.netlify.app/",
+    "projectDemo": "/images/projects_images/demos/CV24_Demo.gif"
+  },
+  {
+    "title": "Weather Forecast",
+    "dateRange": "Aug 2024 - Sep 2024",
+    "summary": "This is a weather application that outputs details about the weather forecast of a specified city. The user will be able to search for a city and the application will use public APIs to extract information about said city. I built this project to get a better grasp of JavaScript and the MVC architecture. Building this project enabled me to learn more about the usage of APIs and how a proper architecture helps in the maintainability of a codebase. I learned that data from one API can be used for queries to another API, this is very helpful since it enables me to chain different functions to get a proper result.",
+    "githubLink": "https://github.com/kahalagan00/weather-app",
+    "siteLink": "https://joshmar-weather-app.netlify.app/",
+    "projectDemo": "/images/projects_images/demos/WeatherApp_Demo.gif"
+  },
+  {
+    "title": "Bluelock Detection",
+    "dateRange": "Nov 2022 - April 2023",
+    "summary": "Developed and deployed a machine learning model designed to detect drowning movements in pools, utilizing Python with TensorFlow for object detection and OpenCV for image classification and video output. The model was optimized and installed on the NVIDIA Jetson Nano, ensuring efficient performance for real-time action recognition in the final product. This was my team's project for the Senior Engineering Capstone Project for Spring 2023",
+    "githubLink": "https://github.com/kahalagan00/bluelock-drowning-detector",
+    "siteLink": "https://github.com/kahalagan00/bluelock-drowning-detector/blob/main/Detection%20Final%20Showcase.mp4",
+    "projectDemo": "/images/projects_images/demos/Bluelock_Demo.gif"
+  }
+]
