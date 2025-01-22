@@ -1,4 +1,7 @@
+"use client";
 // import { Rubik } from "next/font/google";
+
+import MainFooter from "../_components/MainFooter";
 
 // const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 // const rubikBold = Rubik({ weight: "700", subsets: ["latin"] });
@@ -13,6 +16,10 @@ const Page: React.FC = () => {
         <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
           Blogs coming soon...
         </p>
+
+        <div className="mt-32">
+          <MainFooter />
+        </div>
       </div>
     </section>
   );

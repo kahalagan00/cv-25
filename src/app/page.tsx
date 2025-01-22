@@ -168,11 +168,11 @@ const ProfileSection: React.FC = () => {
       </div>
 
       <div className="relative z-10 mt-8 h-[500px] w-full overflow-hidden lg:mt-0 lg:h-auto lg:w-1/2">
-        <div className="absolute left-1/2 top-1/4 flex h-[350px] w-[350px] -translate-x-1/2 transform items-center justify-center rounded-full border-2 border-fuchsia-500 bg-transparent lg:h-[400px] lg:w-[400px] xl:h-[500px] xl:w-[500px]">
+        <div className="absolute left-1/2 top-1/4 flex h-[350px] w-[350px] -translate-x-1/2 translate-y-16 transform items-center justify-center rounded-full border-2 border-fuchsia-500 bg-transparent lg:h-[400px] lg:w-[400px] lg:translate-y-0 xl:h-[500px] xl:w-[500px]">
           <div className="h-[90%] w-[90%] rounded-full bg-gradient-to-r from-indigo-300 via-violet-300 to-fuchsia-300 opacity-80 mix-blend-multiply"></div>
         </div>
 
-        <div className="absolute left-16 top-1/4 z-20 flex h-32 w-32 items-center justify-center rounded-full bg-fuchsia-800 bg-opacity-70 xl:h-36 xl:w-36">
+        <div className="absolute left-16 top-1/4 z-20 flex h-32 w-32 -translate-x-12 items-center justify-center rounded-full bg-fuchsia-800 bg-opacity-70 lg:-translate-x-0 xl:h-36 xl:w-36">
           <div className="flex h-24 w-24 items-center justify-center rounded-full bg-fuchsia-700 bg-opacity-80 xl:h-28 xl:w-28">
             <button className="flex h-16 w-16 flex-col items-center justify-center rounded-full bg-fuchsia-600 transition-transform ease-in-out hover:bg-fuchsia-500 active:translate-y-1 xl:h-20 xl:w-20">
               <IoMdDownload className="text-xl text-white xl:text-2xl" />
@@ -187,11 +187,11 @@ const ProfileSection: React.FC = () => {
         <ImCross className="absolute right-32 top-32 h-8 w-8 text-white" />
 
         <Image
-          src="/images/Header_Torsoshot.png"
-          width={550}
-          height={550}
+          src="/images/Joshmar_Cropped.png"
+          width={380}
+          height={380}
           alt="Picture of developer"
-          className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-16 scale-90 xl:translate-y-0 xl:scale-100"
+          className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-16 scale-90 brightness-150 xl:translate-y-0 xl:scale-100"
         />
 
         <div className="absolute right-0 top-1/4 z-20 flex flex-col gap-y-4">
