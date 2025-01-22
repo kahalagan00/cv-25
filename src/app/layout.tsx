@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./_components/Header";
 import { LinkProvider } from "./contexts/useLink";
 import Image from "next/image";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +31,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head></head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-[#13102b] antialiased`}
       >
+        {/* Add the Google Analytics script */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-BV0JM95MML`}
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-BV0JM95MML', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
         <LinkProvider>
           <div className="mx-auto max-w-screen-2xl px-4">
             <Header />
