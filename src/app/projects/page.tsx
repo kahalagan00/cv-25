@@ -93,14 +93,14 @@ const ProjectRow = ({ project }: { project: Project }) => {
       </div>
       <div className="lg:w-1/2 lg:pl-8">
         <div className="">
-          <h3 className="font-clashmedium text-[3rem] tracking-wide lg:text-[4rem]">
+          <h3 className="font-clashmedium text-[2.25rem] tracking-wide text-white sm:text-[3rem] lg:text-[4rem]">
             {project?.title}
           </h3>
-          <p className="font-clashlight text-[2rem] lg:text-[2.5rem]">
+          <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
             {project?.dateRange}
           </p>
           <p
-            className={`${rubikRegular.className} mt-4 text-[1.25rem] text-gray-300`}
+            className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
           >
             {project?.summary}
           </p>

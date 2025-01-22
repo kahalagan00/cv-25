@@ -6,19 +6,63 @@ const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 const Page: React.FC = () => {
   return (
     <section className="relative w-screen">
-      <div className="relative z-10 mx-auto my-64 w-full max-w-screen-2xl px-4">
-        <div className="flex">
-          <div className="w-1/2">
-            <h1 className="font-clashsemibold text-[6rem] leading-tight text-white">
-              About me
-            </h1>
-            <p
-              className={`${rubikRegular.className} text-4xl tracking-wide text-gray-400`}
-            >
-              Page currently in development...
-            </p>
-          </div>
-        </div>
+      <div className="relative z-10 mx-auto my-16 w-full max-w-screen-2xl px-4">
+        <h1 className="mb-16 font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
+          About me
+        </h1>
+
+        <h3 className="my-8 font-clashmedium text-[2.25rem] tracking-wide text-white sm:text-[3rem] lg:text-[4rem]">
+          Experience
+        </h3>
+        <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+          JCM Global&emsp;2023 - 2024
+        </p>
+        <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+          Software Engineer
+        </p>
+        <p
+          className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
+        >
+          Developed real-time multi-threaded applications and BSP drivers for a
+          network adapter device, facilitating communication between devices and
+          a web server.
+        </p>
+        <p
+          className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
+        >
+          Built RESTful APIs to deliver field product data to the web
+          application&apos;s back-end server.
+        </p>
+        <p
+          className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
+        >
+          Implemented new features that improved EGM gameplay by 10% and
+          expanded networking capabilities.
+        </p>
+        <p
+          className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
+        >
+          Resolved critical bugs, reducing downtimes by 10% and significantly
+          enhancing user experience during casino operations.
+        </p>
+        <p
+          className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
+        >
+          Thoroughly documented codebase changes, improving team productivity
+          and onboarding efficiency.
+        </p>
+
+        <h3 className="my-8 font-clashmedium text-[2.25rem] tracking-wide text-white sm:text-[3rem] lg:text-[4rem]">
+          Education
+        </h3>
+        <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+          University of Nevada, Las Vegas&emsp;2019 - 2023
+        </p>
+        <p
+          className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
+        >
+          Bachelor&apos;s of Science in Electrical and Computer Engineering
+        </p>
       </div>
     </section>
   );

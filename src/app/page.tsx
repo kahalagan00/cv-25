@@ -403,7 +403,7 @@ const ProjectSection: React.FC = () => {
         <div className="relative lg:w-1/2">
           <div className="relative h-[400px] w-full overflow-hidden rounded-[3rem] bg-violet-800 drop-shadow-2xl">
             <Image
-              src="/images/projects_images/Jhuv_Nutrition_Showcase.png"
+              src="/images/projects_images/showcases/Jhuv_Nutrition_Showcase.png"
               fill
               className="object-cover lg:-translate-x-20 lg:translate-y-16"
               alt="Showcase of the Jhuv Nutrition App"
@@ -438,7 +438,7 @@ const ProjectSection: React.FC = () => {
         <div className="relative z-10 lg:w-1/2">
           <div className="h-[400px] overflow-hidden rounded-[3rem] bg-violet-400 drop-shadow-2xl lg:h-[500px] lg:w-[500px]">
             <Image
-              src="/images/projects_images/CV24_Showcase.png"
+              src="/images/projects_images/showcases/CV24_Showcase.png"
               width={1000}
               height={300}
               className="mt-16 translate-x-20 -rotate-45 scale-150"
@@ -467,7 +467,7 @@ const ProjectSection: React.FC = () => {
         <div className="lg:w-[35%]">
           <div className="h-[400px] w-full overflow-hidden rounded-[3rem] bg-purple-800 drop-shadow-2xl">
             <Image
-              src="/images/projects_images/WeatherApp_Showcase.png"
+              src="/images/projects_images/showcases/WeatherApp_Showcase.png"
               width={450}
               height={300}
               className="mx-auto mt-14 object-contain lg:mx-0 lg:mt-24"
@@ -500,7 +500,7 @@ const ProjectSection: React.FC = () => {
         <div className="z-10 lg:w-[70%]">
           <div className="h-[400px] w-full overflow-hidden rounded-[3rem] bg-cyan-700 drop-shadow-2xl">
             <Image
-              src="/images/projects_images/Bluelock_Showcase.png"
+              src="/images/projects_images/showcases/Bluelock_Showcase.png"
               width={975}
               height={300}
               className="translate-y-32 scale-90 lg:ml-16 lg:mt-24 lg:translate-y-0 lg:object-contain"
@@ -658,8 +658,30 @@ const BlogCard = ({
 };
 
 const ContactSection: React.FC = () => {
-  const { setCurrentLink } = useLinkContext();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  // const { setCurrentLink } = useLinkContext();
   const inputStyleNormal = `h-16 w-full rounded-full pl-6 bg-indigo-900 text-white outline-none placeholder:tracking-wide`;
+
+  // eslint-disable-next-line
+  // @ts-ignore
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // eslint-disable-next-line
+  // @ts-ignore
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const mailtoLink = `mailto:${formData.email}?subject=Message from ${formData.name}&body=${encodeURIComponent(
+      formData.message,
+    )}`;
+    window.location.href = mailtoLink;
+  };
 
   return (
     <>
@@ -668,7 +690,7 @@ const ContactSection: React.FC = () => {
           Contact me
         </h1>
         <form
-          action=""
+          onSubmit={handleSubmit}
           className="block w-full flex-col px-4 sm:w-1/2 sm:px-0 lg:w-1/3"
         >
           <div className="my-8">
@@ -678,6 +700,11 @@ const ContactSection: React.FC = () => {
             <input
               placeholder="Enter your full name..."
               type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
               className={inputStyleNormal}
             />
           </div>
@@ -688,7 +715,12 @@ const ContactSection: React.FC = () => {
             </p>
             <input
               placeholder="Enter your email..."
-              type="text"
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
               className={inputStyleNormal}
             />
           </div>
@@ -698,6 +730,11 @@ const ContactSection: React.FC = () => {
               Message*
             </p>
             <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
               placeholder="Enter your message..."
               className="min-h-48 w-full rounded-3xl bg-indigo-900 pl-6 pt-4 text-white outline-none placeholder:tracking-wide"
             ></textarea>
@@ -705,13 +742,20 @@ const ContactSection: React.FC = () => {
             <IoMdArrowBack className="absolute right-0 top-10 hidden translate-x-44 font-clashsemibold text-[8rem] leading-tight text-fuchsia-600 sm:block lg:translate-x-64 lg:text-[10rem]" />
           </div>
 
-          <Link
+          <button
+            type="submit"
+            className={`${rubikBold.className} mx-auto flex w-48 items-center justify-center rounded-full bg-fuchsia-700 px-9 py-4 text-lg text-white hover:bg-fuchsia-600`}
+          >
+            Send Email
+          </button>
+
+          {/* <Link
             href="/contact"
             className={`${rubikBold.className} mx-auto flex w-48 items-center justify-center rounded-full bg-fuchsia-700 px-9 py-4 text-lg text-white hover:bg-fuchsia-600`}
             onClick={() => setCurrentLink("contact")}
           >
             Send
-          </Link>
+          </Link> */}
         </form>
 
         <div className="absolute bottom-1/4 hidden translate-y-16 flex-col gap-y-8 max-lg:left-0 sm:flex lg:right-0">

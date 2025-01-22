@@ -34,7 +34,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} bg-[#13102b] antialiased`}
       >
         <LinkProvider>
-          <div className="mx-auto max-w-screen-2xl">
+          <div className="mx-auto max-w-screen-2xl px-4">
             <Header />
           </div>
           {/* <main className="mx-auto mt-4 max-w-screen-2xl overflow-hidden bg-[#13102b]"> */}
