@@ -22,14 +22,14 @@ const Header: React.FC = () => {
         <Link
           onClick={() => setCurrentLink("home")}
           href="/"
-          className="hidden lg:block"
+          className="hidden text-xl lg:block xl:text-3xl"
         >
           Joshmar Morales
         </Link>
         <Link
           onClick={() => setCurrentLink("home")}
           href="/"
-          className="lg:hidden"
+          className="text-xl lg:hidden"
         >
           JM
         </Link>

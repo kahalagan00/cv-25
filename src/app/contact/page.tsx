@@ -34,6 +34,12 @@ const Page: React.FC = () => {
               GitHub
             </a>
           </p>
+          <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+            &#x2022;&emsp; joshmarinho11@gmail.com
+          </p>
+          <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+            &#x2022;&emsp; 702-978-2001
+          </p>
         </div>
 
         <div>

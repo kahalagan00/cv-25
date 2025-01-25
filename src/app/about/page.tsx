@@ -25,33 +25,33 @@ const Page: React.FC = () => {
         <p
           className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
         >
-          Developed real-time multi-threaded applications and BSP drivers for a
-          network adapter device, facilitating communication between devices and
-          a web server.
+          &#x2022;&emsp;Developed real-time multi-threaded applications and BSP
+          drivers for a network adapter device, facilitating communication
+          between devices and a web server.
         </p>
         <p
           className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
         >
-          Built RESTful APIs to deliver field product data to the web
-          application&apos;s back-end server.
+          &#x2022;&emsp;Built RESTful APIs to deliver field product data to the
+          web application&apos;s back-end server.
         </p>
         <p
           className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
         >
-          Implemented new features that improved EGM gameplay by 10% and
-          expanded networking capabilities.
+          &#x2022;&emsp;Implemented new features that improved EGM gameplay by
+          10% and expanded networking capabilities.
         </p>
         <p
           className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
         >
-          Resolved critical bugs, reducing downtimes by 10% and significantly
-          enhancing user experience during casino operations.
+          &#x2022;&emsp;Resolved critical bugs, reducing downtimes by 10% and
+          significantly enhancing user experience during casino operations.
         </p>
         <p
           className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
         >
-          Thoroughly documented codebase changes, improving team productivity
-          and onboarding efficiency.
+          &#x2022;&emsp;Thoroughly documented codebase changes, improving team
+          productivity and onboarding efficiency.
         </p>
 
         <h3 className="my-8 font-clashmedium text-[2.25rem] tracking-wide text-white sm:text-[3rem] lg:text-[4rem]">
