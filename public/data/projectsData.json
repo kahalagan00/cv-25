@@ -10,10 +10,10 @@
   {
     "title": "CV 25",
     "dateRange": "Jan 2025 - Current",
-    "summary": "This 2025 personal portfolio is a showcase of my skills, projects, and experience as a Full Stack Developer. It highlights my ability to create functional, visually appealing, and well-structured web applications using modern technologies. It is this current website.",
+    "summary": "This 2025 personal portfolio is a showcase of my skills, projects, and experience as a Full Stack Developer. It highlights my ability to create functional, visually appealing, and well-structured web applications using modern technologies. (It is this current website)",
     "githubLink": "https://github.com/kahalagan00/cv-25",
     "siteLink": "https://cv-25-6fd7uvf09-joshmar-morales-projects.vercel.app/",
-    "projectDemo": null
+    "projectDemo": "/images/projects_images/demos/CV25_Demo.gif"
   },
   {
     "title": "CV 24",

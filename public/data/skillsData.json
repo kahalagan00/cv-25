@@ -1,7 +1,7 @@
 [
   {
     "skill": "TypeScript",
-    "rating": 7
+    "rating": 8
   },
   {
     "skill": "React",
@@ -38,5 +38,21 @@
   {
     "skill": "PostgreSQL",
     "rating": 4
+  },
+  {
+    "skill": ".NET",
+    "rating": 3
+  },
+  {
+    "skill": "Blazor",
+    "rating": 2
+  },
+  {
+    "skill": "SQL Server",
+    "rating": 5
+  },
+  {
+    "skill": "C/C++",
+    "rating": 8
   }
 ]
