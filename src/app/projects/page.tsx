@@ -74,7 +74,7 @@ const ProjectRow = ({ project }: { project: Project }) => {
   return (
     <div className="mb-16 flex flex-col px-4 text-white lg:flex-row">
       <div className="mb-4 lg:mb-0 lg:w-1/2">
-        <div className="relative h-[500px] w-full overflow-hidden rounded-[3rem] bg-indigo-300 drop-shadow-2xl">
+        <div className="relative h-[300px] w-full overflow-hidden rounded-[3rem] bg-indigo-300 drop-shadow-2xl sm:h-[500px]">
           {project.projectDemo ? (
             <Image
               alt="Demo of project"
@@ -106,18 +106,18 @@ const ProjectRow = ({ project }: { project: Project }) => {
             {project?.dateRange}
           </p>
           <p
-            className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
+            className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
           >
             {project?.summary}
           </p>
           <div className="mt-8 flex gap-x-4">
             <a href={project.githubLink} target="_blank">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-fuchsia-600 hover:scale-110 hover:bg-fuchsia-500">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-fuchsia-600 transition-all duration-100 ease-in hover:scale-110 hover:bg-fuchsia-500 sm:h-12 sm:w-12">
                 <FaGithub className="text-2xl" />
               </div>
             </a>
             <a href={project.siteLink} target="_blank">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-fuchsia-600 hover:scale-110 hover:bg-fuchsia-500">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-fuchsia-600 transition-all duration-100 ease-in hover:scale-110 hover:bg-fuchsia-500 sm:h-12 sm:w-12">
                 <FaLink className="text-2xl" />
               </div>
             </a>

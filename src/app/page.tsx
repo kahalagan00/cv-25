@@ -209,23 +209,23 @@ const ProfileSection: React.FC = () => {
               <FaGithub className="text-xl text-white" />
             </div>
           </a>
-          <a href={"https://discord.com"} target="_blank">
+          <a href={"#"}>
             <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-500">
               <FaDiscord className="text-xl text-white" />
             </div>
           </a>
-          <a href={"https://instagram.com"} target="_blank">
+          <a href={"#"}>
             <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-500">
               <FaInstagram className="text-xl text-white" />
             </div>
           </a>
-          <a href={"https://facebook.com"} target="_blank">
+          <a href={"#"}>
             <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-500">
               <FaFacebook className="text-xl text-white" />
             </div>
           </a>
 
-          <a href={"https://tiktok.com"} target="_blank">
+          <a href={"#"}>
             <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-500">
               <FaTiktok className="text-xl text-white" />
             </div>
@@ -816,24 +816,24 @@ const FooterSection: React.FC = () => {
                 <FaGithub className={socialButtonStyle} />
               </div>
             </a>
-            <a target="_blank" href="https://instagram.com">
+            <a href={"#"}>
               <div className={socialButtonParentStyle}>
                 <FaInstagram className={socialButtonStyle} />
               </div>
             </a>
           </div>
           <div className="flex justify-evenly gap-x-4">
-            <a target="_blank" href="https://discord.com">
+            <a href={"#"}>
               <div className={socialButtonParentStyle}>
                 <FaDiscord className={socialButtonStyle} />
               </div>
             </a>
-            <a target="_blank" href="https://youtube.com">
+            <a href={"#"}>
               <div className={socialButtonParentStyle}>
                 <FaYoutube className={socialButtonStyle} />
               </div>
             </a>
-            <a target="_blank" href="https://tiktok.com">
+            <a href={"#"}>
               <div className={socialButtonParentStyle}>
                 <FaTiktok className={socialButtonStyle} />
               </div>

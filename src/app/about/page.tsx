@@ -17,40 +17,40 @@ const Page: React.FC = () => {
           Experience
         </h3>
         <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
-          JCM Global&emsp;2023 - 2024
+          JCM Global&nbsp;2023 - 2024
         </p>
         <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
           Software Engineer
         </p>
         <p
-          className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
+          className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
         >
-          &#x2022;&emsp;Developed real-time multi-threaded applications and BSP
+          &#x2022;&nbsp;Developed real-time multi-threaded applications and BSP
           drivers for a network adapter device, facilitating communication
           between devices and a web server.
         </p>
         <p
-          className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
+          className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
         >
-          &#x2022;&emsp;Built RESTful APIs to deliver field product data to the
+          &#x2022;&nbsp;Built RESTful APIs to deliver field product data to the
           web application&apos;s back-end server.
         </p>
         <p
-          className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
+          className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
         >
-          &#x2022;&emsp;Implemented new features that improved EGM gameplay by
+          &#x2022;&nbsp;Implemented new features that improved EGM gameplay by
           10% and expanded networking capabilities.
         </p>
         <p
-          className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
+          className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
         >
-          &#x2022;&emsp;Resolved critical bugs, reducing downtimes by 10% and
+          &#x2022;&nbsp;Resolved critical bugs, reducing downtimes by 10% and
           significantly enhancing user experience during casino operations.
         </p>
         <p
-          className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
+          className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
         >
-          &#x2022;&emsp;Thoroughly documented codebase changes, improving team
+          &#x2022;&nbsp;Thoroughly documented codebase changes, improving team
           productivity and onboarding efficiency.
         </p>
 
@@ -58,7 +58,7 @@ const Page: React.FC = () => {
           Education
         </h3>
         <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
-          University of Nevada, Las Vegas&emsp;2019 - 2023
+          University of Nevada, Las Vegas&nbsp;2019 - 2023
         </p>
         <p
           className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
