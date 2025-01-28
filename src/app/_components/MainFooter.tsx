@@ -10,11 +10,11 @@ const MainFooter: React.FC = () => {
     <div>
       <div className="relative z-10 mb-4 flex border-t-2 border-t-fuchsia-500 px-4">
         <div className="mb-8 mt-12 flex w-full flex-col text-white md:flex-row">
-          <div className="mx-auto font-clashregular text-3xl md:mx-0 md:w-1/2">
+          <div className="mx-auto font-clashregular text-2xl md:mx-0 md:w-1/2 md:text-3xl">
             Joshmar Morales
           </div>
           <div
-            className={`${rubikRegular.className} mt-4 flex justify-center gap-x-8 text-lg tracking-wide text-white md:mt-0 md:w-1/2 md:justify-end xl:gap-x-32`}
+            className={`${rubikRegular.className} mt-4 flex justify-center gap-x-8 text-base tracking-wide text-white md:mt-0 md:w-1/2 md:justify-end md:text-lg xl:gap-x-32`}
           >
             <Link
               onClick={() => setCurrentLink("home")}

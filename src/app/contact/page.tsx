@@ -1,9 +1,9 @@
 "use client";
-// import { Rubik } from "next/font/google";
+import { Rubik } from "next/font/google";
 
 import MainFooter from "../_components/MainFooter";
 
-// const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
+const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 // const rubikBold = Rubik({ weight: "700", subsets: ["latin"] });
 
 const Page: React.FC = () => {
@@ -14,7 +14,13 @@ const Page: React.FC = () => {
           <h1 className="mb-16 font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
             Contact
           </h1>
-          <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+          <div
+            className={`${rubikRegular.className} mb-8 pr-8 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
+          >
+            Feel free to contact me in any of these. But most likely I will
+            respond more via email since I check that one almost daily.
+          </div>
+          <p className="font-clashlight text-[1rem] text-white sm:text-[1.5rem] lg:text-[2rem]">
             &#x2022;&emsp;
             <a
               href="https://www.linkedin.com/in/joshmar-morales/"
@@ -24,7 +30,7 @@ const Page: React.FC = () => {
               LinkedIn
             </a>
           </p>
-          <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+          <p className="font-clashlight text-[1rem] text-white sm:text-[1.5rem] lg:text-[2rem]">
             &#x2022;&emsp;
             <a
               href="https://www.github.com/kahalagan00"
@@ -34,11 +40,8 @@ const Page: React.FC = () => {
               GitHub
             </a>
           </p>
-          <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+          <p className="font-clashlight text-[1rem] text-white sm:text-[1.5rem] lg:text-[2rem]">
             &#x2022;&emsp; joshmarinho11@gmail.com
-          </p>
-          <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
-            &#x2022;&emsp; 702-978-2001
           </p>
         </div>
 

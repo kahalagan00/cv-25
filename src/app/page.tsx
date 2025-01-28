@@ -6,9 +6,10 @@ import { useEffect, useState } from "react";
 import {
   FaDiscord,
   FaFacebook,
+  FaGithub,
   FaInstagram,
+  FaLinkedin,
   FaTiktok,
-  FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
@@ -142,7 +143,7 @@ export default Page;
 const ProfileSection: React.FC = () => {
   return (
     <>
-      <div className="relative z-10 w-full pl-24 pt-16 lg:w-1/2">
+      <div className="relative z-10 w-full pl-16 pt-16 sm:pl-24 lg:w-1/2">
         <h2
           className={`${rubikRegular.className} text-xl uppercase tracking-wide text-gray-400 sm:text-3xl xl:text-4xl`}
         >
@@ -195,33 +196,37 @@ const ProfileSection: React.FC = () => {
         />
 
         <div className="absolute right-0 top-1/4 z-20 flex flex-col gap-y-4">
+          <a
+            href={"https://www.linkedin.com/in/joshmar-morales/"}
+            target="_blank"
+          >
+            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-500">
+              <FaLinkedin className="text-xl text-white" />
+            </div>
+          </a>
+          <a href={"https://github.com/kahalagan00"} target="_blank">
+            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-500">
+              <FaGithub className="text-xl text-white" />
+            </div>
+          </a>
           <a href={"https://discord.com"} target="_blank">
-            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-400">
+            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-500">
               <FaDiscord className="text-xl text-white" />
             </div>
           </a>
           <a href={"https://instagram.com"} target="_blank">
-            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-400">
+            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-500">
               <FaInstagram className="text-xl text-white" />
             </div>
           </a>
           <a href={"https://facebook.com"} target="_blank">
-            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-400">
+            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-500">
               <FaFacebook className="text-xl text-white" />
             </div>
           </a>
-          <a href={"https://x.com"} target="_blank">
-            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-400">
-              <FaTwitter className="text-xl text-white" />
-            </div>
-          </a>
-          <a href={"https://youtube.com"} target="_blank">
-            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-400">
-              <FaYoutube className="text-xl text-white" />
-            </div>
-          </a>
+
           <a href={"https://tiktok.com"} target="_blank">
-            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-400">
+            <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-500">
               <FaTiktok className="text-xl text-white" />
             </div>
           </a>
@@ -781,7 +786,7 @@ const FooterSection: React.FC = () => {
     );
   }
 
-  const socialButtonParentStyle = `flex lg:h-20 lg:w-20 h-16 w-16 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500`;
+  const socialButtonParentStyle = `flex lg:h-20 lg:w-20 h-16 w-16 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500 transition-all duration-150 ease-in hover:scale-110`;
   const socialButtonStyle = `lg:h-14 lg:w-14 h-10 w-10`;
 
   return (
@@ -797,14 +802,18 @@ const FooterSection: React.FC = () => {
 
         <div className="mt-8 w-full lg:mt-0 lg:w-1/4">
           <div className="mb-8 flex justify-evenly gap-x-4">
-            <a target="_blank" href="https://discord.com">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/joshmar-morales/"
+            >
               <div className={socialButtonParentStyle}>
-                <FaDiscord className={socialButtonStyle} />
+                <FaLinkedin className={socialButtonStyle} />
               </div>
             </a>
-            <a target="_blank" href="https://twitter.com">
+
+            <a target="_blank" href="https://github.com/kahalagan00">
               <div className={socialButtonParentStyle}>
-                <FaTwitter className={socialButtonStyle} />
+                <FaGithub className={socialButtonStyle} />
               </div>
             </a>
             <a target="_blank" href="https://instagram.com">
@@ -814,9 +823,9 @@ const FooterSection: React.FC = () => {
             </a>
           </div>
           <div className="flex justify-evenly gap-x-4">
-            <a target="_blank" href="https://facebook.com">
+            <a target="_blank" href="https://discord.com">
               <div className={socialButtonParentStyle}>
-                <FaFacebook className={socialButtonStyle} />
+                <FaDiscord className={socialButtonStyle} />
               </div>
             </a>
             <a target="_blank" href="https://youtube.com">

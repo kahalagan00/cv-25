@@ -125,7 +125,7 @@ const Header: React.FC = () => {
         <Link
           onClick={() => setCurrentLink("contact")}
           href="/contact"
-          className={`${rubikBold.className} hidden rounded-full bg-violet-900 px-9 py-4 text-lg hover:bg-violet-800 lg:block`}
+          className={`${rubikBold.className} ml-8 hidden rounded-full bg-violet-900 px-9 py-4 text-lg hover:bg-violet-800 lg:block`}
         >
           Contact
         </Link>
