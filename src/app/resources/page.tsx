@@ -34,6 +34,30 @@ const Page: React.FC = () => {
           <p className="font-clashlight text-[1rem] text-white sm:text-[1.5rem] lg:text-[2rem]">
             &#x2022;&emsp;The C Programming Language by Brian Kernighan
           </p>
+          <p className="font-clashlight text-[1rem] text-white sm:text-[1.5rem] lg:text-[2rem]">
+            &#x2022;&emsp;100 Days of Code: The Complete Python Pro Bootcamp by
+            Angela Yu
+          </p>
+          <p className="font-clashlight text-[1rem] text-white sm:text-[1.5rem] lg:text-[2rem]">
+            &#x2022;&emsp;
+            <a
+              href="https://tryhackme.com"
+              target="_blank"
+              className="hover:underline"
+            >
+              TryHackMe
+            </a>
+          </p>
+          <p className="font-clashlight text-[1rem] text-white sm:text-[1.5rem] lg:text-[2rem]">
+            &#x2022;&emsp;
+            <a
+              href="https://leetcode.com"
+              target="_blank"
+              className="hover:underline"
+            >
+              Leetcode
+            </a>
+          </p>
         </div>
 
         <div>

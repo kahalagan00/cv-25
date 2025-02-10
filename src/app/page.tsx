@@ -147,7 +147,7 @@ const ProfileSection: React.FC = () => {
         <h2
           className={`${rubikRegular.className} text-xl uppercase tracking-wide text-gray-400 sm:text-3xl xl:text-4xl`}
         >
-          Fullstack software engineer
+          Software Engineering | Cyber
         </h2>
         <h1 className="font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
           Joshmar Morales
@@ -156,7 +156,7 @@ const ProfileSection: React.FC = () => {
         <div
           className={`${rubikRegular.className} w-[300px] border-l-2 border-l-gray-200 py-1 pl-8 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
         >
-          I am a Full-Stack developer and I work in the United States.
+          I am a Software Engineer and I work in the United States.
         </div>
 
         <div className="absolute left-0 top-0 flex h-[100px] translate-y-32 flex-col justify-between sm:h-[200px]">
@@ -255,11 +255,11 @@ const AboutSection: React.FC = () => {
         <p
           className={`${rubikRegular.className} my-16 w-[400px] tracking-[.015em] text-gray-400 xl:w-[500px] xl:text-lg`}
         >
-          I am a Full Stack Developer with a strong passion for creating
-          impactful, user-centered web applications. With a focus on both
-          frontend and backend development, I enjoy building scalable solutions
-          that solve real-world problems. I thrive in dynamic environments and
-          am constantly looking for new opportunities to grow and contribute to
+          I am a Software Engineer with a strong passion for creating impactful,
+          user-centered web applications. With a focus on both frontend and
+          backend development, I enjoy building scalable solutions that solve
+          real-world problems. I thrive in dynamic environments and am
+          constantly looking for new opportunities to grow and contribute to
           meaningful projects.
         </p>
         <Link
