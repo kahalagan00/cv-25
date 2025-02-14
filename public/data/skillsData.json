@@ -54,5 +54,13 @@
   {
     "skill": "C/C++",
     "rating": 8
+  },
+  {
+    "skill": "OWASP",
+    "rating": 5
+  },
+  {
+    "skill": "SQL",
+    "rating": 5
   }
 ]
