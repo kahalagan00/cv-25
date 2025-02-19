@@ -147,7 +147,7 @@ const ProfileSection: React.FC = () => {
         <h2
           className={`${rubikRegular.className} text-xl uppercase tracking-wide text-gray-400 sm:text-3xl xl:text-4xl`}
         >
-          Dev | Cyber
+          Fullstack Engineer
         </h2>
         <h1 className="font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
           Joshmar Morales
@@ -255,14 +255,14 @@ const AboutSection: React.FC = () => {
         <p
           className={`${rubikRegular.className} my-16 w-[400px] tracking-[.015em] text-gray-400 xl:w-[500px] xl:text-lg`}
         >
-          I am a Software Engineer with a strong passion for creating impactful,
-          user-centered web applications. With a focus on both frontend and
-          backend development, I enjoy building scalable solutions that solve
-          real-world problems. I thrive in dynamic environments and am
-          constantly looking for new opportunities to grow and contribute to
-          meaningful projects. I am also very interested in implementing the
-          best security practices for applications and looking for the
-          vulnerabilities manually.
+          I am a Software Engineer and a Cybersecurity enthusiast with a strong
+          passion for creating impactful, user-centered web applications. With a
+          focus on both frontend and backend development, I enjoy building
+          scalable solutions that solve real-world problems. I thrive in dynamic
+          environments and am constantly looking for new opportunities to grow
+          and contribute to meaningful projects. I am also very interested in
+          implementing the best security practices for applications and looking
+          for the vulnerabilities manually.
         </p>
         <Link
           href="/contact"

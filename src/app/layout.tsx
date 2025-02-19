@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Joshmar Morales CV25",
-  description: "Created with Next.js",
+  title: "Joshmar Morales",
+  description: "Personal portfolio of Joshmar Morales created with Next.js",
   icons: {
     icon: "/svgs/panda.svg", // /public path
   },
