@@ -18,8 +18,8 @@ const Page: React.FC = () => {
             className={`${rubikRegular.className} mb-8 pr-8 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
           >
             I am not sponsored by these people or companies. I just simply found
-            these resources beneficial to my growth as a programmer and engineer
-            in general.
+            these resources beneficial to my growth as a programmer, engineer,
+            and cybersecurity enthusiast.
           </div>
 
           <p className="font-clashlight text-[1rem] text-white sm:text-[1.5rem] lg:text-[2rem]">
@@ -46,16 +46,6 @@ const Page: React.FC = () => {
               className="hover:underline"
             >
               TryHackMe
-            </a>
-          </p>
-          <p className="font-clashlight text-[1rem] text-white sm:text-[1.5rem] lg:text-[2rem]">
-            &#x2022;&emsp;
-            <a
-              href="https://leetcode.com"
-              target="_blank"
-              className="hover:underline"
-            >
-              Leetcode
             </a>
           </p>
         </div>
