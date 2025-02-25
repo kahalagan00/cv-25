@@ -1,7 +1,27 @@
 [
   {
+    "skill": "Python",
+    "rating": 10
+  },
+  {
     "skill": "TypeScript",
-    "rating": 8
+    "rating": 9
+  },
+  {
+    "skill": "Java",
+    "rating": 7
+  },
+  {
+    "skill": "C#",
+    "rating": 7
+  },
+  {
+    "skill": "Spring",
+    "rating": 3
+  },
+  {
+    "skill": ".NET",
+    "rating": 3
   },
   {
     "skill": "React",
@@ -16,48 +36,12 @@
     "rating": 10
   },
   {
-    "skill": "Python",
-    "rating": 10
-  },
-  {
     "skill": "Node.js",
     "rating": 8
   },
   {
-    "skill": "Express",
-    "rating": 8
-  },
-  {
-    "skill": "Django",
-    "rating": 3
-  },
-  {
     "skill": "MongoDB",
     "rating": 8
-  },
-  {
-    "skill": "PostgreSQL",
-    "rating": 4
-  },
-  {
-    "skill": ".NET",
-    "rating": 3
-  },
-  {
-    "skill": "Blazor",
-    "rating": 2
-  },
-  {
-    "skill": "SQL Server",
-    "rating": 5
-  },
-  {
-    "skill": "C/C++",
-    "rating": 8
-  },
-  {
-    "skill": "OWASP",
-    "rating": 5
   },
   {
     "skill": "SQL",

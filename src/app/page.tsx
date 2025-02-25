@@ -255,14 +255,12 @@ const AboutSection: React.FC = () => {
         <p
           className={`${rubikRegular.className} my-16 w-[400px] tracking-[.015em] text-gray-400 xl:w-[500px] xl:text-lg`}
         >
-          I am a Software Engineer and a Cybersecurity enthusiast with a strong
-          passion for creating impactful, user-centered web applications. With a
-          focus on both frontend and backend development, I enjoy building
-          scalable solutions that solve real-world problems. I thrive in dynamic
-          environments and am constantly looking for new opportunities to grow
-          and contribute to meaningful projects. I am also very interested in
-          implementing the best security practices for applications and looking
-          for the vulnerabilities manually.
+          I am a Full Stack Software Engineer with a strong passion for creating
+          impactful, user-centered web applications. With a focus on both
+          frontend and backend development, I enjoy building scalable solutions
+          that solve real-world problems. I thrive in dynamic environments and
+          am constantly looking for new opportunities to grow and contribute to
+          meaningful projects.
         </p>
         <Link
           href="/contact"
