@@ -38,18 +38,7 @@ const Page: React.FC = () => {
             &#x2022;&emsp;100 Days of Code: The Complete Python Pro Bootcamp by
             Angela Yu
           </p>
-          <p className="font-clashlight text-[1rem] text-white sm:text-[1.5rem] lg:text-[2rem]">
-            &#x2022;&emsp;
-            <a
-              href="https://tryhackme.com"
-              target="_blank"
-              className="hover:underline"
-            >
-              TryHackMe
-            </a>
-          </p>
         </div>
-
         <div>
           <MainFooter />
         </div>

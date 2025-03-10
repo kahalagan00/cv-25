@@ -1,7 +1,7 @@
 [
   {
-    "skill": "Python",
-    "rating": 10
+    "skill": "JavaScript",
+    "rating": 9
   },
   {
     "skill": "TypeScript",
@@ -12,16 +12,8 @@
     "rating": 7
   },
   {
-    "skill": "C#",
-    "rating": 7
-  },
-  {
     "skill": "Spring",
-    "rating": 3
-  },
-  {
-    "skill": ".NET",
-    "rating": 3
+    "rating": 7
   },
   {
     "skill": "React",
@@ -29,7 +21,7 @@
   },
   {
     "skill": "Next.js",
-    "rating": 7
+    "rating": 8
   },
   {
     "skill": "Tailwind",
@@ -44,7 +36,15 @@
     "rating": 8
   },
   {
-    "skill": "SQL",
-    "rating": 5
+    "skill": "Python",
+    "rating": 8
+  },
+  {
+    "skill": "C",
+    "rating": 10
+  },
+  {
+    "skill": "C++",
+    "rating": 10
   }
 ]
