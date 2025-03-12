@@ -2,6 +2,7 @@
 import { Rubik } from "next/font/google";
 
 import MainFooter from "../_components/MainFooter";
+import { SOCIAL_LINKS } from "../_utils/constants";
 
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 // const rubikBold = Rubik({ weight: "700", subsets: ["latin"] });
@@ -23,7 +24,7 @@ const Page: React.FC = () => {
           <p className="font-clashlight text-[1rem] text-white sm:text-[1.5rem] lg:text-[2rem]">
             &#x2022;&emsp;
             <a
-              href="https://www.linkedin.com/in/joshmar-morales/"
+              href={SOCIAL_LINKS.linkedin}
               target="_blank"
               className="hover:underline"
             >
@@ -33,7 +34,7 @@ const Page: React.FC = () => {
           <p className="font-clashlight text-[1rem] text-white sm:text-[1.5rem] lg:text-[2rem]">
             &#x2022;&emsp;
             <a
-              href="https://www.github.com/kahalagan00"
+              href={SOCIAL_LINKS.github}
               target="_blank"
               className="hover:underline"
             >

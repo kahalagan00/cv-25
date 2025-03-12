@@ -16,6 +16,7 @@ import { ImCross } from "react-icons/im";
 import { IoMdArrowBack, IoMdArrowForward, IoMdDownload } from "react-icons/io";
 import { useLinkContext } from "./contexts/useLink";
 import MainFooter from "./_components/MainFooter";
+import { DOCUMENT_PATHS, SOCIAL_LINKS } from "./_utils/constants";
 
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 const rubikBold = Rubik({ weight: "700", subsets: ["latin"] });
@@ -160,11 +161,12 @@ const ProfileSection: React.FC = () => {
         </div>
 
         <div className="absolute left-0 top-0 flex h-[100px] translate-y-32 flex-col justify-between sm:h-[200px]">
-          <div className="h-[5px] w-10 rotate-45 rounded-md bg-indigo-400 sm:w-20"></div>
-          <div className="h-[5px] w-10 rotate-45 rounded-md bg-indigo-400 sm:w-20"></div>
-          <div className="h-[5px] w-10 rotate-45 rounded-md bg-indigo-400 sm:w-20"></div>
-          <div className="h-[5px] w-10 rotate-45 rounded-md bg-indigo-400 sm:w-20"></div>
-          <div className="h-[5px] w-10 rotate-45 rounded-md bg-indigo-400 sm:w-20"></div>
+            {Array.from({ length: 5 }).map((_, index) => (
+              <div
+                key={index}
+                className="h-[5px] w-10 rotate-45 rounded-md bg-indigo-400 sm:w-20"
+              ></div>
+          ))}
         </div>
       </div>
 
@@ -177,7 +179,7 @@ const ProfileSection: React.FC = () => {
           <div className="flex h-24 w-24 items-center justify-center rounded-full bg-fuchsia-700 bg-opacity-80 xl:h-28 xl:w-28">
             <button className="flex h-16 w-16 flex-col items-center justify-center rounded-full bg-fuchsia-600 transition-transform ease-in-out hover:bg-fuchsia-500 active:translate-y-1 xl:h-20 xl:w-20">
               <IoMdDownload className="text-xl text-white xl:text-2xl" />
-              <a target="_blank" href="documents/Joshmar_Morales_Resume_FS.pdf">
+              <a target="_blank" href={DOCUMENT_PATHS.resume}>
                 <span className="text-xl text-white xl:text-2xl">CV</span>
               </a>
             </button>
@@ -197,14 +199,14 @@ const ProfileSection: React.FC = () => {
 
         <div className="absolute right-0 top-1/4 z-20 flex flex-col gap-y-4">
           <a
-            href={"https://www.linkedin.com/in/joshmar-morales/"}
+            href={SOCIAL_LINKS.linkedin}
             target="_blank"
           >
             <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-500">
               <FaLinkedin className="text-xl text-white" />
             </div>
           </a>
-          <a href={"https://github.com/kahalagan00"} target="_blank">
+          <a href={SOCIAL_LINKS.github} target="_blank">
             <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-500">
               <FaGithub className="text-xl text-white" />
             </div>
@@ -764,10 +766,9 @@ const ContactSection: React.FC = () => {
         </form>
 
         <div className="absolute bottom-1/4 hidden translate-y-16 flex-col gap-y-8 max-lg:left-0 sm:flex lg:right-0">
-          <div className="flex gap-x-8">{generateDotsArt(3)}</div>
-          <div className="flex gap-x-8">{generateDotsArt(3)}</div>
-          <div className="flex gap-x-8">{generateDotsArt(3)}</div>
-          <div className="flex gap-x-8">{generateDotsArt(3)}</div>
+          {Array.from({ length: 4 }).map((_, index) => (
+            <div key={index} className="flex gap-x-8">{generateDotsArt(3)}</div>
+          ))}
         </div>
       </div>
     </>
@@ -804,14 +805,14 @@ const FooterSection: React.FC = () => {
           <div className="mb-8 flex justify-evenly gap-x-4">
             <a
               target="_blank"
-              href="https://www.linkedin.com/in/joshmar-morales/"
+              href={SOCIAL_LINKS.linkedin}
             >
               <div className={socialButtonParentStyle}>
                 <FaLinkedin className={socialButtonStyle} />
               </div>
             </a>
 
-            <a target="_blank" href="https://github.com/kahalagan00">
+            <a target="_blank" href={SOCIAL_LINKS.github}>
               <div className={socialButtonParentStyle}>
                 <FaGithub className={socialButtonStyle} />
               </div>
