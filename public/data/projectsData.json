@@ -38,5 +38,13 @@
     "githubLink": "https://github.com/kahalagan00/bluelock-drowning-detector",
     "siteLink": "https://github.com/kahalagan00/bluelock-drowning-detector/blob/main/Detection%20Final%20Showcase.mp4",
     "projectDemo": "/images/projects_images/demos/Bluelock_Demo.gif"
+  },
+  {
+    "title": "Egolift University",
+    "dateRange": "Apr 2025 - Current",
+    "summary": "Full-stack web application developed using Spring Boot and React that provides courses and interactive activities about fitness routines. (UNDER DEVELOPMENT)",
+    "githubLink": "https://github.com/kahalagan00",
+    "siteLink": "https://github.com/kahalagan00",
+    "projectDemo": "/images/projects_images/demos/UnderDevelopment_Demo.svg"
   }
 ]

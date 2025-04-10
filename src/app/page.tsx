@@ -148,7 +148,7 @@ const ProfileSection: React.FC = () => {
         <h2
           className={`${rubikRegular.className} text-xl uppercase tracking-wide text-gray-400 sm:text-3xl xl:text-4xl`}
         >
-          Fullstack Engineer
+          Software Engineer
         </h2>
         <h1 className="font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
           Joshmar Morales
@@ -161,11 +161,11 @@ const ProfileSection: React.FC = () => {
         </div>
 
         <div className="absolute left-0 top-0 flex h-[100px] translate-y-32 flex-col justify-between sm:h-[200px]">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <div
-                key={index}
-                className="h-[5px] w-10 rotate-45 rounded-md bg-indigo-400 sm:w-20"
-              ></div>
+          {Array.from({ length: 5 }).map((_, index) => (
+            <div
+              key={index}
+              className="h-[5px] w-10 rotate-45 rounded-md bg-indigo-400 sm:w-20"
+            ></div>
           ))}
         </div>
       </div>
@@ -190,18 +190,15 @@ const ProfileSection: React.FC = () => {
         <ImCross className="absolute right-32 top-32 h-8 w-8 text-white" />
 
         <Image
-          src="/images/Joshmar_Cropped.png"
-          width={380}
-          height={380}
+          src="/images/CV25_PFP.PNG"
+          width={400}
+          height={400}
           alt="Picture of developer"
-          className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-16 scale-90 brightness-150 xl:translate-y-0 xl:scale-100"
+          className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-16 scale-90 brightness-110 xl:translate-y-0 xl:scale-100"
         />
 
         <div className="absolute right-0 top-1/4 z-20 flex flex-col gap-y-4">
-          <a
-            href={SOCIAL_LINKS.linkedin}
-            target="_blank"
-          >
+          <a href={SOCIAL_LINKS.linkedin} target="_blank">
             <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-500">
               <FaLinkedin className="text-xl text-white" />
             </div>
@@ -258,11 +255,11 @@ const AboutSection: React.FC = () => {
           className={`${rubikRegular.className} my-16 w-[400px] tracking-[.015em] text-gray-400 xl:w-[500px] xl:text-lg`}
         >
           I am a Full Stack Software Engineer with a strong passion for creating
-          impactful, user-centered web applications. With a focus on both
-          frontend and backend development, I enjoy building scalable solutions
-          that solve real-world problems. I thrive in dynamic environments and
-          am constantly looking for new opportunities to grow and contribute to
-          meaningful projects.
+          impactful, user-centered web and Android applications. With a focus on
+          both frontend and backend development, I enjoy building scalable
+          solutions that solve real-world problems. I thrive in dynamic
+          environments and am constantly looking for new opportunities to grow
+          and contribute to meaningful projects.
         </p>
         <Link
           href="/contact"
@@ -767,7 +764,9 @@ const ContactSection: React.FC = () => {
 
         <div className="absolute bottom-1/4 hidden translate-y-16 flex-col gap-y-8 max-lg:left-0 sm:flex lg:right-0">
           {Array.from({ length: 4 }).map((_, index) => (
-            <div key={index} className="flex gap-x-8">{generateDotsArt(3)}</div>
+            <div key={index} className="flex gap-x-8">
+              {generateDotsArt(3)}
+            </div>
           ))}
         </div>
       </div>
@@ -803,10 +802,7 @@ const FooterSection: React.FC = () => {
 
         <div className="mt-8 w-full lg:mt-0 lg:w-1/4">
           <div className="mb-8 flex justify-evenly gap-x-4">
-            <a
-              target="_blank"
-              href={SOCIAL_LINKS.linkedin}
-            >
+            <a target="_blank" href={SOCIAL_LINKS.linkedin}>
               <div className={socialButtonParentStyle}>
                 <FaLinkedin className={socialButtonStyle} />
               </div>
