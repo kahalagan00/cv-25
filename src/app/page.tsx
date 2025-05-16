@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 import { IoMdArrowBack, IoMdArrowForward, IoMdDownload } from "react-icons/io";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { useLinkContext } from "./contexts/useLink";
 import MainFooter from "./_components/MainFooter";
 import { DOCUMENT_PATHS, SOCIAL_LINKS } from "./_utils/constants";
@@ -401,6 +402,49 @@ const ProjectSection: React.FC = () => {
           My projects
         </h1>
         <ImCross className="absolute h-16 w-16 translate-y-32 text-white lg:h-20 lg:w-20 lg:translate-y-48" />
+      </div>
+
+      <div className="relative z-10 mt-16 flex flex-col px-4 lg:mt-32 lg:flex-row lg:px-0">
+        <div className="z-20 hidden w-[45%] text-white lg:block">
+          <div className="flex translate-x-16 translate-y-72 flex-col items-end">
+            <h3 className="font-clashmedium text-[4rem] tracking-wide">
+              Egolift University
+            </h3>
+            <p className="font-clashlight text-[2.5rem]">Current</p>
+          </div>
+        </div>
+
+        <div className="relative z-10 lg:w-1/2">
+          <div className="h-[400px] overflow-hidden rounded-[3rem] bg-violet-400 drop-shadow-2xl lg:h-[500px] lg:w-[500px]">
+            {/* <Image
+              src="/images/projects_images/showcases/CV24_Showcase.png"
+              width={1000}
+              height={300}
+              className="mt-16 translate-x-20 -rotate-45 scale-150"
+              alt="Showcase of the CV 24 Portfolio"
+            /> */}
+            <DotLottieReact
+              src="https://lottie.host/622eef5c-b382-411e-abf8-d4a2d14965c6/oR8WjYDVmr.lottie"
+              loop
+              autoplay
+            />
+          </div>
+
+          {/* <div className="absolute bottom-0 left-0 ml-72 hidden translate-y-32 gap-x-8 lg:flex">
+            {generateDotsArt(5)}
+          </div> */}
+        </div>
+
+        <div className="z-20 text-white lg:hidden">
+          <div className="flex flex-col">
+            <h3 className="font-clashmedium text-[3rem] tracking-wide lg:text-[4rem]">
+              CV 24 Portfolio
+            </h3>
+            <p className="font-clashlight text-[2rem] lg:text-end lg:text-[2.5rem]">
+              December 2024
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="relative z-10 mt-32 flex flex-col px-4 lg:flex-row lg:px-0">

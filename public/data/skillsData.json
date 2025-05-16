@@ -4,10 +4,6 @@
     "rating": 9
   },
   {
-    "skill": "Kotlin",
-    "rating": 9
-  },
-  {
     "skill": "JavaScript",
     "rating": 8
   },
@@ -17,10 +13,6 @@
   },
   {
     "skill": "Spring",
-    "rating": 8
-  },
-  {
-    "skill": "Jetpack Compose",
     "rating": 8
   },
   {
@@ -38,5 +30,13 @@
   {
     "skill": "NoSQL",
     "rating": 9
+  },
+  {
+    "skill": "Jetpack Compose",
+    "rating": 3
+  },
+  {
+    "skill": "Kotlin",
+    "rating": 3
   }
 ]
