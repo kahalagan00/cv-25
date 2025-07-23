@@ -149,7 +149,7 @@ const ProfileSection: React.FC = () => {
         <h2
           className={`${rubikRegular.className} text-xl uppercase tracking-wide text-gray-400 sm:text-3xl xl:text-4xl`}
         >
-          Software Engineer
+          Software & Data
         </h2>
         <h1 className="font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
           Joshmar Morales
@@ -158,7 +158,7 @@ const ProfileSection: React.FC = () => {
         <div
           className={`${rubikRegular.className} w-[300px] border-l-2 border-l-gray-200 py-1 pl-8 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
         >
-          Software Engineer & MSCS student working in the United States.
+          MSCS student in the United States
         </div>
 
         <div className="absolute left-0 top-0 flex h-[100px] translate-y-32 flex-col justify-between sm:h-[200px]">

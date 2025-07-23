@@ -58,12 +58,20 @@ const Page: React.FC = () => {
           Education
         </h3>
         <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+          University of Nevada, Las Vegas&nbsp;2025 - 2027
+        </p>
+        <p
+          className={`${rubikRegular.className} mt-1 text-[1rem] text-gray-300 lg:text-[1.5rem]`}
+        >
+          Master of Science in Computer Science
+        </p>
+        <p className="mt-8 font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
           University of Nevada, Las Vegas&nbsp;2019 - 2023
         </p>
         <p
-          className={`${rubikRegular.className} mt-4 text-[1rem] text-gray-300 lg:text-[1.25rem]`}
+          className={`${rubikRegular.className} mt-1 text-[1rem] text-gray-300 lg:text-[1.5rem]`}
         >
-          Bachelor&apos;s of Science in Electrical and Computer Engineering
+          Bachelor of Science in Electrical and Computer Engineering
         </p>
 
         <div className="mt-32">
