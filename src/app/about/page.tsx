@@ -14,6 +14,26 @@ const Page: React.FC = () => {
         </h1>
 
         <h3 className="my-8 font-clashmedium text-[2.25rem] tracking-wide text-white sm:text-[3rem] lg:text-[4rem]">
+          Education
+        </h3>
+        <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+          University of Nevada, Las Vegas&nbsp;2025 - 2027
+        </p>
+        <p
+          className={`${rubikRegular.className} mt-1 text-[1rem] text-gray-300 lg:text-[1.5rem]`}
+        >
+          Master of Science in Computer Science
+        </p>
+        <p className="mt-8 font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+          University of Nevada, Las Vegas&nbsp;2019 - 2023
+        </p>
+        <p
+          className={`${rubikRegular.className} mt-1 text-[1rem] text-gray-300 lg:text-[1.5rem]`}
+        >
+          Bachelor of Science in Electrical and Computer Engineering
+        </p>
+
+        <h3 className="my-8 font-clashmedium text-[2.25rem] tracking-wide text-white sm:text-[3rem] lg:text-[4rem]">
           Experience
         </h3>
         <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
@@ -52,26 +72,6 @@ const Page: React.FC = () => {
         >
           &#x2022;&nbsp;Thoroughly documented codebase changes, improving team
           productivity and onboarding efficiency.
-        </p>
-
-        <h3 className="my-8 font-clashmedium text-[2.25rem] tracking-wide text-white sm:text-[3rem] lg:text-[4rem]">
-          Education
-        </h3>
-        <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
-          University of Nevada, Las Vegas&nbsp;2025 - 2027
-        </p>
-        <p
-          className={`${rubikRegular.className} mt-1 text-[1rem] text-gray-300 lg:text-[1.5rem]`}
-        >
-          Master of Science in Computer Science
-        </p>
-        <p className="mt-8 font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
-          University of Nevada, Las Vegas&nbsp;2019 - 2023
-        </p>
-        <p
-          className={`${rubikRegular.className} mt-1 text-[1rem] text-gray-300 lg:text-[1.5rem]`}
-        >
-          Bachelor of Science in Electrical and Computer Engineering
         </p>
 
         <div className="mt-32">
