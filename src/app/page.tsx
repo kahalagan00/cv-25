@@ -158,7 +158,7 @@ const ProfileSection: React.FC = () => {
         <div
           className={`${rubikRegular.className} w-[300px] border-l-2 border-l-gray-200 py-1 pl-8 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
         >
-          MSCS student in the United States
+          MS in Computer Science student in the United States
         </div>
 
         <div className="absolute left-0 top-0 flex h-[100px] translate-y-32 flex-col justify-between sm:h-[200px]">

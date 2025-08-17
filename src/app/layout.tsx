@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "Joshmar Morales",
   description: "Personal portfolio of Joshmar Morales created with Next.js",
   icons: {
-    icon: "/svgs/panda.svg", // /public path
+    icon: "/images/Joshmar_Morales_Logo_2.png", // /public path
   },
 };
 
