@@ -17,7 +17,7 @@ const Page: React.FC = () => {
           Education
         </h3>
         <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
-          University of Nevada, Las Vegas&nbsp;2025 - 2027
+          University of Nevada, Las Vegas&nbsp;&nbsp;&nbsp;&nbsp;2025 - 2027
         </p>
         <p
           className={`${rubikRegular.className} mt-1 text-[1rem] text-gray-300 lg:text-[1.5rem]`}
@@ -25,7 +25,7 @@ const Page: React.FC = () => {
           Master of Science in Computer Science
         </p>
         <p className="mt-8 font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
-          University of Nevada, Las Vegas&nbsp;2019 - 2023
+          University of Nevada, Las Vegas&nbsp;&nbsp;&nbsp;&nbsp;2019 - 2023
         </p>
         <p
           className={`${rubikRegular.className} mt-1 text-[1rem] text-gray-300 lg:text-[1.5rem]`}
@@ -37,7 +37,26 @@ const Page: React.FC = () => {
           Experience
         </h3>
         <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
-          JCM Global&nbsp;2023 - 2024
+          UNLV College of Engineering&nbsp;&nbsp;&nbsp;&nbsp;2025 - Present
+        </p>
+        <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+          Graduate Teaching Assistant
+        </p>
+        <p
+          className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
+        >
+          &#x2022;&nbsp;Offer tutoring and host office hours to help students
+          grasp challenging computer science concepts.
+        </p>
+        <p
+          className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
+        >
+          &#x2022;&nbsp;Guide students through assignments and provide feedback
+          to enhance their problem-solving skills.
+        </p>
+
+        <p className="mt-16 font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+          JCM Global&nbsp;&nbsp;&nbsp;&nbsp;2023 - 2024
         </p>
         <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
           Software Engineer
