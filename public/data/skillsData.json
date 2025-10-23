@@ -1,7 +1,7 @@
 [
   {
-    "skill": "Java",
-    "rating": 9
+    "skill": "C#",
+    "rating": 8
   },
   {
     "skill": "Python",
@@ -16,7 +16,7 @@
     "rating": 8
   },
   {
-    "skill": "Spring",
+    "skill": ".NET",
     "rating": 8
   },
   {
@@ -24,7 +24,7 @@
     "rating": 9
   },
   {
-    "skill": "Node",
+    "skill": "Java",
     "rating": 7
   },
   {

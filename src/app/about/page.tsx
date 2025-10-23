@@ -37,7 +37,7 @@ const Page: React.FC = () => {
           Experience
         </h3>
         <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
-          UNLV College of Engineering&nbsp;&nbsp;&nbsp;&nbsp;2025 - Present
+          UNLV College of Engineering&nbsp;&nbsp;&nbsp;&nbsp;2025
         </p>
         <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
           Graduate Teaching Assistant
