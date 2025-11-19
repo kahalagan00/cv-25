@@ -17,7 +17,7 @@ const Page: React.FC = () => {
           Education
         </h3>
         <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
-          University of Nevada, Las Vegas&nbsp;&nbsp;&nbsp;&nbsp;2025 - 2027
+          University of Nevada, Las Vegas&nbsp;&nbsp;&nbsp;&nbsp;2025 - Present
         </p>
         <p
           className={`${rubikRegular.className} mt-1 text-[1rem] text-gray-300 lg:text-[1.5rem]`}
@@ -30,14 +30,28 @@ const Page: React.FC = () => {
         <p
           className={`${rubikRegular.className} mt-1 text-[1rem] text-gray-300 lg:text-[1.5rem]`}
         >
-          Bachelor of Science in Electrical and Computer Engineering
+          Bachelor of Science in Computer Engineering
         </p>
 
         <h3 className="my-8 font-clashmedium text-[2.25rem] tracking-wide text-white sm:text-[3rem] lg:text-[4rem]">
           Experience
         </h3>
+
         <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
-          UNLV College of Engineering&nbsp;&nbsp;&nbsp;&nbsp;2025
+          Viticus Group (WVC)&nbsp;&nbsp;&nbsp;&nbsp;Oct 2025 - Present
+        </p>
+        <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+          Fullstack Software Engineer
+        </p>
+        <p
+          className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
+        >
+          &#x2022;&nbsp;Develop internal products that optimizes the company's workflow in 
+          creating and selling courses. 
+        </p>
+
+        <p className="mt-16 font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+          UNLV College of Engineering&nbsp;&nbsp;&nbsp;&nbsp;Aug 2025 - Nov 2025
         </p>
         <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
           Graduate Teaching Assistant
@@ -54,9 +68,15 @@ const Page: React.FC = () => {
           &#x2022;&nbsp;Guide students through assignments and provide feedback
           to enhance their problem-solving skills.
         </p>
+        <p 
+          className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
+        >
+
+          &#x2022;&nbsp;Assisted professor with accreditation process for the university.
+        </p>
 
         <p className="mt-16 font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
-          JCM Global&nbsp;&nbsp;&nbsp;&nbsp;2023 - 2024
+          JCM Global&nbsp;&nbsp;&nbsp;&nbsp; Aug 2023 - Aug 2024
         </p>
         <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
           Software Engineer

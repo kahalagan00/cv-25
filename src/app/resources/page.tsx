@@ -18,8 +18,8 @@ const Page: React.FC = () => {
             className={`${rubikRegular.className} mb-8 pr-8 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
           >
             I am not sponsored by these people or companies. I just simply found
-            these resources beneficial to my growth as a programmer, engineer,
-            and cybersecurity enthusiast.
+            these resources beneficial to my growth as a Software Engineer, Tech Enthusiast
+            and overall thinker.
           </div>
 
           <p className="font-clashlight text-[1rem] text-white sm:text-[1.5rem] lg:text-[2rem]">

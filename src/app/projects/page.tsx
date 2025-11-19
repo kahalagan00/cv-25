@@ -86,7 +86,7 @@ const ProjectRow = ({ project }: { project: Project }) => {
             <div
               className={`ml-8 mt-16 text-black ${rubikRegular.className} relative h-1/2 w-full text-3xl`}
             >
-              <p className="">Still under development...</p>
+              <p className="">Under development...</p>
               <Image
                 alt="Project under construction photo"
                 src={"/images/projects_images/demos/UnderDevelopment_Demo.svg"}
