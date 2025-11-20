@@ -46,7 +46,7 @@ const Page: React.FC = () => {
         <p
           className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
         >
-          &#x2022;&nbsp;Develop internal products that optimizes the company's workflow in 
+          &#x2022;&nbsp;Develop internal products that optimizes the company&apos;s workflow in 
           creating and selling courses. 
         </p>
 
