@@ -47,7 +47,19 @@ const Page: React.FC = () => {
           className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
         >
           &#x2022;&nbsp;Develop internal products that optimizes the company&apos;s workflow in 
-          creating and selling courses. 
+          creating and selling courses.
+        </p>
+        <p
+          className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
+        >
+          &#x2022;&nbsp;Resolved defects across internal web applications to strengthen security
+          controls and reduce risk of data exposure.
+        </p>
+        <p
+          className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
+        >
+          &#x2022;&nbsp;Built and deployed in-house tooling to replace a third-party service, 
+          reducing vendor costs and improving operational efficiency.
         </p>
 
         <p className="mt-16 font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">

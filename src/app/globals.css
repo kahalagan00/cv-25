@@ -1,8 +1,8 @@
+@import url("clash-display.css"); /* Imports must always be at the top */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("clash-display.css");
 
 /* FOR DEBUGGING */
 /* Check for overflows in the entire application */

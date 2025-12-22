@@ -58,10 +58,8 @@ export default function RootLayout({
           <div className="mx-auto max-w-screen-2xl px-4">
             <Header />
           </div>
-          {/* <main className="mx-auto mt-4 max-w-screen-2xl overflow-hidden bg-[#13102b]"> */}
           <main className="relative mt-4 overflow-hidden bg-[#13102b]">
             {children}
-
             <Image
               alt="Whole page artwork"
               src={"/images/WholePage_BG1.png"}

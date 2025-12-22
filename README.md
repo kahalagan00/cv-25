@@ -1,6 +1,6 @@
-# CV 25 Portfolio
+# CV Portfolio
 
-This personal portfolio is a showcase of my skills, projects, and experience as a Full Stack Developer. It highlights my ability to create functional, visually appealing, and well-structured web applications using modern technologies.
+This personal portfolio is a showcase of my skills, projects, and experience as a Full Stack Engineer. It highlights my ability to create functional, visually appealing, and well-structured web applications using modern technologies.
 
 > [!NOTE]
 > Will be updated monthly.
@@ -20,7 +20,9 @@ This personal portfolio is a showcase of my skills, projects, and experience as 
 ### Main Full Stack Projects
 
 - <a href="https://jhuvnutrition.fit">Jhuv Nutrition</a>
+- Weakling Program Portal (In development)
 - EgoLift University (In development)
+
 
 ### Mini Side Projects
 
@@ -30,11 +32,12 @@ This personal portfolio is a showcase of my skills, projects, and experience as 
 ### University Projects
 
 - Bluelock (Senior Design Capstone)
-- Rader Distance Detector
+- Radar Distance Detector
 
 ## Future features
 
 - Dark mode
+- Foreign language support
 
 ## Resources
 
