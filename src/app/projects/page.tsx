@@ -24,6 +24,7 @@ const Page: React.FC = () => {
   const [projectsData, setProjectsData] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  // TODO: Use TansStack query here instead
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -49,6 +50,7 @@ const Page: React.FC = () => {
     return <p>Loading...</p>;
   }
 
+  // TODO: Add Weakling Portal project in the list
   return (
     <section className="relative w-screen">
       <div className="relative z-10 mx-auto my-16 w-full max-w-screen-2xl px-4">

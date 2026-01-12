@@ -46,5 +46,13 @@
     "githubLink": "https://github.com/kahalagan00",
     "siteLink": "https://github.com/kahalagan00",
     "projectDemo": "/images/projects_images/demos/UnderDevelopment_Demo.svg"
+  },
+  {
+    "title": "Weakling Program Portal",
+    "dateRange": "Jan 2026 - Current",
+    "summary": "Application to assist athletes and coaches in organizing workout routines for powerlifting endeavours.",
+    "githubLink": "https://github.com/kahalagan00/weakling-program-portal-client",
+    "siteLink": "https://github.com/kahalagan00",
+    "projectDemo": "/images/projects_images/demos/UnderDevelopment_Demo.svg"
   }
 ]
