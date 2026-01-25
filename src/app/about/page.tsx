@@ -46,7 +46,7 @@ const Page: React.FC = () => {
         <p
           className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
         >
-          &#x2022;&nbsp;Develop internal products that optimizes the company&apos;s workflow in 
+          &#x2022;&nbsp;Develop internal products that optimizes the company&apos;s workflow in
           creating and selling courses.
         </p>
         <p
@@ -58,7 +58,7 @@ const Page: React.FC = () => {
         <p
           className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
         >
-          &#x2022;&nbsp;Built and deployed in-house tooling to replace a third-party service, 
+          &#x2022;&nbsp;Built and deployed in-house tooling to replace a third-party service,
           reducing vendor costs and improving operational efficiency.
         </p>
 
@@ -80,7 +80,7 @@ const Page: React.FC = () => {
           &#x2022;&nbsp;Guide students through assignments and provide feedback
           to enhance their problem-solving skills.
         </p>
-        <p 
+        <p
           className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
         >
 
@@ -132,5 +132,34 @@ const Page: React.FC = () => {
     </section>
   );
 };
+
+// TODO: Utilize this component to shorten code above
+const ExperienceRow = ({ company, title, bulletPoints }: {
+  company: string
+  title: string;
+  bulletPoints: string[];
+}) => {
+
+  return (
+    <>
+      <p className="mt-16 font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+        {company}
+      </p>
+      <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+        {title}
+      </p>
+      <ul>
+        {bulletPoints.map((bp, idx) =>
+          <li
+            key={idx}
+            className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
+          >
+            {bp}
+          </li>
+        )}
+      </ul>
+    </>
+  );
+}
 
 export default Page;

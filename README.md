@@ -3,7 +3,7 @@
 This personal portfolio is a showcase of my skills, projects, and experience as a Full Stack Engineer. It highlights my ability to create functional, visually appealing, and well-structured web applications using modern technologies.
 
 > [!NOTE]
-> Will be updated monthly.
+> Will be updated every month or every 2 months.
 
 ### Technologies
 
@@ -23,7 +23,6 @@ This personal portfolio is a showcase of my skills, projects, and experience as 
 - Weakling Program Portal (In development)
 - EgoLift University (In development)
 
-
 ### Mini Side Projects
 
 - <a href="https://joshmar-weather-app.netlify.app">Weather App</a>
@@ -38,6 +37,8 @@ This personal portfolio is a showcase of my skills, projects, and experience as 
 
 - Dark mode
 - Foreign language support
+- 3D Models
+- Animation
 
 ## Resources
 
