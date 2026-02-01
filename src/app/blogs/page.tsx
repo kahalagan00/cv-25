@@ -28,14 +28,14 @@ const Page: React.FC = () => {
           <h1 className="mb-16 font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
             Blogs
           </h1>
-          {/* <div
+          <div
             className={`${rubikRegular.className} mb-8 pr-8 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
           >
             Here I will write about my thoughts, predictions, and learnings.
             Things are always changing in the world and it is important for us
             to learn and adapt. We are mainly going to talk about Software
             Development, AI and Cybersecurity.
-          </div> */}
+          </div>
           {blogsData.map((data: BlogType) => (
             <BlogBody
               key={data.title}
@@ -56,15 +56,15 @@ const Page: React.FC = () => {
 
 export default Page;
 
+interface BlogBodyProps {
+  title: string;
+  content: string;
+}
+
 const BlogBody = ({
   title,
-  // summary,
   content,
-}: {
-  title: string;
-  // summary: string;
-  content: string;
-}) => {
+}: BlogBodyProps) => {
   return (
     <div className="border-t-2 border-t-fuchsia-500 py-8">
       <h4 className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
