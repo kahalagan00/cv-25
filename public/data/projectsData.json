@@ -4,7 +4,7 @@
     "dateRange": "Nov 2024 - Current",
     "summary": "Jhuv Nutrition is a full-stack e-commerce application built with the MERN Stack (MongoDB, Express, React, Node.js) and styled using Tailwind CSS for a modern, responsive design. The backend is powered by Node.js and Express, providing a RESTful API to manage product data, user authentication, and orders. MongoDB serves as the database, storing product information, user profiles, and transaction history. On the frontend, React handles the user interface, enabling dynamic product browsing, secure login, and a smooth checkout process, while React Router ensures seamless navigation throughout the site.",
     "githubLink": "https://github.com/kahalagan00/nutri-store-app-v2",
-    "siteLink": "https://jhuvnutrition.fit/",
+    "siteLink": "https://jhuvnutrition.com/",
     "projectDemo": "/images/projects_images/demos/Jhuv_Nutrition_Demo.gif"
   },
   {

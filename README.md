@@ -19,7 +19,7 @@ This personal portfolio is a showcase of my skills, projects, and experience as 
 
 ### Main Full Stack Projects
 
-- <a href="https://jhuvnutrition.fit">Jhuv Nutrition</a>
+- <a href="https://jhuvnutrition.com">Jhuv Nutrition</a>
 - Weakling Program Portal (In development)
 - EgoLift University (In development)
 
