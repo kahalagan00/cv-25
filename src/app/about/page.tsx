@@ -16,13 +16,13 @@ const Page: React.FC = () => {
         <h3 className="my-8 font-clashmedium text-[2.25rem] tracking-wide text-white sm:text-[3rem] lg:text-[4rem]">
           Education
         </h3>
-        <ExperienceRow
-          company="University of Nevada, Las Vegas"
-          title="Master of Science in Computer Science"
-          bulletPoints={[
-            "Artificial Intelligence, Machine Learning, Advanced Algorithms",
-          ]}
-        />
+        {/* <ExperienceRow */}
+        {/*   company="University of Nevada, Las Vegas" */}
+        {/*   title="Master of Science in Computer Science" */}
+        {/*   bulletPoints={[ */}
+        {/*     "Artificial Intelligence, Machine Learning, Advanced Algorithms", */}
+        {/*   ]} */}
+        {/* /> */}
         <ExperienceRow
           company="University of Nevada, Las Vegas"
           title="Bachelor of Science in Electrical Computer Engineering"
