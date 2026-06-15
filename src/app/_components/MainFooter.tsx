@@ -1,3 +1,4 @@
+"use client";
 import { Rubik } from "next/font/google";
 import { useLinkContext } from "../contexts/useLink";
 import Link from "next/link";
