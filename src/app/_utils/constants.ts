@@ -1,5 +1,5 @@
 export const DOCUMENT_PATHS = {
-  resume: "documents/Joshmar_Morales_Resume_SWE.pdf",
+  resume: "/documents/Joshmar_Morales_Resume_SWE.pdf",
   // Add more document paths as needed
 };
 

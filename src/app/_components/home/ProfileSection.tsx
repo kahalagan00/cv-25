@@ -44,12 +44,16 @@ const ProfileSection: React.FC = () => {
 
         <div className="absolute left-16 top-1/4 z-20 flex h-32 w-32 -translate-x-12 items-center justify-center rounded-full bg-fuchsia-800 bg-opacity-70 lg:-translate-x-0 xl:h-36 xl:w-36">
           <div className="flex h-24 w-24 items-center justify-center rounded-full bg-fuchsia-700 bg-opacity-80 xl:h-28 xl:w-28">
-            <button className="flex h-16 w-16 flex-col items-center justify-center rounded-full bg-fuchsia-600 transition-transform ease-in-out hover:bg-fuchsia-500 active:translate-y-1 xl:h-20 xl:w-20">
+            <a
+              href={DOCUMENT_PATHS.resume}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open CV as PDF"
+              className="flex h-16 w-16 flex-col items-center justify-center rounded-full bg-fuchsia-600 transition-transform ease-in-out hover:bg-fuchsia-500 active:translate-y-1 xl:h-20 xl:w-20"
+            >
               <IoMdDownload className="text-xl text-white xl:text-2xl" />
-              <a target="_blank" href={DOCUMENT_PATHS.resume}>
-                <span className="text-xl text-white xl:text-2xl">CV</span>
-              </a>
-            </button>
+              <span className="text-xl text-white xl:text-2xl">CV</span>
+            </a>
           </div>
         </div>
 

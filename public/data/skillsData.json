@@ -20,6 +20,14 @@
     "rating": 8
   },
   {
+    "skill": "Dart",
+    "rating": 7
+  },
+  {
+    "skill": "Flutter",
+    "rating": 7
+  },
+  {
     "skill": "React",
     "rating": 9
   },
