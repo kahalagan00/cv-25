@@ -10,18 +10,18 @@ const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 const ProfileSection: React.FC = () => {
   return (
     <>
-      <div className="relative z-10 w-full pl-16 pt-16 sm:pl-24 lg:w-1/2">
+      <div className="relative z-10 w-full pl-16 pr-4 pt-16 sm:pl-24 lg:w-1/2">
         <h2
           className={`${rubikRegular.className} text-xl uppercase tracking-wide text-gray-400 sm:text-3xl xl:text-4xl`}
         >
           Software & Data
         </h2>
-        <h1 className="font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
+        <h1 className="break-words font-clashsemibold text-[2.5rem] leading-tight text-white sm:text-[6rem] lg:text-[5rem] xl:text-[6.5rem] 2xl:text-[8rem]">
           Joshmar Morales
         </h1>
 
         <div
-          className={`${rubikRegular.className} w-[300px] border-l-2 border-l-gray-200 py-1 pl-8 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
+          className={`${rubikRegular.className} max-w-[300px] border-l-2 border-l-gray-200 py-1 pl-8 text-sm text-gray-400 sm:text-xl xl:max-w-[420px] xl:text-2xl`}
         >
           Fullstack Software Engineer in the United States
         </div>
