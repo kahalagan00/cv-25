@@ -48,8 +48,12 @@ const AboutSection: React.FC = () => {
       <h1 className="absolute left-1/2 top-0 z-10 w-[300px] -translate-x-1/2 -translate-y-8 text-center font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] lg:translate-y-0 lg:text-start xl:text-[8rem]">
         About me
       </h1>
-      <Link href="/about" className="z-10">
-        <IoMdArrowForward className="absolute right-0 top-1/4 w-[300px] -translate-y-20 font-clashsemibold text-[8rem] leading-tight text-fuchsia-600 xl:-translate-y-1/4 xl:text-[10rem]" />
+      <Link
+        href="/about"
+        aria-label="Read more about me"
+        className="absolute right-0 top-1/4 z-20 -translate-y-20 text-fuchsia-600 xl:-translate-y-1/4"
+      >
+        <IoMdArrowForward aria-hidden className="text-[8rem] xl:text-[10rem]" />
       </Link>
     </>
   );

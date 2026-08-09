@@ -126,11 +126,10 @@ const Header: React.FC = () => {
         {/* Single underline that slides between items. */}
         <div
           aria-hidden="true"
-          className={`pointer-events-none absolute -bottom-1 left-0 h-2 w-6 rounded-full bg-fuchsia-600 lg:w-10 ${
-            hasPainted.current
+          className={`pointer-events-none absolute -bottom-1 left-0 h-2 w-6 rounded-full bg-fuchsia-600 lg:w-10 ${hasPainted.current
               ? "transition-[transform,opacity] duration-300 ease-out motion-reduce:transition-none"
               : ""
-          }`}
+            }`}
           style={{
             transform: `translateX(calc(${underlineX ?? 0}px - 50%))`,
             opacity: activeIndex === -1 || underlineX === null ? 0 : 1,

@@ -2,8 +2,6 @@
 import ProfileSection from "./_components/home/ProfileSection";
 import AboutSection from "./_components/home/AboutSection";
 import TechnicalSection from "./_components/home/TechnicalSection";
-import ProjectSection from "./_components/home/ProjectSection";
-import BlogsSection from "./_components/home/BlogsSection";
 import ContactSection from "./_components/home/ContactSection";
 import FooterSection from "./_components/home/FooterSection";
 
@@ -27,19 +25,6 @@ const Page: React.FC = () => {
           <TechnicalSection />
         </div>
       </section>
-
-      {/* <section className="relative w-screen"> */}
-      {/*   <div className="relative mx-auto mb-64 w-full max-w-screen-2xl px-4"> */}
-      {/*     <ProjectSection /> */}
-      {/*   </div> */}
-      {/* </section> */}
-
-      {/* <section className="relative w-screen"> */}
-      {/*   <div className="relative mx-auto mb-64 w-full max-w-screen-2xl px-4"> */}
-      {/*     <BlogsSection /> */}
-      {/*   </div> */}
-      {/* </section> */}
-
       <section className="relative w-screen">
         <div className="relative mx-auto mb-64 w-full max-w-screen-2xl px-4">
           <ContactSection />
