@@ -1,9 +1,8 @@
 "use client";
 import { Rubik } from "next/font/google";
 import Image from "next/image";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaLinkedin } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
-import { IoMdDownload } from "react-icons/io";
 import { DOCUMENT_PATHS, SOCIAL_LINKS } from "../../_utils/constants";
 
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
@@ -37,7 +36,7 @@ const ProfileSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative z-10 mt-8 h-[500px] w-full overflow-hidden lg:mt-0 lg:h-auto lg:w-1/2">
+      <div className="relative z-10 mt-8 h-[500px] w-full overflow-hidden lg:mt-0 lg:h-auto lg:min-h-[500px] lg:w-1/2">
         <div className="absolute left-1/2 top-1/4 flex h-[350px] w-[350px] -translate-x-1/2 translate-y-16 transform items-center justify-center rounded-full border-2 border-fuchsia-500 bg-transparent lg:h-[400px] lg:w-[400px] lg:translate-y-0 xl:h-[500px] xl:w-[500px]">
           <div className="h-[90%] w-[90%] rounded-full bg-gradient-to-r from-indigo-300 via-violet-300 to-fuchsia-300 opacity-80 mix-blend-multiply"></div>
         </div>
@@ -48,10 +47,10 @@ const ProfileSection: React.FC = () => {
               href={DOCUMENT_PATHS.resume}
               target="_blank"
               rel="noreferrer"
-              aria-label="Open CV as PDF"
+              aria-label="Open CV as a PDF in a new tab"
               className="flex h-16 w-16 flex-col items-center justify-center rounded-full bg-fuchsia-600 transition-transform ease-in-out hover:bg-fuchsia-500 active:translate-y-1 xl:h-20 xl:w-20"
             >
-              <IoMdDownload className="text-xl text-white xl:text-2xl" />
+              <FaExternalLinkAlt className="text-base text-white xl:text-lg" />
               <span className="text-xl text-white xl:text-2xl">CV</span>
             </a>
           </div>
