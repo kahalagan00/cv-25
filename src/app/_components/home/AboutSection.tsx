@@ -12,10 +12,10 @@ const AboutSection: React.FC = () => {
   return (
     <>
       <div className="relative z-10 flex w-full justify-center lg:w-3/5 lg:justify-start">
-        <div className="relative aspect-square w-full max-w-[400px] overflow-hidden rounded-full bg-pink-200 sm:max-w-[500px] xl:max-w-[700px]">
+        <div className="relative aspect-square w-full max-w-[400px] overflow-hidden rounded-full bg-indigo-950 sm:max-w-[500px] xl:max-w-[700px]">
           <Image
             src="/images/Coding_Desk.jpg"
-            alt="Picture of desk"
+            alt=""
             fill
             sizes="(min-width: 1280px) 700px, (min-width: 640px) 500px, 400px"
             className="object-cover object-[center_25%]"
@@ -41,14 +41,14 @@ const AboutSection: React.FC = () => {
           Contact me
         </Link>
 
-        <div className="absolute bottom-0 right-0 mb-8 flex gap-x-8">
+        <div aria-hidden className="absolute bottom-0 right-0 mb-8 flex gap-x-8">
           {generateDotsArt(5)}
         </div>
       </div>
 
-      <h1 className="absolute left-1/2 top-0 z-10 w-max max-w-full -translate-x-1/2 -translate-y-8 text-center font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] lg:translate-y-0 xl:text-[8rem]">
+      <h2 className="absolute left-1/2 top-0 z-10 w-max max-w-full -translate-x-1/2 -translate-y-8 text-center font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] lg:translate-y-0 xl:text-[8rem]">
         About me
-      </h1>
+      </h2>
       <Link
         href="/about"
         aria-label="Read more about me"
