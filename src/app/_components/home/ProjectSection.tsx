@@ -4,14 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { ImCross } from "react-icons/im";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { useLinkContext } from "../../contexts/useLink";
 import { generateDotsArt } from "../../_utils/dotsArt";
 
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 
 const ProjectSection: React.FC = () => {
-  const { setCurrentLink } = useLinkContext();
-
   return (
     <>
       <div className="relative z-10 flex justify-end">
@@ -175,7 +172,7 @@ const ProjectSection: React.FC = () => {
       </div>
 
       <div className="relative z-10 mt-32 flex justify-center">
-        <Link href="/projects" onClick={() => setCurrentLink("projects")}>
+        <Link href="/projects">
           <p
             className={`${rubikRegular.className} text-2xl tracking-wide text-fuchsia-600 hover:underline`}
           >

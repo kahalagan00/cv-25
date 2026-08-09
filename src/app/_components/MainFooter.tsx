@@ -1,12 +1,10 @@
 "use client";
 import { Rubik } from "next/font/google";
-import { useLinkContext } from "../contexts/useLink";
 import Link from "next/link";
 
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 
 const MainFooter: React.FC = () => {
-  const { setCurrentLink } = useLinkContext();
   return (
     <div>
       <div className="relative z-10 mb-4 flex border-t-2 border-t-fuchsia-500 px-4">
@@ -17,25 +15,13 @@ const MainFooter: React.FC = () => {
           <div
             className={`${rubikRegular.className} mt-4 flex justify-center gap-x-8 text-base tracking-wide text-white md:mt-0 md:w-1/2 md:justify-end md:text-lg xl:gap-x-32`}
           >
-            <Link
-              onClick={() => setCurrentLink("home")}
-              href="/"
-              className="hover:underline"
-            >
+            <Link href="/" className="hover:underline">
               Home
             </Link>
-            <Link
-              href="/blogs"
-              onClick={() => setCurrentLink("blogs")}
-              className="hover:underline"
-            >
+            <Link href="/blogs" className="hover:underline">
               Blogs
             </Link>
-            <Link
-              onClick={() => setCurrentLink("contact")}
-              href="/contact"
-              className="hover:underline"
-            >
+            <Link href="/contact" className="hover:underline">
               Contact
             </Link>
           </div>

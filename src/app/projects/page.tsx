@@ -3,7 +3,6 @@ import { Rubik } from "next/font/google";
 import Image from "next/image";
 import { FaGithub, FaLink } from "react-icons/fa";
 import MainFooter from "../_components/MainFooter";
-import SetActiveLink from "../_components/SetActiveLink";
 import projectsJson from "../../../public/data/projectsData.json";
 
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
@@ -31,7 +30,6 @@ export const metadata: Metadata = {
 const Page: React.FC = () => {
   return (
     <section className="relative w-screen">
-      <SetActiveLink link="projects" />
       <div className="relative z-10 mx-auto my-16 w-full max-w-screen-2xl px-4">
         <h1 className="mb-16 font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
           Projects

@@ -3,14 +3,12 @@ import { Rubik } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { IoMdArrowForward } from "react-icons/io";
-import { useLinkContext } from "../../contexts/useLink";
 import { generateDotsArt } from "../../_utils/dotsArt";
 
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 const rubikBold = Rubik({ weight: "700", subsets: ["latin"] });
 
 const AboutSection: React.FC = () => {
-  const { setCurrentLink } = useLinkContext();
   return (
     <>
       <div className="relative z-10 flex w-full justify-center lg:w-3/5 lg:justify-start">
@@ -50,11 +48,7 @@ const AboutSection: React.FC = () => {
       <h1 className="absolute left-1/2 top-0 z-10 w-[300px] -translate-x-1/2 -translate-y-8 text-center font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] lg:translate-y-0 lg:text-start xl:text-[8rem]">
         About me
       </h1>
-      <Link
-        href="/about"
-        onClick={() => setCurrentLink("about")}
-        className="z-10"
-      >
+      <Link href="/about" className="z-10">
         <IoMdArrowForward className="absolute right-0 top-1/4 w-[300px] -translate-y-20 font-clashsemibold text-[8rem] leading-tight text-fuchsia-600 xl:-translate-y-1/4 xl:text-[10rem]" />
       </Link>
     </>

@@ -23,7 +23,7 @@ const ProfileSection: React.FC = () => {
         <div
           className={`${rubikRegular.className} max-w-[300px] border-l-2 border-l-gray-200 py-1 pl-8 text-sm text-gray-400 sm:text-xl xl:max-w-[420px] xl:text-2xl`}
         >
-          Fullstack Software Engineer in the United States
+          Fullstack and Mobile Engineer in the United States
         </div>
 
         <div

@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ImCross } from "react-icons/im";
-import { useLinkContext } from "../../contexts/useLink";
 
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 const rubikBold = Rubik({ weight: "700", subsets: ["latin"] });
@@ -18,8 +17,6 @@ const BlogCard = ({
   summary: string;
   index: number;
 }) => {
-  const { setCurrentLink } = useLinkContext();
-
   return (
     <div className="my-16">
       <div className="relative mb-8 h-[400px] w-full overflow-hidden rounded-[3rem] bg-slate-300">
@@ -34,7 +31,7 @@ const BlogCard = ({
       <p className={`${rubikRegular.className} mb-6 text-xl text-gray-400`}>
         {summary}
       </p>
-      <Link href="/blogs" onClick={() => setCurrentLink("blogs")}>
+      <Link href="/blogs">
         <p
           className={`${rubikRegular.className} text-2xl tracking-wide text-fuchsia-600 hover:underline`}
         >
@@ -47,7 +44,6 @@ const BlogCard = ({
 
 const BlogsSection: React.FC = () => {
   const [blogsData, setBlogsData] = useState([]);
-  const { setCurrentLink } = useLinkContext();
 
   useEffect(() => {
     fetch("/data/blogsData.json")
@@ -79,7 +75,6 @@ const BlogsSection: React.FC = () => {
         )}
 
         <Link
-          onClick={() => setCurrentLink("blogs")}
           href="/blogs"
           className={`${rubikBold.className} mx-auto flex w-48 items-center justify-center rounded-full bg-fuchsia-700 px-9 py-4 text-lg hover:bg-fuchsia-600`}
         >
@@ -90,7 +85,6 @@ const BlogsSection: React.FC = () => {
       <div className="relative z-10 hidden w-full gap-x-8 text-white lg:flex">
         <div className="w-1/2">
           <Link
-            onClick={() => setCurrentLink("blogs")}
             href="/blogs"
             className={`${rubikBold.className} mt-32 flex w-48 items-center justify-center rounded-full bg-fuchsia-700 px-9 py-4 text-lg hover:bg-fuchsia-600`}
           >
