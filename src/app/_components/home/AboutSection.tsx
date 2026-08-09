@@ -17,7 +17,8 @@ const AboutSection: React.FC = () => {
             src="/images/Coding_Desk.jpg"
             alt="Picture of desk"
             fill
-            className="-translate-y-18 h-full w-full object-cover"
+            sizes="(min-width: 1280px) 700px, (min-width: 640px) 500px, 400px"
+            className="object-cover object-[center_25%]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 opacity-80 mix-blend-multiply"></div>
         </div>
@@ -45,7 +46,7 @@ const AboutSection: React.FC = () => {
         </div>
       </div>
 
-      <h1 className="absolute left-1/2 top-0 z-10 w-[300px] -translate-x-1/2 -translate-y-8 text-center font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] lg:translate-y-0 lg:text-start xl:text-[8rem]">
+      <h1 className="absolute left-1/2 top-0 z-10 w-max max-w-full -translate-x-1/2 -translate-y-8 text-center font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] lg:translate-y-0 xl:text-[8rem]">
         About me
       </h1>
       <Link
