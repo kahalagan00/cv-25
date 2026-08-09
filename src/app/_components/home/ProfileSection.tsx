@@ -26,7 +26,10 @@ const ProfileSection: React.FC = () => {
           Fullstack Software Engineer in the United States
         </div>
 
-        <div className="absolute left-0 top-0 flex h-[100px] translate-y-32 flex-col justify-between sm:h-[200px]">
+        <div
+          aria-hidden
+          className="absolute left-0 top-0 flex h-[100px] translate-y-32 flex-col justify-between sm:h-[200px]"
+        >
           {Array.from({ length: 5 }).map((_, index) => (
             <div
               key={index}
@@ -56,24 +59,38 @@ const ProfileSection: React.FC = () => {
           </div>
         </div>
 
-        <ImCross className="absolute left-1/4 top-9 h-8 w-8 text-white" />
-        <ImCross className="absolute right-32 top-32 h-8 w-8 text-white" />
+        <ImCross
+          aria-hidden
+          className="absolute left-1/4 top-9 h-8 w-8 text-white"
+        />
+        <ImCross
+          aria-hidden
+          className="absolute right-32 top-32 h-8 w-8 text-white"
+        />
 
         <Image
           src="/images/CV25_PFP.PNG"
           width={400}
           height={400}
-          alt="Picture of developer"
+          alt="Joshmar Morales"
           className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-16 scale-90 brightness-110 xl:translate-y-0 xl:scale-100"
         />
 
         <div className="absolute right-0 top-1/4 z-20 flex flex-col gap-y-4">
-          <a href={SOCIAL_LINKS.linkedin} target="_blank">
+          <a
+            href={SOCIAL_LINKS.linkedin}
+            target="_blank"
+            aria-label="LinkedIn profile"
+          >
             <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-500">
               <FaLinkedin className="text-xl text-white" />
             </div>
           </a>
-          <a href={SOCIAL_LINKS.github} target="_blank">
+          <a
+            href={SOCIAL_LINKS.github}
+            target="_blank"
+            aria-label="GitHub profile"
+          >
             <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-700 transition-all duration-150 ease-in hover:scale-125 hover:bg-indigo-500">
               <FaGithub className="text-xl text-white" />
             </div>

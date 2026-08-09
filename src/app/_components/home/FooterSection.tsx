@@ -39,35 +39,43 @@ const FooterSection: React.FC = () => {
 
         <div className="mt-8 w-full lg:mt-0 lg:w-1/4">
           <div className="mb-8 flex justify-evenly gap-x-4">
-            <a target="_blank" href={SOCIAL_LINKS.linkedin}>
+            <a
+              target="_blank"
+              href={SOCIAL_LINKS.linkedin}
+              aria-label="LinkedIn profile"
+            >
               <div className={socialButtonParentStyle}>
                 <FaLinkedin className={socialButtonStyle} />
               </div>
             </a>
 
-            <a target="_blank" href={SOCIAL_LINKS.github}>
+            <a
+              target="_blank"
+              href={SOCIAL_LINKS.github}
+              aria-label="GitHub profile"
+            >
               <div className={socialButtonParentStyle}>
                 <FaGithub className={socialButtonStyle} />
               </div>
             </a>
-            <a href={"#"}>
+            <a href={"#"} aria-label="Instagram profile">
               <div className={socialButtonParentStyle}>
                 <FaInstagram className={socialButtonStyle} />
               </div>
             </a>
           </div>
           <div className="flex justify-evenly gap-x-4">
-            <a href={"#"}>
+            <a href={"#"} aria-label="Discord profile">
               <div className={socialButtonParentStyle}>
                 <FaDiscord className={socialButtonStyle} />
               </div>
             </a>
-            <a href={"#"}>
+            <a href={"#"} aria-label="YouTube channel">
               <div className={socialButtonParentStyle}>
                 <FaYoutube className={socialButtonStyle} />
               </div>
             </a>
-            <a href={"#"}>
+            <a href={"#"} aria-label="TikTok profile">
               <div className={socialButtonParentStyle}>
                 <FaTiktok className={socialButtonStyle} />
               </div>
