@@ -12,7 +12,7 @@ const AboutSection: React.FC = () => {
   return (
     <>
       <div className="relative z-10 flex w-full justify-center lg:w-3/5 lg:justify-start">
-        <div className="relative h-[400px] w-[400px] overflow-hidden rounded-full bg-pink-200 sm:h-[500px] sm:w-[500px] xl:h-[700px] xl:w-[700px]">
+        <div className="relative aspect-square w-full max-w-[400px] overflow-hidden rounded-full bg-pink-200 sm:max-w-[500px] xl:max-w-[700px]">
           <Image
             src="/images/Coding_Desk.jpg"
             alt="Picture of desk"
@@ -24,7 +24,7 @@ const AboutSection: React.FC = () => {
       </div>
       <div className="relative z-10 flex w-full flex-col items-center justify-center text-white sm:justify-end lg:w-2/5 lg:items-start">
         <p
-          className={`${rubikRegular.className} my-16 w-[400px] tracking-[.015em] text-gray-400 xl:w-[500px] xl:text-lg`}
+          className={`${rubikRegular.className} my-16 w-full max-w-[400px] tracking-[.015em] text-gray-400 xl:max-w-[500px] xl:text-lg`}
         >
           I am a Fullstack Engineer with a strong passion for creating impactful,
           user-centered applications. With a strong background on both
