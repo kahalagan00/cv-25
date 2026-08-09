@@ -94,3 +94,61 @@
   font-display: swap;
   font-style: normal;
 }
+
+/**
+* Metric-adjusted Arial fallbacks.
+*
+* font-display: swap means text paints in the fallback first, then reflows when
+* ClashDisplay arrives -- most visible on the large headings. These overrides
+* scale local Arial to match each ClashDisplay weight's advance widths and
+* vertical metrics, so the swap happens without a layout shift.
+*
+* Derived from the .ttf files against Arial (azAvgWidth 934.5116, upm 2048):
+*   size-adjust    = (azAvgWidth / upm) / (arialAz / arialUpm)
+*   *-override     = hheaMetric / (upm * size-adjust)
+* Regenerate these if the font files are ever replaced.
+*/
+@font-face {
+  font-family: "ClashDisplay-Light-Fallback";
+  src: local("Arial");
+  size-adjust: 117.07%;
+  ascent-override: 76.02%;
+  descent-override: 21.35%;
+  line-gap-override: 7.69%;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Regular-Fallback";
+  src: local("Arial");
+  size-adjust: 119.65%;
+  ascent-override: 74.38%;
+  descent-override: 20.89%;
+  line-gap-override: 7.52%;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Medium-Fallback";
+  src: local("Arial");
+  size-adjust: 123.15%;
+  ascent-override: 72.27%;
+  descent-override: 20.3%;
+  line-gap-override: 7.31%;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Semibold-Fallback";
+  src: local("Arial");
+  size-adjust: 127.3%;
+  ascent-override: 69.91%;
+  descent-override: 19.64%;
+  line-gap-override: 7.07%;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Bold-Fallback";
+  src: local("Arial");
+  size-adjust: 130.96%;
+  ascent-override: 67.96%;
+  descent-override: 19.09%;
+  line-gap-override: 6.87%;
+}

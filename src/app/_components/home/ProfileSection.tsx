@@ -71,7 +71,8 @@ const ProfileSection: React.FC = () => {
         <Image
           src="/images/CV25_PFP.PNG"
           width={400}
-          height={400}
+          height={500}
+          priority
           alt="Joshmar Morales"
           className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-16 scale-90 brightness-110 xl:translate-y-0 xl:scale-100"
         />

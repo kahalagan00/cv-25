@@ -10,11 +10,31 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        clashlight: ["ClashDisplay-Light", "sans-serif"],
-        clashregular: ["ClashDisplay-Regular", "sans-serif"],
-        clashbold: ["ClashDisplay-Bold", "sans-serif"],
-        clashmedium: ["ClashDisplay-Medium", "sans-serif"],
-        clashsemibold: ["ClashDisplay-Semibold", "sans-serif"],
+        clashlight: [
+          "ClashDisplay-Light",
+          "ClashDisplay-Light-Fallback",
+          "sans-serif",
+        ],
+        clashregular: [
+          "ClashDisplay-Regular",
+          "ClashDisplay-Regular-Fallback",
+          "sans-serif",
+        ],
+        clashbold: [
+          "ClashDisplay-Bold",
+          "ClashDisplay-Bold-Fallback",
+          "sans-serif",
+        ],
+        clashmedium: [
+          "ClashDisplay-Medium",
+          "ClashDisplay-Medium-Fallback",
+          "sans-serif",
+        ],
+        clashsemibold: [
+          "ClashDisplay-Semibold",
+          "ClashDisplay-Semibold-Fallback",
+          "sans-serif",
+        ],
       },
       colors: {
         background: "var(--background)",
