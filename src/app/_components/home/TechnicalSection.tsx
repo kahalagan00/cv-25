@@ -22,7 +22,7 @@ const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
       >
         {skill}
       </p>
-      <div className="flex">
+      <div className="flex" role="img" aria-label={`${rating} out of 10`}>
         {ratingsArr.map((x, idx) =>
           x ? (
             <div
