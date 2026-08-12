@@ -18,7 +18,7 @@ const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
   }
 
   return (
-    <li className="my-4 grid w-full grid-cols-[150px_1fr] justify-start text-white">
+    <li className="my-4 grid w-full grid-cols-[minmax(0,150px)_1fr] justify-start text-white">
       <p
         className={`${rubikRegular.className} text-xl text-gray-100 lg:text-2xl`}
       >
@@ -53,7 +53,7 @@ const FETCH_TIMEOUT_MS = 10000;
 const SkeletonRow = () => (
   <li
     aria-hidden
-    className="my-4 grid w-full grid-cols-[150px_1fr] justify-start"
+    className="my-4 grid w-full grid-cols-[minmax(0,150px)_1fr] justify-start"
   >
     <div className="h-7 w-24 animate-pulse rounded bg-gray-700 lg:h-8" />
     <div className="flex flex-wrap gap-2">
@@ -101,16 +101,21 @@ const TechnicalSection: React.FC = () => {
     loadSkills();
   }, [loadSkills]);
 
+  const midpoint = Math.ceil(skillsData.length / 2);
+
   return (
     <>
       <div className="relative z-20 flex">
         <div className="flex w-full justify-center lg:block lg:w-1/2">
-          <h1 className="font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
+          <h2 className="font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
             My skills
-          </h1>
+          </h2>
         </div>
         <div className="hidden overflow-hidden lg:block lg:w-1/2">
-          <IoMdArrowBack className="-translate-x-6 font-clashsemibold text-[8rem] leading-tight text-fuchsia-600 xl:text-[10rem]" />
+          <IoMdArrowBack
+            aria-hidden
+            className="-translate-x-6 text-[8rem] text-fuchsia-600 xl:text-[10rem]"
+          />
         </div>
       </div>
 
@@ -136,16 +141,15 @@ const TechnicalSection: React.FC = () => {
                   ? Array.from({ length: SKELETON_ROWS }, (_, idx) => (
                       <SkeletonRow key={idx} />
                     ))
-                  : skillsData.map(
-                      (data: { skill: string; rating: number }, idx: number) =>
-                        idx < skillsData.length / 2 && (
-                          <SkillRow
-                            key={data.skill}
-                            skill={data.skill}
-                            rating={data.rating}
-                          />
-                        ),
-                    )}
+                  : skillsData
+                      .slice(0, midpoint)
+                      .map((data) => (
+                        <SkillRow
+                          key={data.skill}
+                          skill={data.skill}
+                          rating={data.rating}
+                        />
+                      ))}
               </ul>
             </div>
             <div className="flex w-full justify-center lg:block lg:w-1/2">
@@ -154,16 +158,15 @@ const TechnicalSection: React.FC = () => {
                   ? Array.from({ length: SKELETON_ROWS }, (_, idx) => (
                       <SkeletonRow key={idx} />
                     ))
-                  : skillsData.map(
-                      (data: { skill: string; rating: number }, idx: number) =>
-                        idx >= skillsData.length / 2 && (
-                          <SkillRow
-                            key={data.skill}
-                            skill={data.skill}
-                            rating={data.rating}
-                          />
-                        ),
-                    )}
+                  : skillsData
+                      .slice(midpoint)
+                      .map((data) => (
+                        <SkillRow
+                          key={data.skill}
+                          skill={data.skill}
+                          rating={data.rating}
+                        />
+                      ))}
               </ul>
             </div>
           </>
