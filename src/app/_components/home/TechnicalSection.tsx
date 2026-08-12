@@ -22,17 +22,21 @@ const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
       >
         {skill}
       </p>
-      <div className="flex" role="img" aria-label={`${rating} out of 10`}>
+      <div
+        className="flex flex-wrap gap-2"
+        role="img"
+        aria-label={`${rating} out of 10`}
+      >
         {ratingsArr.map((x, idx) =>
           x ? (
             <div
               key={`Rating valid ${idx}`}
-              className="ml-2 h-4 w-4 rounded-full bg-fuchsia-600 lg:h-5 lg:w-5"
+              className="h-4 w-4 shrink-0 rounded-full bg-fuchsia-600 lg:h-5 lg:w-5"
             ></div>
           ) : (
             <div
               key={`Rating invalid ${idx}`}
-              className="ml-2 h-4 w-4 rounded-full border-2 border-fuchsia-600 bg-transparent lg:h-5 lg:w-5"
+              className="h-4 w-4 shrink-0 rounded-full border-2 border-fuchsia-600 bg-transparent lg:h-5 lg:w-5"
             ></div>
           ),
         )}
