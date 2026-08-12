@@ -6,9 +6,11 @@ import { IoMdArrowBack } from "react-icons/io";
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 
 const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
+  const safeRating = Math.max(0, Math.min(10, Math.round(rating ?? 0)));
+
   const ratingsArr = [];
   for (let i = 0; i < 10; i++) {
-    if (i + 1 <= rating) {
+    if (i + 1 <= safeRating) {
       ratingsArr.push(1);
     } else {
       ratingsArr.push(0);
@@ -25,7 +27,7 @@ const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
       <div
         className="flex flex-wrap gap-2"
         role="img"
-        aria-label={`${rating} out of 10`}
+        aria-label={`${safeRating} out of 10`}
       >
         {ratingsArr.map((x, idx) =>
           x ? (
