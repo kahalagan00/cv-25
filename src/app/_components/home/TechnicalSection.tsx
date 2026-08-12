@@ -1,6 +1,6 @@
 "use client";
 import { Rubik } from "next/font/google";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { IoMdArrowBack } from "react-icons/io";
 
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
@@ -46,6 +46,7 @@ const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
 };
 
 const SKELETON_ROWS = 6;
+const FETCH_TIMEOUT_MS = 10000;
 
 const SkeletonRow = () => (
   <li
@@ -71,8 +72,14 @@ const TechnicalSection: React.FC = () => {
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("/data/skillsData.json")
+  const loadSkills = useCallback(() => {
+    setIsLoading(true);
+    setHasError(false);
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
+    fetch("/data/skillsData.json", { signal: controller.signal })
       .then((response) => {
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         return response.json();
@@ -82,8 +89,15 @@ const TechnicalSection: React.FC = () => {
         setSkillsData(data);
       })
       .catch(() => setHasError(true))
-      .finally(() => setIsLoading(false));
+      .finally(() => {
+        clearTimeout(timeoutId);
+        setIsLoading(false);
+      });
   }, []);
+
+  useEffect(() => {
+    loadSkills();
+  }, [loadSkills]);
 
   return (
     <>
@@ -100,12 +114,18 @@ const TechnicalSection: React.FC = () => {
 
       <div className="relative z-20 mt-12 flex flex-col lg:flex-row">
         {hasError ? (
-          <p
-            role="alert"
-            className={`${rubikRegular.className} w-full text-xl text-gray-400`}
-          >
-            Skills could not be loaded. Please refresh the page to try again.
-          </p>
+          <div role="alert" className={`${rubikRegular.className} w-full`}>
+            <p className="text-xl text-gray-400">
+              Skills could not be loaded right now.
+            </p>
+            <button
+              type="button"
+              onClick={loadSkills}
+              className="mt-4 rounded-full bg-fuchsia-700 px-6 py-3 text-lg text-white hover:bg-fuchsia-600"
+            >
+              Try again
+            </button>
+          </div>
         ) : (
           <>
             <div className="flex w-full justify-center lg:block lg:w-1/2">
