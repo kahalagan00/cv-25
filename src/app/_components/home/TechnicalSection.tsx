@@ -42,12 +42,22 @@ const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
 };
 
 const TechnicalSection: React.FC = () => {
-  const [skillsData, setSkillsData] = useState([]);
+  const [skillsData, setSkillsData] = useState<
+    { skill: string; rating: number }[]
+  >([]);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     fetch("/data/skillsData.json")
-      .then((response) => response.json())
-      .then((data) => setSkillsData(data));
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((data) => {
+        if (!Array.isArray(data)) throw new Error("Malformed skills payload");
+        setSkillsData(data);
+      })
+      .catch(() => setHasError(true));
   }, []);
 
   return (
@@ -64,34 +74,45 @@ const TechnicalSection: React.FC = () => {
       </div>
 
       <div className="relative z-20 mt-12 flex flex-col lg:flex-row">
-        <div className="flex w-full justify-center lg:block lg:w-1/2">
-          <ul className="lg:w-full">
-            {skillsData.map(
-              (data: { skill: string; rating: number }, idx: number) =>
-                idx < skillsData.length / 2 && (
-                  <SkillRow
-                    key={data.skill}
-                    skill={data.skill}
-                    rating={data.rating}
-                  />
-                ),
-            )}
-          </ul>
-        </div>
-        <div className="flex w-full justify-center lg:block lg:w-1/2">
-          <ul className="lg:w-full">
-            {skillsData.map(
-              (data: { skill: string; rating: number }, idx: number) =>
-                idx >= skillsData.length / 2 && (
-                  <SkillRow
-                    key={data.skill}
-                    skill={data.skill}
-                    rating={data.rating}
-                  />
-                ),
-            )}
-          </ul>
-        </div>
+        {hasError ? (
+          <p
+            role="alert"
+            className={`${rubikRegular.className} w-full text-xl text-gray-400`}
+          >
+            Skills could not be loaded. Please refresh the page to try again.
+          </p>
+        ) : (
+          <>
+            <div className="flex w-full justify-center lg:block lg:w-1/2">
+              <ul className="lg:w-full">
+                {skillsData.map(
+                  (data: { skill: string; rating: number }, idx: number) =>
+                    idx < skillsData.length / 2 && (
+                      <SkillRow
+                        key={data.skill}
+                        skill={data.skill}
+                        rating={data.rating}
+                      />
+                    ),
+                )}
+              </ul>
+            </div>
+            <div className="flex w-full justify-center lg:block lg:w-1/2">
+              <ul className="lg:w-full">
+                {skillsData.map(
+                  (data: { skill: string; rating: number }, idx: number) =>
+                    idx >= skillsData.length / 2 && (
+                      <SkillRow
+                        key={data.skill}
+                        skill={data.skill}
+                        rating={data.rating}
+                      />
+                    ),
+                )}
+              </ul>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
