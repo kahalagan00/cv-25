@@ -1,95 +1,133 @@
 "use client";
 import { Rubik } from "next/font/google";
-import { IoMdArrowBack } from "react-icons/io";
+import { useEffect, useRef, useState } from "react";
 import { skillsData } from "../../_data/skillsData";
 
-const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin"] });
 
-const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
+const RING_GRADIENT_ID = "skill-ring-gradient";
+const RING_RADIUS = 15;
+const RING_LENGTH = 2 * Math.PI * RING_RADIUS;
+
+const SkillTile = ({
+  skill,
+  rating,
+  index,
+  inView,
+}: {
+  skill: string;
+  rating: number;
+  index: number;
+  inView: boolean;
+}) => {
   const safeRating = Math.max(0, Math.min(10, Math.round(rating ?? 0)));
 
-  const ratingsArr = [];
-  for (let i = 0; i < 10; i++) {
-    if (i + 1 <= safeRating) {
-      ratingsArr.push(1);
-    } else {
-      ratingsArr.push(0);
-    }
-  }
-
   return (
-    <li className="my-4 grid w-full grid-cols-[minmax(0,150px)_1fr] justify-start text-white">
-      <p
-        className={`${rubikRegular.className} text-xl text-gray-100 lg:text-2xl`}
-      >
-        {skill}
-      </p>
+    <li className="flex flex-col items-center gap-y-3 rounded-3xl border border-white/10 bg-white/5 px-3 py-6 transition-colors hover:border-fuchsia-400/40 hover:bg-white/10">
       <div
-        className="flex flex-wrap gap-2"
+        className="relative h-20 w-20"
         role="img"
         aria-label={`${safeRating} out of 10`}
       >
-        {ratingsArr.map((x, idx) =>
-          x ? (
-            <div
-              key={`Rating valid ${idx}`}
-              className="h-4 w-4 shrink-0 rounded-full bg-fuchsia-600 lg:h-5 lg:w-5"
-            ></div>
-          ) : (
-            <div
-              key={`Rating invalid ${idx}`}
-              className="h-4 w-4 shrink-0 rounded-full border-2 border-fuchsia-600 bg-transparent lg:h-5 lg:w-5"
-            ></div>
-          ),
-        )}
+        <svg viewBox="0 0 36 36" className="h-full w-full -rotate-90">
+          <circle
+            cx="18"
+            cy="18"
+            r={RING_RADIUS}
+            fill="none"
+            strokeWidth="3"
+            className="stroke-white/10"
+          />
+          {/* One dash as long as the ring, offset to leave only the rated
+              share showing. It stays fully offset until the grid scrolls into
+              view, then draws in; the hidden offset sits just past the full
+              length so no round cap shows early. */}
+          <circle
+            cx="18"
+            cy="18"
+            r={RING_RADIUS}
+            fill="none"
+            strokeWidth="3"
+            strokeLinecap="round"
+            stroke={`url(#${RING_GRADIENT_ID})`}
+            strokeDasharray={`${RING_LENGTH} ${RING_LENGTH * 2}`}
+            strokeDashoffset={
+              inView && safeRating > 0
+                ? RING_LENGTH * (1 - safeRating / 10)
+                : RING_LENGTH * 1.05
+            }
+            className="transition-[stroke-dashoffset] duration-1000 ease-out motion-reduce:transition-none"
+            style={{ transitionDelay: `${index * 60}ms` }}
+          />
+        </svg>
+        <span className="absolute inset-0 flex items-baseline justify-center pt-6 font-clashsemibold text-2xl leading-8 text-white">
+          {safeRating}
+          <span className="text-xs text-white/50">/10</span>
+        </span>
       </div>
+      <p
+        className={`${rubik.className} text-center text-base text-gray-100 sm:text-lg`}
+      >
+        {skill}
+      </p>
     </li>
   );
 };
 
 const TechnicalSection: React.FC = () => {
-  const midpoint = Math.ceil(skillsData.length / 2);
+  const gridRef = useRef<HTMLUListElement | null>(null);
+  const [inView, setInView] = useState(false);
+
+  // Draws the rings once, the first time the grid is scrolled into view.
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setInView(true);
+        observer.disconnect();
+      },
+      { threshold: 0.2 },
+    );
+    observer.observe(grid);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
-      <div className="relative z-20 flex">
-        <div className="flex w-full justify-center lg:block lg:w-1/2">
-          <h2 className="font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
-            My skills
-          </h2>
-        </div>
-        <div className="hidden overflow-hidden lg:block lg:w-1/2">
-          <IoMdArrowBack
-            aria-hidden
-            className="-translate-x-6 text-[8rem] text-fuchsia-600 xl:text-[10rem]"
-          />
-        </div>
-      </div>
+      {/* One gradient shared by every ring. */}
+      <svg aria-hidden className="absolute h-0 w-0">
+        <defs>
+          <linearGradient id={RING_GRADIENT_ID} x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#818cf8" />
+            <stop offset="1" stopColor="#d946ef" />
+          </linearGradient>
+        </defs>
+      </svg>
 
-      <div className="relative z-20 mt-12 flex flex-col lg:flex-row">
-        <div className="flex w-full justify-center lg:block lg:w-1/2">
-          <ul className="lg:w-full">
-            {skillsData.slice(0, midpoint).map((data) => (
-              <SkillRow
-                key={data.skill}
-                skill={data.skill}
-                rating={data.rating}
-              />
-            ))}
-          </ul>
-        </div>
-        <div className="flex w-full justify-center lg:block lg:w-1/2">
-          <ul className="lg:w-full">
-            {skillsData.slice(midpoint).map((data) => (
-              <SkillRow
-                key={data.skill}
-                skill={data.skill}
-                rating={data.rating}
-              />
-            ))}
-          </ul>
-        </div>
-      </div>
+      <h2 className="relative z-20 px-4 font-clashsemibold text-[3rem] leading-[1.05] tracking-tight text-white sm:px-8 sm:text-[4rem] xl:text-[5rem]">
+        My{" "}
+        <span className="bg-gradient-to-r from-indigo-300 via-violet-300 to-fuchsia-400 bg-clip-text pb-2 text-transparent">
+          skills
+        </span>
+      </h2>
+
+      <ul
+        ref={gridRef}
+        className="relative z-20 mt-12 grid grid-cols-2 gap-3 px-4 sm:grid-cols-3 sm:gap-4 sm:px-8 lg:grid-cols-4 xl:grid-cols-6"
+      >
+        {skillsData.map((data, index) => (
+          <SkillTile
+            key={data.skill}
+            skill={data.skill}
+            rating={data.rating}
+            index={index}
+            inView={inView}
+          />
+        ))}
+      </ul>
     </>
   );
 };
