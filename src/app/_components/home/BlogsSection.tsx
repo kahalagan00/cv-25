@@ -2,8 +2,8 @@
 import { Rubik } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { ImCross } from "react-icons/im";
+import { blogsData } from "../../_data/blogsData";
 
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 const rubikBold = Rubik({ weight: "700", subsets: ["latin"] });
@@ -43,14 +43,6 @@ const BlogCard = ({
 };
 
 const BlogsSection: React.FC = () => {
-  const [blogsData, setBlogsData] = useState([]);
-
-  useEffect(() => {
-    fetch("/data/blogsData.json")
-      .then((response) => response.json())
-      .then((data) => setBlogsData(data));
-  }, []);
-
   const halfIndex = blogsData.length / 2;
 
   return (

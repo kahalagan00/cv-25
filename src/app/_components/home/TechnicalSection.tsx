@@ -1,7 +1,7 @@
 "use client";
 import { Rubik } from "next/font/google";
-import { useCallback, useEffect, useState } from "react";
 import { IoMdArrowBack } from "react-icons/io";
+import { skillsData } from "../../_data/skillsData";
 
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 
@@ -47,60 +47,7 @@ const SkillRow = ({ skill, rating }: { skill: string; rating: number }) => {
   );
 };
 
-const SKELETON_ROWS = 6;
-const FETCH_TIMEOUT_MS = 10000;
-
-const SkeletonRow = () => (
-  <li
-    aria-hidden
-    className="my-4 grid w-full grid-cols-[minmax(0,150px)_1fr] justify-start"
-  >
-    <div className="h-7 w-24 animate-pulse rounded bg-gray-700 lg:h-8" />
-    <div className="flex flex-wrap gap-2">
-      {Array.from({ length: 10 }).map((_, idx) => (
-        <div
-          key={idx}
-          className="h-4 w-4 shrink-0 animate-pulse rounded-full bg-fuchsia-600 bg-opacity-20 lg:h-5 lg:w-5"
-        />
-      ))}
-    </div>
-  </li>
-);
-
 const TechnicalSection: React.FC = () => {
-  const [skillsData, setSkillsData] = useState<
-    { skill: string; rating: number }[]
-  >([]);
-  const [hasError, setHasError] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  const loadSkills = useCallback(() => {
-    setIsLoading(true);
-    setHasError(false);
-
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
-
-    fetch("/data/skillsData.json", { signal: controller.signal })
-      .then((response) => {
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        return response.json();
-      })
-      .then((data) => {
-        if (!Array.isArray(data)) throw new Error("Malformed skills payload");
-        setSkillsData(data);
-      })
-      .catch(() => setHasError(true))
-      .finally(() => {
-        clearTimeout(timeoutId);
-        setIsLoading(false);
-      });
-  }, []);
-
-  useEffect(() => {
-    loadSkills();
-  }, [loadSkills]);
-
   const midpoint = Math.ceil(skillsData.length / 2);
 
   return (
@@ -120,57 +67,28 @@ const TechnicalSection: React.FC = () => {
       </div>
 
       <div className="relative z-20 mt-12 flex flex-col lg:flex-row">
-        {hasError ? (
-          <div role="alert" className={`${rubikRegular.className} w-full`}>
-            <p className="text-xl text-gray-400">
-              Skills could not be loaded right now.
-            </p>
-            <button
-              type="button"
-              onClick={loadSkills}
-              className="mt-4 rounded-full bg-fuchsia-700 px-6 py-3 text-lg text-white hover:bg-fuchsia-600"
-            >
-              Try again
-            </button>
-          </div>
-        ) : (
-          <>
-            <div className="flex w-full justify-center lg:block lg:w-1/2">
-              <ul className="lg:w-full">
-                {isLoading
-                  ? Array.from({ length: SKELETON_ROWS }, (_, idx) => (
-                      <SkeletonRow key={idx} />
-                    ))
-                  : skillsData
-                      .slice(0, midpoint)
-                      .map((data) => (
-                        <SkillRow
-                          key={data.skill}
-                          skill={data.skill}
-                          rating={data.rating}
-                        />
-                      ))}
-              </ul>
-            </div>
-            <div className="flex w-full justify-center lg:block lg:w-1/2">
-              <ul className="lg:w-full">
-                {isLoading
-                  ? Array.from({ length: SKELETON_ROWS }, (_, idx) => (
-                      <SkeletonRow key={idx} />
-                    ))
-                  : skillsData
-                      .slice(midpoint)
-                      .map((data) => (
-                        <SkillRow
-                          key={data.skill}
-                          skill={data.skill}
-                          rating={data.rating}
-                        />
-                      ))}
-              </ul>
-            </div>
-          </>
-        )}
+        <div className="flex w-full justify-center lg:block lg:w-1/2">
+          <ul className="lg:w-full">
+            {skillsData.slice(0, midpoint).map((data) => (
+              <SkillRow
+                key={data.skill}
+                skill={data.skill}
+                rating={data.rating}
+              />
+            ))}
+          </ul>
+        </div>
+        <div className="flex w-full justify-center lg:block lg:w-1/2">
+          <ul className="lg:w-full">
+            {skillsData.slice(midpoint).map((data) => (
+              <SkillRow
+                key={data.skill}
+                skill={data.skill}
+                rating={data.rating}
+              />
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   );

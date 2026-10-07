@@ -3,23 +3,12 @@ import { Rubik } from "next/font/google";
 import Image from "next/image";
 import { FaGithub, FaLink } from "react-icons/fa";
 import MainFooter from "../_components/MainFooter";
-import projectsJson from "../../../public/data/projectsData.json";
+import { projectsData, type Project } from "../_data/projectsData";
 
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 
 const PLACEHOLDER_DEMO =
   "/images/projects_images/demos/UnderDevelopment_Demo.svg";
-
-type Project = {
-  title: string;
-  dateRange: string;
-  summary: string;
-  githubLink: string;
-  siteLink: string;
-  projectDemo: string;
-};
-
-const projects = projectsJson as Project[];
 
 export const metadata: Metadata = {
   title: "Projects | Joshmar Morales",
@@ -35,7 +24,7 @@ const Page: React.FC = () => {
           Projects
         </h1>
 
-        {projects.map((project) => (
+        {projectsData.map((project) => (
           <ProjectRow project={project} key={project.title} />
         ))}
 

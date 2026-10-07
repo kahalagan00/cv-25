@@ -2,25 +2,12 @@
 import { Rubik } from "next/font/google";
 
 import MainFooter from "../_components/MainFooter";
-import { useEffect, useState } from "react";
+import { blogsData } from "../_data/blogsData";
 
 const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
 // const rubikBold = Rubik({ weight: "700", subsets: ["latin"] });
 
-type BlogType = {
-  title: string;
-  summary: string;
-  content: string;
-};
-
 const Page: React.FC = () => {
-  const [blogsData, setBlogsData] = useState([]);
-
-  useEffect(() => {
-    fetch("/data/blogsData.json")
-      .then((response) => response.json())
-      .then((data) => setBlogsData(data));
-  }, []);
   return (
     <section className="relative w-screen">
       <div className="relative z-10 mx-auto my-16 flex min-h-screen w-full max-w-screen-2xl flex-col justify-between px-4">
@@ -36,7 +23,7 @@ const Page: React.FC = () => {
             to learn and adapt. We are mainly going to talk about Software
             Development, AI and Cybersecurity.
           </div>
-          {blogsData.map((data: BlogType) => (
+          {blogsData.map((data) => (
             <BlogBody
               key={data.title}
               title={data.title}
