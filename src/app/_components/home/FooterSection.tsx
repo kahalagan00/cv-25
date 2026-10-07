@@ -1,87 +1,96 @@
 "use client";
+import { Rubik } from "next/font/google";
 import {
   FaDiscord,
   FaGithub,
   FaInstagram,
-  FaLinkedin,
+  FaLinkedinIn,
   FaTiktok,
   FaYoutube,
 } from "react-icons/fa";
-import { ImCross } from "react-icons/im";
 import { SOCIAL_LINKS } from "../../_utils/constants";
 import MainFooter from "../MainFooter";
 
+const rubik = Rubik({ subsets: ["latin"] });
+
+const FOCUS_RING =
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-400";
+
+const SOCIALS = [
+  {
+    name: "LinkedIn",
+    label: "LinkedIn profile",
+    href: SOCIAL_LINKS.linkedin,
+    icon: FaLinkedinIn,
+  },
+  {
+    name: "GitHub",
+    label: "GitHub profile",
+    href: SOCIAL_LINKS.github,
+    icon: FaGithub,
+  },
+  {
+    name: "Instagram",
+    label: "Instagram profile",
+    href: "#",
+    icon: FaInstagram,
+  },
+  {
+    name: "Discord",
+    label: "Discord profile",
+    href: "#",
+    icon: FaDiscord,
+  },
+  {
+    name: "YouTube",
+    label: "YouTube channel",
+    href: "#",
+    icon: FaYoutube,
+  },
+  {
+    name: "TikTok",
+    label: "TikTok profile",
+    href: "#",
+    icon: FaTiktok,
+  },
+];
+
 const FooterSection: React.FC = () => {
-  const dotsArt = [];
-  for (let i = 0; i < 20; ++i) {
-    dotsArt.push(
-      <div
-        key={i}
-        className={`h-3 w-3 rounded-full bg-fuchsia-600 md:h-5 md:w-5`}
-        style={{ opacity: 1 - i * 0.05 }}
-      ></div>,
-    );
-  }
-
-  const socialButtonParentStyle = `flex lg:h-20 lg:w-20 h-16 w-16 items-center justify-center rounded-full bg-fuchsia-600 hover:bg-fuchsia-500 transition-all duration-150 ease-in hover:scale-110`;
-  const socialButtonStyle = `lg:h-14 lg:w-14 h-10 w-10`;
-
   return (
     <>
-      <div className="relative z-10 mb-48 flex w-full flex-col px-4 lg:flex-row">
-        <div className="relative flex w-full flex-col items-center justify-center lg:block lg:w-3/4">
-          <h1 className="font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
-            Follow me
-          </h1>
-          <div className="mt-4 flex gap-x-3">{dotsArt}</div>
-          <ImCross className="absolute left-0 top-0 h-24 w-24 -translate-x-32 -translate-y-32 text-fuchsia-600" />
+      <div className="relative z-10 mb-48 w-full lg:flex">
+        <div className="px-4 sm:px-8 lg:w-5/12">
+          <h2 className="font-clashsemibold text-[3rem] leading-[1.05] tracking-tight text-white sm:text-[4rem] xl:text-[5rem]">
+            Follow{" "}
+            <span className="bg-gradient-to-r from-indigo-300 via-violet-300 to-fuchsia-400 bg-clip-text pb-2 text-transparent">
+              me
+            </span>
+          </h2>
         </div>
 
-        <div className="mt-8 w-full lg:mt-0 lg:w-1/4">
-          <div className="mb-8 flex justify-evenly gap-x-4">
-            <a
-              target="_blank"
-              href={SOCIAL_LINKS.linkedin}
-              aria-label="LinkedIn profile"
-            >
-              <div className={socialButtonParentStyle}>
-                <FaLinkedin className={socialButtonStyle} />
-              </div>
-            </a>
-
-            <a
-              target="_blank"
-              href={SOCIAL_LINKS.github}
-              aria-label="GitHub profile"
-            >
-              <div className={socialButtonParentStyle}>
-                <FaGithub className={socialButtonStyle} />
-              </div>
-            </a>
-            <a href={"#"} aria-label="Instagram profile">
-              <div className={socialButtonParentStyle}>
-                <FaInstagram className={socialButtonStyle} />
-              </div>
-            </a>
-          </div>
-          <div className="flex justify-evenly gap-x-4">
-            <a href={"#"} aria-label="Discord profile">
-              <div className={socialButtonParentStyle}>
-                <FaDiscord className={socialButtonStyle} />
-              </div>
-            </a>
-            <a href={"#"} aria-label="YouTube channel">
-              <div className={socialButtonParentStyle}>
-                <FaYoutube className={socialButtonStyle} />
-              </div>
-            </a>
-            <a href={"#"} aria-label="TikTok profile">
-              <div className={socialButtonParentStyle}>
-                <FaTiktok className={socialButtonStyle} />
-              </div>
-            </a>
-          </div>
-        </div>
+        <ul className="mt-12 grid grid-cols-3 gap-3 px-4 sm:gap-4 sm:px-8 lg:mt-0 lg:w-7/12">
+          {SOCIALS.map(({ name, label, href, icon: Icon }) => (
+            <li key={name}>
+              <a
+                href={href}
+                // Only real destinations open in a new tab.
+                target={href === "#" ? undefined : "_blank"}
+                rel={href === "#" ? undefined : "noreferrer"}
+                aria-label={label}
+                className={`${FOCUS_RING} group flex flex-col items-center gap-y-3 rounded-3xl border border-white/10 bg-white/5 px-2 py-6 transition-colors hover:border-fuchsia-400/40 hover:bg-white/10`}
+              >
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-fuchsia-700 text-2xl text-white transition-colors group-hover:bg-fuchsia-600">
+                  <Icon aria-hidden />
+                </span>
+                <span
+                  className={`${rubik.className} text-sm text-gray-100 sm:text-lg`}
+                >
+                  {name}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
       <MainFooter />
     </>
