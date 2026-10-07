@@ -93,7 +93,7 @@ const Header: React.FC = () => {
   }, [pill]);
 
   return (
-    <header className="sticky top-4 z-50 mx-auto mt-4 flex h-14 w-[calc(100%-2rem)] max-w-screen-xl items-center gap-x-1 rounded-full border border-white/10 bg-indigo-950/90 px-1.5 text-white shadow-lg shadow-black/30 backdrop-blur-xl supports-[backdrop-filter]:bg-indigo-950/70 lg:h-16 lg:px-2.5">
+    <header className="sticky top-4 z-50 mx-auto mt-4 flex h-14 w-[calc(100%-2rem)] max-w-screen-xl items-center gap-x-1 rounded-full border border-white/10 bg-indigo-950/90 px-1.5 text-white backdrop-blur-xl supports-[backdrop-filter]:bg-indigo-950/70 lg:h-16 lg:px-2.5">
       <div className="flex shrink-0 lg:flex-1">
         <Link
           href="/"
