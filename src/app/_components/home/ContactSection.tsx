@@ -1,10 +1,23 @@
 "use client";
 import { Rubik } from "next/font/google";
 import { useState } from "react";
-import { IoMdArrowBack } from "react-icons/io";
-import { generateDotsArt } from "../../_utils/dotsArt";
+import { LuSend } from "react-icons/lu";
 
-const rubikBold = Rubik({ weight: "700", subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin"] });
+
+const FOCUS_RING =
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-400";
+
+const LABEL_STYLE = "mb-2 block text-sm font-medium text-gray-300";
+
+const FIELD_STYLE =
+  "w-full rounded-2xl border border-white/10 bg-white/5 px-5 text-white outline-none transition-colors placeholder:text-gray-500 hover:border-white/20 focus:border-fuchsia-400 focus:bg-white/10 focus:ring-2 focus:ring-fuchsia-400/30";
+
+const RequiredMark = () => (
+  <span aria-hidden className="text-fuchsia-400">
+    *
+  </span>
+);
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +25,6 @@ const ContactSection: React.FC = () => {
     email: "",
     message: "",
   });
-  const inputStyleNormal = `h-16 w-full rounded-full pl-6 bg-indigo-900 text-white outline-none placeholder:tracking-wide`;
 
   // eslint-disable-next-line
   // @ts-ignore
@@ -32,81 +44,85 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <>
-      <div className="relative z-10 flex w-full flex-col items-center">
-        <h1 className="font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] lg:text-[8rem]">
-          Contact me
-        </h1>
+    <div className="relative z-10 w-full lg:flex">
+      <div className="px-4 sm:px-8 lg:w-5/12">
+        <h2 className="font-clashsemibold text-[3rem] leading-[1.05] tracking-tight text-white sm:text-[4rem] xl:text-[5rem]">
+          Contact{" "}
+          <span className="bg-gradient-to-r from-indigo-300 via-violet-300 to-fuchsia-400 bg-clip-text pb-2 text-transparent">
+            me
+          </span>
+        </h2>
+      </div>
+
+      <div className="mt-12 px-4 sm:px-8 lg:mt-0 lg:w-7/12">
         <form
           onSubmit={handleSubmit}
-          className="block w-full flex-col px-4 sm:w-1/2 sm:px-0 lg:w-1/3"
+          className={`${rubik.className} rounded-[2rem] border border-white/10 bg-white/5 p-6 sm:p-10`}
         >
-          <div className="my-8">
-            <p className={`${rubikBold.className} mb-2 text-lg text-white`}>
-              Full name*
-            </p>
-            <input
-              placeholder="Enter your full name..."
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className={inputStyleNormal}
-            />
-          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <div>
+              <label htmlFor="name" className={LABEL_STYLE}>
+                Full name
+                <RequiredMark />
+              </label>
+              <input
+                placeholder="Enter your full name..."
+                type="text"
+                id="name"
+                name="name"
+                autoComplete="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className={`${FIELD_STYLE} h-14`}
+              />
+            </div>
 
-          <div className="my-8">
-            <p className={`${rubikBold.className} mb-2 text-lg text-white`}>
-              Email*
-            </p>
-            <input
-              placeholder="Enter your email..."
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className={inputStyleNormal}
-            />
-          </div>
+            <div>
+              <label htmlFor="email" className={LABEL_STYLE}>
+                Email
+                <RequiredMark />
+              </label>
+              <input
+                placeholder="Enter your email..."
+                type="email"
+                id="email"
+                name="email"
+                autoComplete="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className={`${FIELD_STYLE} h-14`}
+              />
+            </div>
 
-          <div className="relative my-8">
-            <p className={`${rubikBold.className} mb-2 text-lg text-white`}>
-              Message*
-            </p>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              placeholder="Enter your message..."
-              className="min-h-48 w-full rounded-3xl bg-indigo-900 pl-6 pt-4 text-white outline-none placeholder:tracking-wide"
-            ></textarea>
-
-            <IoMdArrowBack className="absolute right-0 top-10 hidden translate-x-44 font-clashsemibold text-[8rem] leading-tight text-fuchsia-600 sm:block lg:translate-x-64 lg:text-[10rem]" />
+            <div className="sm:col-span-2 lg:col-span-1 xl:col-span-2">
+              <label htmlFor="message" className={LABEL_STYLE}>
+                Message
+                <RequiredMark />
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                placeholder="Enter your message..."
+                className={`${FIELD_STYLE} block min-h-48 py-4`}
+              ></textarea>
+            </div>
           </div>
 
           <button
             type="submit"
-            className={`${rubikBold.className} mx-auto flex w-48 items-center justify-center rounded-full bg-fuchsia-700 px-9 py-4 text-lg text-white hover:bg-fuchsia-600`}
+            className={`${FOCUS_RING} mt-8 flex h-12 w-full items-center justify-center gap-x-2 rounded-full bg-fuchsia-700 px-7 text-lg font-medium text-white transition-colors hover:bg-fuchsia-600 sm:w-auto`}
           >
             Send Email
+            <LuSend aria-hidden />
           </button>
         </form>
-
-        <div className="absolute bottom-1/4 hidden translate-y-16 flex-col gap-y-8 max-lg:left-0 sm:flex lg:right-0">
-          {Array.from({ length: 4 }).map((_, index) => (
-            <div key={index} className="flex gap-x-8">
-              {generateDotsArt(3)}
-            </div>
-          ))}
-        </div>
       </div>
-    </>
+    </div>
   );
 };
 
