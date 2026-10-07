@@ -1,34 +1,42 @@
 import { Rubik } from "next/font/google";
-const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin"] });
 
 interface ExperienceRowProps {
-  company: string
+  company: string;
   title: string;
   bulletPoints: string[];
 }
 
-const ExperienceRow = ({ company, title, bulletPoints }: ExperienceRowProps) => {
-
+const ExperienceRow = ({
+  company,
+  title,
+  bulletPoints,
+}: ExperienceRowProps) => {
   return (
-    <>
-      <p className="mt-16 font-clashregular text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+    <article className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8">
+      <h3 className="font-clashmedium text-xl text-white sm:text-2xl">
         {company}
-      </p>
-      <p className="font-clashlight text-[1.5rem] text-white sm:text-[2rem] lg:text-[2.5rem]">
+      </h3>
+      <p
+        className={`${rubik.className} mt-1 text-base text-fuchsia-300 sm:text-lg`}
+      >
         {title}
       </p>
-      <ul>
-        {bulletPoints.map((bp, idx) =>
-          <li
-            key={idx}
-            className={`${rubikRegular.className} mt-4 text-sm text-gray-400 sm:text-xl xl:text-2xl`}
-          >
-            &#x2022;&nbsp;{bp}
+      <ul
+        className={`${rubik.className} mt-5 space-y-3 text-base font-light leading-relaxed text-gray-400 sm:text-lg`}
+      >
+        {bulletPoints.map((bp, idx) => (
+          <li key={idx} className="flex gap-x-3">
+            <span
+              aria-hidden
+              className="mt-[0.62em] h-1.5 w-1.5 shrink-0 rounded-full bg-fuchsia-400"
+            />
+            {bp}
           </li>
-        )}
+        ))}
       </ul>
-    </>
+    </article>
   );
-}
+};
 
 export default ExperienceRow;

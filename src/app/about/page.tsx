@@ -72,23 +72,37 @@ const Page: React.FC = () => {
   return (
     <section className="relative w-screen">
       <div className="relative z-10 mx-auto my-16 w-full max-w-screen-2xl px-4">
-        <h1 className="mb-16 font-clashsemibold text-[4rem] leading-tight text-white sm:text-[6rem] xl:text-[8rem]">
-          About me
-        </h1>
+        <div className="px-4 sm:px-8">
+          <h1 className="font-clashsemibold text-[3.5rem] leading-[1.05] tracking-tight text-white sm:text-[5rem] xl:text-[6.5rem]">
+            About{" "}
+            <span className="bg-gradient-to-r from-indigo-300 via-violet-300 to-fuchsia-400 bg-clip-text pb-2 text-transparent">
+              me
+            </span>
+          </h1>
 
-        {sections.map(({ heading, entries }) => (
-          <section key={heading} aria-labelledby={`${heading}-heading`}>
-            <h2
-              id={`${heading}-heading`}
-              className="my-8 font-clashmedium text-[2.25rem] tracking-wide text-white sm:text-[3rem] lg:text-[4rem]"
+          {sections.map(({ heading, entries }) => (
+            <section
+              key={heading}
+              aria-labelledby={`${heading}-heading`}
+              className="mt-16 border-t border-white/10 pt-10 lg:flex"
             >
-              {heading}
-            </h2>
-            {entries.map((entry) => (
-              <ExperienceRow key={`${entry.company}-${entry.title}`} {...entry} />
-            ))}
-          </section>
-        ))}
+              <h2
+                id={`${heading}-heading`}
+                className="font-clashmedium text-[2rem] tracking-tight text-white sm:text-[2.5rem] lg:w-4/12"
+              >
+                {heading}
+              </h2>
+              <div className="mt-6 space-y-4 lg:mt-0 lg:w-8/12">
+                {entries.map((entry) => (
+                  <ExperienceRow
+                    key={`${entry.company}-${entry.title}`}
+                    {...entry}
+                  />
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
 
         <div className="mt-32">
           <MainFooter />
