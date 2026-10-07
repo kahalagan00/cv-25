@@ -2,44 +2,46 @@
 import { Rubik } from "next/font/google";
 import Link from "next/link";
 
-const rubikRegular = Rubik({ weight: "300", subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin"] });
+
+const FOOTER_LINK =
+  "rounded-full px-4 py-2 text-white/70 transition-colors hover:bg-white/5 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-400";
 
 const MainFooter: React.FC = () => {
   return (
-    <div>
-      <div className="relative z-10 mb-4 flex border-t-2 border-t-fuchsia-500 px-4">
-        <div className="mb-8 mt-12 flex w-full flex-col text-white md:flex-row">
-          <div className="mx-auto font-clashregular text-2xl md:mx-0 md:w-1/2 md:text-3xl">
-            Joshmar Morales
-          </div>
-          <div
-            className={`${rubikRegular.className} mt-4 flex justify-center gap-x-8 text-base tracking-wide text-white md:mt-0 md:w-1/2 md:justify-end md:text-lg xl:gap-x-32`}
-          >
-            <Link href="/" className="hover:underline">
-              Home
-            </Link>
-            <Link href="/blogs" className="hover:underline">
-              Blogs
-            </Link>
-            <Link href="/contact" className="hover:underline">
-              Contact
-            </Link>
-          </div>
+    <footer className="relative z-10 border-t border-white/10 px-4 pb-6 pt-10 sm:px-8">
+      <div className="flex flex-col items-center gap-y-4 md:flex-row md:justify-between">
+        <div className="font-clashregular text-2xl text-white md:text-3xl">
+          Joshmar Morales
         </div>
+        <nav
+          aria-label="Footer"
+          className={`${rubik.className} flex gap-x-1 text-base md:-mr-4 md:text-lg`}
+        >
+          <Link href="/" className={FOOTER_LINK}>
+            Home
+          </Link>
+          <Link href="/blogs" className={FOOTER_LINK}>
+            Blogs
+          </Link>
+          <Link href="/contact" className={FOOTER_LINK}>
+            Contact
+          </Link>
+        </nav>
       </div>
 
-      <div className="relative z-10 ml-auto flex h-8 justify-center gap-x-12 px-4 text-center text-xs tracking-wide sm:text-sm md:text-start xl:w-1/2 xl:justify-end">
-        <p className={`${rubikRegular.className} text-gray-400`}>
+      <div
+        className={`${rubik.className} mt-8 flex flex-col items-center gap-y-2 text-center text-xs font-light tracking-wide text-gray-400 sm:text-sm md:flex-row md:justify-between`}
+      >
+        <p>
           &copy; {new Date().getFullYear()} Joshmar Morales. All rights reserved
         </p>
-        <p className={`${rubikRegular.className} text-gray-400`}>
-          Terms of Use
-        </p>
-        <p className={`${rubikRegular.className} text-gray-400`}>
-          Privacy Policy
-        </p>
+        <div className="flex gap-x-6">
+          <p>Terms of Use</p>
+          <p>Privacy Policy</p>
+        </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
