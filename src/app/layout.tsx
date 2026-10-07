@@ -90,9 +90,7 @@ export default function RootLayout({
             `,
           }}
         />
-        <div className="mx-auto max-w-screen-2xl px-4">
-          <Header />
-        </div>
+        <Header />
         <main className="relative mt-4 overflow-hidden bg-[#13102b]">
           {children}
 
